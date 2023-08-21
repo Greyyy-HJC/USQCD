@@ -1,0 +1,1 @@
+./chroma_double -i wilslp.ini.xml -o wilslp.out.xml > wilslp.print.txt 2>&1

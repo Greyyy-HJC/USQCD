@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+
+<tutorial2>
+  <ProgramInfo>
+    <code_version>
+      <chroma>3.44.0</chroma>
+      <qdp>1.46.0</qdp>
+      <basePrecision>64</basePrecision>
+    </code_version>
+    <run_date>16 Aug 23 10:38:58 EDT</run_date>
+    <Setgeom>
+      <latt_size>4 4 4 8</latt_size>
+      <logical_size>1 1 1 1</logical_size>
+      <subgrid_size>4 4 4 8</subgrid_size>
+      <total_volume>512</total_volume>
+      <subgrid_volume>512</subgrid_volume>
+    </Setgeom>
+  </ProgramInfo>
+  <Input><tutorial2>
+  <Param>
+    <nrow>4 4 4 8</nrow>
+    <myname>greyyy</myname>
+  </Param>
+  <Cfg>
+    <cfg_type>UNIT</cfg_type>
+    <cfg_file>ignored</cfg_file>
+  </Cfg>
+  <Prop>
+    <prop_file>./propagator_0</prop_file>
+  </Prop>
+  <FermionAction>
+     <FermAct>WILSON</FermAct>
+     <Mass>0.3</Mass>
+     <FermState>
+        <Name>SIMPLE_FERM_STATE</Name>
+        <FermionBC>
+          <FermBC>SIMPLE_FERMBC</FermBC>
+	  <boundary>1 1 1 -1</boundary>
+        </FermionBC>
+     </FermState>
+  </FermionAction>
+</tutorial2>
+
+  </Input>
+  <Config_info><unit>
+</unit>
+
+  </Config_info>
+  <Plaquette>
+    <w_plaq>1</w_plaq>
+    <s_plaq>1</s_plaq>
+    <t_plaq>1</t_plaq>
+    <plane_01_plaq>1</plane_01_plaq>
+    <plane_02_plaq>1</plane_02_plaq>
+    <plane_12_plaq>1</plane_12_plaq>
+    <plane_03_plaq>1</plane_03_plaq>
+    <plane_13_plaq>1</plane_13_plaq>
+    <plane_23_plaq>1</plane_23_plaq>
+    <link>1</link>
+    <pollp>
+      <elem>
+        <re>1</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>1</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>1</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>1</re>
+        <im>0</im>
+      </elem>
+    </pollp>
+  </Plaquette>
+</tutorial2>
+<PseudoScalar>
+  <elem>
+    <mom_index>0</mom_index>
+    <mom>0 0 0</mom>
+    <correlator>
+      <elem>
+        <re>0.147564096224241</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.00923145565952558</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.00288719936104957</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.00109399245053551</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.000683482212778387</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.00110198608291354</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.00286503148758941</re>
+        <im>0</im>
+      </elem>
+      <elem>
+        <re>0.00919642748650267</re>
+        <im>0</im>
+      </elem>
+    </correlator>
+  </elem>
+</PseudoScalar>

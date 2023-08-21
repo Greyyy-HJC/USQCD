@@ -1,0 +1,32 @@
+###
+### AUTOTOOLS chroma
+###
+Autotools: other_libs/cpp_wilson_dslash
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.cpp_wilson_dslash.log
+Autotools: other_libs/qdp-lapack
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.qdp-lapack.log
+Autotools: other_libs/sse_wilson_dslash
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.sse_wilson_dslash.log
+Autotools: other_libs/wilsonmg
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.wilsonmg.log
+Autotools: chroma
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.chroma.log
+###
+### CONFIGURING chroma
+###
+================================================
+CC        /usr/bin/mpicc
+          gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CXX       /usr/bin/mpicxx
+          g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CFLAGS    -O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/openmpi
+CXXFLAGS  -O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/openmpi
+HOST      
+qmp           /home/jinchen/USQCD/install/qmp
+qdpxx         /home/jinchen/USQCD/install/qdpxx
+chroma        /home/jinchen/USQCD/install/chroma
+================================================
+CC="/usr/bin/mpicc" CFLAGS="-O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/openmpi" CXX="/usr/bin/mpicxx" CXXFLAGS="-O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/openmpi" CPPFLAGS="" LIBS="" QUDA_LIBS="" LDFLAGS=" -L/usr/lib/x86_64-linux-gnu/hdf5/openmpi" /home/jinchen/USQCD/source/chroma/configure --prefix=/home/jinchen/USQCD/install/chroma --with-qmp=/home/jinchen/USQCD/install/qmp --with-qdp=/home/jinchen/USQCD/install/qdpxx --enable-openmp 
+
+        tail -f /home/jinchen/USQCD/log/chroma/configure.log
+

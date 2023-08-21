@@ -1,0 +1,34 @@
+###
+### AUTOTOOLS qdpxx
+###
+Autotools: other_libs/filedb
+        tail -f /home/jinchen/USQCD/log/qdpxx/autotools.filedb.log
+Autotools: other_libs/libintrin
+        tail -f /home/jinchen/USQCD/log/qdpxx/autotools.libintrin.log
+Autotools: other_libs/qio/other_libs/c-lime
+        tail -f /home/jinchen/USQCD/log/qdpxx/autotools.c-lime.log
+Autotools: other_libs/qio
+        tail -f /home/jinchen/USQCD/log/qdpxx/autotools.qio.log
+Autotools: other_libs/xpath_reader
+        tail -f /home/jinchen/USQCD/log/qdpxx/autotools.xpath_reader.log
+Autotools: qdpxx
+        tail -f /home/jinchen/USQCD/log/qdpxx/autotools.qdpxx.log
+###
+### CONFIGURING qdpxx
+###
+================================================
+CC        /usr/bin/mpicc
+          gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CXX       /usr/bin/mpicxx
+          g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CFLAGS    -O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/openmpi
+CXXFLAGS  -O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/openmpi
+HOST      
+qmp           /home/jinchen/USQCD/install/qmp
+qdpxx         /home/jinchen/USQCD/install/qdpxx
+chroma        /home/jinchen/USQCD/install/chroma
+================================================
+CC="/usr/bin/mpicc" CFLAGS="-O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/openmpi" CXX="/usr/bin/mpicxx" CXXFLAGS="-O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/openmpi" CPPFLAGS="" LIBS="" QUDA_LIBS="" LDFLAGS=" -L/usr/local/openmpi/lib -L/home/jinchen/USQCD/build/qdpxx/other_libs/qio/lib " /home/jinchen/USQCD/source/qdpxx/configure --prefix=/home/jinchen/USQCD/install/qdpxx --with-qmp=/home/jinchen/USQCD/install/qmp --with-libxml2=/usr --with-hdf5=/usr/include/hdf5/openmpi --enable-openmp --enable-precision=double --enable-largefile --enable-parallel-io --enable-db-lite --enable-parallel-arch=parscalar
+
+        tail -f /home/jinchen/USQCD/log/qdpxx/configure.log
+

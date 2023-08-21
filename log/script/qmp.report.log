@@ -1,0 +1,33 @@
+###
+### REPORT ON qmp
+###
+================================================
+SOURCE        /home/jinchen/USQCD/source/qmp
+BUILD         /home/jinchen/USQCD/build/qmp
+INSTALL       /home/jinchen/USQCD/install/qmp
+LOG           /home/jinchen/USQCD/log/qmp
+
+GET           git clone --recursive git@github.com:usqcd-software/qmp.git /home/jinchen/USQCD/source/qmp; pushd /home/jinchen/USQCD/source/qmp; git checkout mpiaccess; popd
+
+CONFIGURE     /home/jinchen/USQCD/source/qmp/configure
+CONFIG_FLAGS  --prefix=/home/jinchen/USQCD/install/qmp --with-qmp-comms-type=MPI
+
+CC            /usr/bin/mpicc
+./usqcd.sh: line 313: /usr/bin/mpicc: No such file or directory
+              
+C_FLAGS       -O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/mpich
+
+CXX           /usr/bin/mpicxx
+./usqcd.sh: line 317: /usr/bin/mpicxx: No such file or directory
+              
+CXX_FLAGS     -O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/mpich
+
+HOST          
+
+qmp           /home/jinchen/USQCD/install/qmp
+qdpxx         /home/jinchen/USQCD/install/qdpxx
+chroma        /home/jinchen/USQCD/install/chroma
+
+LD_LIBRARY_PATH   
+================================================
+

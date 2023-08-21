@@ -1,0 +1,68 @@
+###
+### GETTING chroma
+###
+Directory exists: /home/jinchen/USQCD/source/chroma
+Overwrite? [NO]         tail -f /home/jinchen/USQCD/log/chroma/get.log
+Cloning into '/home/jinchen/USQCD/source/chroma'...
+Submodule 'other_libs/cpp_wilson_dslash' (git@github.com:JeffersonLab/cpp_wilson_dslash.git) registered for path 'other_libs/cpp_wilson_dslash'
+Submodule 'other_libs/qdp-lapack' (git@github.com:JeffersonLab/qdp-lapack.git) registered for path 'other_libs/qdp-lapack'
+Submodule 'other_libs/sse_wilson_dslash' (git@github.com:JeffersonLab/sse_wilson_dslash.git) registered for path 'other_libs/sse_wilson_dslash'
+Submodule 'other_libs/wilsonmg' (git@github.com:JeffersonLab/wilsonmg.git) registered for path 'other_libs/wilsonmg'
+Cloning into '/home/jinchen/USQCD/source/chroma/other_libs/cpp_wilson_dslash'...
+Cloning into '/home/jinchen/USQCD/source/chroma/other_libs/qdp-lapack'...
+Cloning into '/home/jinchen/USQCD/source/chroma/other_libs/sse_wilson_dslash'...
+Cloning into '/home/jinchen/USQCD/source/chroma/other_libs/wilsonmg'...
+Submodule path 'other_libs/cpp_wilson_dslash': checked out 'f2f83e4076a6abcd86728c67229b5e6d2450cff9'
+Submodule path 'other_libs/qdp-lapack': checked out 'dd8af4ab3b7915062db58e4c67762a8c7980d2f9'
+Submodule path 'other_libs/sse_wilson_dslash': checked out '0f9e5ed76589ce5f4bdd314990999b818a7a6c22'
+Submodule path 'other_libs/wilsonmg': checked out 'cad7edd92e5b6a6871856e9dbff9cf269e32440c'
+Switched to a new branch 'devel'
+M	other_libs/cpp_wilson_dslash
+M	other_libs/qdp-lapack
+Branch 'devel' set up to track remote branch 'devel' from 'origin'.
+Submodule path 'other_libs/cpp_wilson_dslash': checked out '5a14dd16ba57aeed0166a22158116be5e499a5aa'
+Submodule path 'other_libs/qdp-lapack': checked out '2b0b713efecf3d02aa172c2d01d3320775e80fb0'
+
+###
+### AUTOTOOLS chroma
+###
+Autotools: other_libs/cpp_wilson_dslash
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.cpp_wilson_dslash.log
+Autotools: other_libs/qdp-lapack
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.qdp-lapack.log
+Autotools: other_libs/sse_wilson_dslash
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.sse_wilson_dslash.log
+Autotools: other_libs/wilsonmg
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.wilsonmg.log
+Autotools: chroma
+        tail -f /home/jinchen/USQCD/log/chroma/autotools.chroma.log
+###
+### CONFIGURING chroma
+###
+================================================
+CC        /usr/bin/mpicc
+          gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CXX       /usr/bin/mpicxx
+          g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CFLAGS    -O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/openmpi
+CXXFLAGS  -O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/openmpi
+HOST      
+qmp           /home/jinchen/USQCD/install/qmp
+qdpxx         /home/jinchen/USQCD/install/qdpxx
+chroma        /home/jinchen/USQCD/install/chroma
+================================================
+CC="/usr/bin/mpicc" CFLAGS="-O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/openmpi" CXX="/usr/bin/mpicxx" CXXFLAGS="-O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/openmpi" CPPFLAGS="" LIBS="" QUDA_LIBS="" LDFLAGS=" -L/usr/lib/x86_64-linux-gnu/hdf5/openmpi" /home/jinchen/USQCD/source/chroma/configure --prefix=/home/jinchen/USQCD/install/chroma --with-qmp=/home/jinchen/USQCD/install/qmp --with-qdp=/home/jinchen/USQCD/install/qdpxx --enable-openmp 
+
+        tail -f /home/jinchen/USQCD/log/chroma/configure.log
+
+###
+### COMPILING chroma
+###
+        tail -f /home/jinchen/USQCD/log/chroma/make.log
+
+###
+### INSTALLING chroma
+###
+        tail -f /home/jinchen/USQCD/log/chroma/install.log
+
+

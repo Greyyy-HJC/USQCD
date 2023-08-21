@@ -1,0 +1,1202 @@
+<?xml version="1.0"?>
+
+
+<chroma>
+  <Input><chroma>
+    <annotation>Hadron spectrum input</annotation>
+    <Param>
+        <InlineMeasurements>
+        <!-- InlineMeasurements tag holds the list of measurement tasks. Each tag sits in an <elem> </elem> tag pair. You can see 8 tags corresponding to 8 measurement actions. -->
+            <elem>
+            <!-- The first element corresponds to task of making a source (the gauge field already being handled with the <Cfg> tag.) -->
+                <Name>MAKE_SOURCE</Name>
+                <!-- This is the name of the task. It is used as an ObjectId to the factory which creates the measurements. Each measurement has one of these. The name of this task is MAKE_SOURCE which is used for forward propagator source creation. (Sequential sources would be created with SEQSOURCE) -->
+                <Frequency>1</Frequency>
+                <!-- This tag is useful in the context of using the measurement as an inline measurement The measurement is only measured if its frequency divides the current update number. Of course 1 divides into everything, so for the case when the measurement is being used in chroma we set the frequency to 1. -->
+                <Param>
+                <!-- This tag contains the parameters for the measurement and its contents are generally measurement specific. -->
+                    <version>6</version>
+                    <!-- This indicates the version of the parameter input XML. Over time the information input can change and we try to keep track of it with version numbers. -->
+                    <Source>
+                    <!-- These are the parameters for the source creation, which is now done through factories. The <SourceType> subtag is the factory object ID. The <j_decay> subtag indicates the time direction and the <t_srce> tag specifies the coordinates of the center of the source source. -->
+                        <version>2</version>
+                        <SourceType>SHELL_SOURCE</SourceType>
+                        <j_decay>3</j_decay>
+                        <t_srce>0 0 0 0</t_srce>
+                        <SmearingParam>
+                        <!-- This refers to the smearing of the source. In this case we use gauge invariant wafefunction smearing. The smearing factor is 2 and we apply 5 iterations. We omit direction 3 from smearing so that the smearing is 'spatial' only. -->
+                            <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+                            <wvf_param>2.0</wvf_param>
+                            <wvfIntPar>5</wvfIntPar>
+                            <no_smear_dir>3</no_smear_dir>
+                        </SmearingParam>
+                    </Source>
+                </Param>
+                <NamedObject>
+                <!-- These are the tags that specify which objects the measurement creates. Most measurements have these. In this case, the measurement creates a source and we want to give it a name so we can refer to it elsewhere. The source in our program will be called sh_source_1. The measurement also may make reference to a gauge field which we specify by the <gauge_id> element. In this case we will use the default_gauge_field that is specified by the <Cfg> tag (see earlier). Note Other measurements may contain more or fewer named objects with different IDs depending on their needs. -->
+                    <gauge_id>default_gauge_field</gauge_id>
+                    <source_id>sh_source_1</source_id>
+                </NamedObject>
+            </elem>
+            <elem>
+                <Name>PROPAGATOR</Name>
+                <!-- The second <InlineMeasurement> element is used to compute a propagator. This is the conversion of the previous propagator program into an inline measurement. The propagator program itself has been deprecated. -->
+                <Frequency>1</Frequency>
+                <Param>
+                    <version>10</version>
+                    <quarkSpinType>FULL</quarkSpinType>
+                    <!-- This specifies the kind of propagator we make. In this instance FULL means we compute the full prop on all 12 spin colour components. We could also specify UPPER and LOWER for non relativistic projection using (1/2)(1 + gamma_4) or/and (1/2)(1 - gamma_4) projections respectively. -->
+                    <obsvP>false</obsvP>
+                    <!-- This flag was put in to allow us to hook in some extra observables onto the ends of the propagator calculations. This option is really only useful in 5 dimenasional solves where the observables may be done with the 5D props, as the output of the propagator measurement will only be the effective 4D prop. In 5D enabling this flag to true for example could measure the correlators needed for 5D mres measurements. In 4D solves we should just keep this as false -->
+                    <FermionAction>
+                    <!-- This tag specifies the fermion action we use. -->
+                        <FermAct>WILSON</FermAct>
+                        <!-- This is the factory Product ID that specifies the type of fermion action to be used -->
+                        <Kappa>0.11</Kappa>
+                        <AnisoParam>
+                        <!-- This group specifies anisotropy for the action. In this case since <anisoP> is set to false the action is not anisotropic (ie it is isotropic). If it were set to true the fields would have the following meaning: -->
+                            <anisoP>false</anisoP>
+                            <t_dir>3</t_dir>
+                            <xi_0>1.0</xi_0>
+                            <!-- The usual xi_0 term for (inverse) bare gauge anisotropy -->
+                            <nu>1.0</nu>
+                            <!-- The fermion anisotropy -->
+                        </AnisoParam>
+                        <FermState>
+                            <Name>SIMPLE_FERM_STATE</Name>
+                            <!-- This is the element where we specify things about our fermion link field state. In this example, we don't stout smear or anything complex, so we just call it a SIMPLE_FERM_STATE. The only subtag to set here is to do with the fermionic boundaries. -->
+                            <FermionBC>
+                            <!-- Specifies the fermion boundaries to be used. The <FermBC> tag is a factory key after which the parameters are specific to the type of boundary condition. Simple boundaries can be denoted with the <boundary> array which has a number for each dimension. In this case 1 means periodic, -1 means antiperiodic and 0 means Dirichlet boundaries. The example uses periodic boundaries in space and antiperiodic ones in time -->
+                                <FermBC>SIMPLE_FERMBC</FermBC>
+                                <boundary>1 1 1 -1</boundary>
+                                <!-- <Kappa>: Speficies the Kappa parameter for Wilson fermions. Internally this is converted to the free field definition of the quark mass. One could also use a <Mass> tag here - which is more conventional in chroma. -->
+                            </FermionBC>
+                        </FermState>
+                    </FermionAction>
+                    <InvertParam>
+                    <!-- These are the parameters for the inversion. -->
+                        <invType>CG_INVERTER</invType>
+                        <!-- The type of inverter to use - this is a factory key which is followed by parameters pertinent to the inversion -->
+                        <RsdCG>1.0e-8</RsdCG>
+                        <!-- The target relative residuum -->
+                        <MaxCG>1000</MaxCG>
+                        <!-- The maximum number of iterations to perform before claiming nonconvergence. -->
+                    </InvertParam>
+                </Param>
+                <NamedObject>
+                    <gauge_id>default_gauge_field</gauge_id>
+                    <!-- This is the ID of the gauge field to use in the inversions -->
+                    <source_id>sh_source_1</source_id>
+                    <!-- This is the source to invert on, it is the one we created in the previous step -->
+                    <prop_id>sh_prop_1</prop_id>
+                    <!-- This is the ID of the propagator that will be created by this measurement -->
+                </NamedObject>
+            </elem>
+            <elem>
+                <annotation>erase the source to save memory</annotation>
+                <!-- The third elemen is used to discard the source which is no longer needed. -->
+                <Name>ERASE_NAMED_OBJECT</Name>
+                <Frequency>1</Frequency>
+                <NamedObject>
+                    <object_id>sh_source_1</object_id>
+                </NamedObject>
+            </elem>
+            <elem>
+                <annotation>Save the prop</annotation>
+                <Name>QIO_WRITE_NAMED_OBJECT</Name>
+                <!-- The name of this task is QIO_WRITE_NAMED_OBJECT to signify that we will write the object in QIO LIME format. -->
+                <Frequency>1</Frequency>
+                <NamedObject>
+                    <object_id>sh_prop_1</object_id>
+                    <!-- The name of the named object -->
+                    <object_type>LatticePropagator</object_type>
+                    <!-- What kind of object we wish to write. Up until now this has been implicit, since MAKE_SOURCE could only create sources and PROPAGATOR could only create propagators. However now we have a routine that does not know up front what the type of the object to write is. Now we could have got around this by either having a separate measurement to write each type of object, but we chose to have one general writing "measutement" with a string specifying the type. The type string is the same one we would have in the C++ code, with the exception that the < and > symbols due to templates are discarded. Ie a multi1d<LatticeColorMatrix> type would appear in the XML file as multi1dLatticeColorMatrix -->
+                </NamedObject>
+                <File>
+                <!-- Here we specify the details of the I/O. -->
+                    <file_name>./sh_prop_1</file_name>
+                    <!-- The name of the output file -->
+                    <file_volfmt>SINGLEFILE</file_volfmt>
+                    <!-- The volume format of the output file. Here we choose SINGLEFILE to indicate the prop should be just dumped into a single file by QIO. We could also use MULTIFILE in which case every node would write its own file, or PARTFILE where only nominated I/O nodes would write files. In the latter cases the filename would have the string .volXXX appended to it where XXX is an ID pertaining to the node that wrote the file. -->
+                </File>
+            </elem>
+            <elem>
+            <!-- We perform two sink smearing measurements here - one is a simple point sink (ie no smearing at all). -->
+                <Name>SINK_SMEAR</Name>
+                <Frequency>1</Frequency>
+                <Param>
+                    <version>5</version>
+                    <Sink>
+                        <version>2</version>
+                        <SinkType>POINT_SINK</SinkType>
+                        <j_decay>3</j_decay>
+                    </Sink>
+                </Param>
+                <NamedObject>
+                    <gauge_id>default_gauge_field</gauge_id>
+                    <prop_id>sh_prop_1</prop_id>
+                    <smeared_prop_id>sh_pt_sink_1</smeared_prop_id>
+                </NamedObject>
+                <!-- Here the <SinkType> specifies that we have a point sink. The <j_decay> denotes that we treat dimension 3 as time. The <gauge_id> denotes the input gauge field (which is not used when making a point sink) and the <prop_id> denotes tha propagator on which we are performing this trivial sink smearing. The trivially sink smeared prop (which in reality is a source smeared point sink propagator) is given the name sh_pt_sink_1 in the <smeared_prop_id> tag. -->
+            </elem>
+            <elem>
+                <Name>SINK_SMEAR</Name>
+                <Frequency>1</Frequency>
+                <Param>
+                    <version>5</version>
+                    <Sink>
+                        <version>2</version>
+                        <SinkType>SHELL_SINK</SinkType>
+                        <j_decay>3</j_decay>
+                        <SmearingParam>
+                            <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+                            <wvf_param>2.0</wvf_param>
+                            <wvfIntPar>5</wvfIntPar>
+                            <no_smear_dir>3</no_smear_dir>
+                        </SmearingParam>
+                    </Sink>
+                </Param>
+                <NamedObject>
+                    <gauge_id>default_gauge_field</gauge_id>
+                    <prop_id>sh_prop_1</prop_id>
+                    <smeared_prop_id>sh_sh_sink_1</smeared_prop_id>
+                </NamedObject>
+                <!-- The second sink smearing task is a little more convoluted. This time we perform wavefunction smearing on the propagator to create a shell sink. The XML is like for the point sink but with an extra <SmearingParam> element which has parameters that are the same as in the MAKE_SOURCE element. The name we give to the sink smeared prop (which is actually both source and sink smeared prop) is sh_sh_sink_1. -->
+            </elem>
+            <elem>
+            <!-- Another ERASE_NAMED_OBJECT measurement that erases the un-sink-smeared prop to save some memory. -->
+                <annotation>erase the source to save memory</annotation>
+                <Name>ERASE_NAMED_OBJECT</Name>
+                <Frequency>1</Frequency>
+                <NamedObject>
+                    <object_id>sh_prop_1</object_id>
+                </NamedObject>
+            </elem>
+            <elem>
+                <annotation>Compute the hadron spectrum.</annotation>
+                <Name>HADRON_SPECTRUM</Name>
+                <Frequency>1</Frequency>
+                <Param>
+                    <version>1</version>
+                    <MesonP>true</MesonP>
+                    <!-- Whether to compute Meson Correlators -->
+                    <CurrentP>true</CurrentP>
+                    <!-- Whether to compute various current correlators -->
+                    <BaryonP>true</BaryonP>
+                    <!-- Whether to compute Baryon correlators -->
+                    <time_rev>false</time_rev>
+                    <!-- Whether to time reverse the prop before computing Baryon correlators -->
+                    <mom2_max>3</mom2_max>
+                    <!-- The maximum value of the norm of sink momenta -->
+                    <avg_equiv_mom>true</avg_equiv_mom>
+                    <!-- Whether to average over momenta of equal norm -->
+                </Param>
+                <NamedObject>
+                    <gauge_id>default_gauge_field</gauge_id>
+                    <sink_pairs>
+                        <elem>
+                            <first_id>sh_pt_sink_1</first_id>
+                            <second_id>sh_pt_sink_1</second_id>
+                        </elem>
+                        <elem>
+                            <first_id>sh_sh_sink_1</first_id>
+                            <second_id>sh_sh_sink_1</second_id>
+                        </elem>
+                    </sink_pairs>
+                    <!-- The named object tag specifies the gauge field to use, and then a list of <sink_pairs>. The sink pairs contain a list of sink smeared prop pairs. These pairs refer to the sink smeared quark props to use in computing the spectroscopy. In this case, the spectroscopy correlators are computed twice. Once with smeared-point props and the second time with smeared smeared correlators. -->
+                </NamedObject>
+                <xml_file>hadspec.dat.xml</xml_file>
+                <!-- Finally this measurement has an extra tag: <xml_file>. This tag specifies that the output from the data should be written to a separate XML file, rather than in the default output XML file. This option is available on several inline measurements (almost a de-facto standard). In this case the output is placed into a file called hadspec.dat.xml. -->
+            </elem>
+        </InlineMeasurements>
+        <nrow>4 4 4 8</nrow>
+        <!-- This tag contains the dimensions of the lattice. Now, some configurations formats contain this information in their metadata. Some however do not. Also occasionally it can happen that we work with unit gauge or other internal configurations. So we have to explicitly state the size of the lattice we use. You can see that these tags hold the value "4 4 4 8" which correspond to the dimensions of our lattice in the X, Y, Z and T directions respectively. -->
+    </Param>
+    <RNG> 
+    <!-- RNG is a place to supply a random number seed to the program. This tag is optional, but you may like to have it if you have stochastic measurements such as Ritz eigenvalue/vector computations or noisy sources.  -->
+        <Seed>
+            <elem>11</elem>
+            <elem>11</elem>
+            <elem>11</elem>
+            <elem>0</elem>
+        </Seed>
+    </RNG>
+    <Cfg>
+    <!-- Cfg tag details the default input configuration. -->
+        <cfg_type>SZIN</cfg_type>
+        <!-- Corresponds to the type of configuration we are reading. In this case we are reading the SZIN format, but we could well be configs in NERSC, SCIDAC (&ILDG), CPPACS and other formats too. Also there are some internal formats such as UNIT for the unit gauge, DISORDERED for a hot start and, WEAK_FIELD which is a slightly perturbed UNIT gauge. -->
+        <cfg_file>../config/test_purgaug.cfg1</cfg_file>
+        <!-- Corresponds to the filename which holds the config. For non file based formats, the value of this field is ignored. -->
+    </Cfg>
+    <!-- The <Cfg> task reads the gauge field into a NamedObject. NamedObjects are similar to a little internal file system, where we can put objects to share between tasks, and refer to the by names. Initially this system was added for machines where I/O was prohibitively slow. Since their inception, NamedObjects have become prevasive and are now used outside of just measurements such as a place to put monomials in HMC. The object_id of the config specified in the <Cfg> element is default_gauge_field. -->
+</chroma>
+
+  </Input>
+  <ProgramInfo>
+    <code_version>
+      <chroma>3.44.0</chroma>
+      <qdp>1.46.0</qdp>
+      <basePrecision>64</basePrecision>
+    </code_version>
+    <run_date>14 Aug 23 13:19:23 EDT</run_date>
+    <Setgeom>
+      <latt_size>4 4 4 8</latt_size>
+      <logical_size>1 1 1 1</logical_size>
+      <subgrid_size>4 4 4 8</subgrid_size>
+      <total_volume>512</total_volume>
+      <subgrid_volume>512</subgrid_volume>
+    </Setgeom>
+  </ProgramInfo>
+  <RNG>
+    <Seed>
+      <elem>11</elem>
+      <elem>11</elem>
+      <elem>11</elem>
+      <elem>0</elem>
+    </Seed>
+  </RNG>
+  <Config_info><szin>
+      <cfg_version>7</cfg_version>
+      <date>Sat Jun 16 00:35:57 2001</date>
+      <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+      <FermTypeP>0</FermTypeP>
+      <Nd>4</Nd>
+      <Nc>3</Nc>
+      <BetaMC>20.1</BetaMC>
+      <BetaMD>0</BetaMD>
+      <KappaMC>0</KappaMC>
+      <KappaMD>0</KappaMD>
+      <MassMC>0</MassMC>
+      <MassMD>0</MassMD>
+      <dt>0</dt>
+      <MesTrj>1</MesTrj>
+      <TotalCG>0</TotalCG>
+      <TotalTrj>2</TotalTrj>
+      <spec_acc>0</spec_acc>
+      <NOver>2</NOver>
+      <TotalTry>12288</TotalTry>
+      <TotalFail>56</TotalFail>
+      <Nf>9.48851e+33</Nf>
+      <Npf>2</Npf>
+      <RefMomTrj>302059064</RefMomTrj>
+      <RefFnoiseTrj>36</RefFnoiseTrj>
+      <LamPl>9.454679e+33</LamPl>
+      <LamMi>0</LamMi>
+      <AlpLog>0</AlpLog>
+      <AlpExp>0</AlpExp>
+      <nrow>4 4 4 8</nrow>
+      <seed>
+        <Seed>
+          <elem>811</elem>
+          <elem>1073</elem>
+          <elem>1535</elem>
+          <elem>1310</elem>
+        </Seed>
+      </seed>
+    </szin>
+
+  </Config_info>
+  <Observables>
+    <w_plaq>0.902263118814605</w_plaq>
+    <s_plaq>0.862579366822376</s_plaq>
+    <t_plaq>0.941946870806834</t_plaq>
+    <plane_01_plaq>0.866129674299542</plane_01_plaq>
+    <plane_02_plaq>0.860100465688026</plane_02_plaq>
+    <plane_12_plaq>0.86150796047956</plane_12_plaq>
+    <plane_03_plaq>0.943066135273956</plane_03_plaq>
+    <plane_13_plaq>0.942909783076619</plane_13_plaq>
+    <plane_23_plaq>0.939864694069927</plane_23_plaq>
+    <link>0.734640950507734</link>
+    <pollp>
+      <elem>
+        <re>0.790237455994322</re>
+        <im>0.00288482547832802</im>
+      </elem>
+      <elem>
+        <re>0.785869177577656</re>
+        <im>-0.000158659344119511</im>
+      </elem>
+      <elem>
+        <re>0.803930456732242</re>
+        <im>0.00160447221135163</im>
+      </elem>
+      <elem>
+        <re>0.864751860404065</re>
+        <im>0.00215502009528636</im>
+      </elem>
+    </pollp>
+  </Observables>
+  <InlineObservables>
+    <elem>
+      <make_source>
+        <update_no>0</update_no>
+        <ProgramInfo>
+          <code_version>
+            <chroma>3.44.0</chroma>
+            <qdp>1.46.0</qdp>
+            <basePrecision>64</basePrecision>
+          </code_version>
+          <run_date>14 Aug 23 13:19:23 EDT</run_date>
+          <Setgeom>
+            <latt_size>4 4 4 8</latt_size>
+            <logical_size>1 1 1 1</logical_size>
+            <subgrid_size>4 4 4 8</subgrid_size>
+            <total_volume>512</total_volume>
+            <subgrid_volume>512</subgrid_volume>
+          </Setgeom>
+        </ProgramInfo>
+        <RNG>
+          <Seed>
+            <elem>11</elem>
+            <elem>11</elem>
+            <elem>11</elem>
+            <elem>0</elem>
+          </Seed>
+        </RNG>
+        <Input>
+          <Param>
+            <version>6</version><Source>
+      <!-- These are the parameters for the source creation, which is now done through factories. The <SourceType> subtag is the factory object ID. The <j_decay> subtag indicates the time direction and the <t_srce> tag specifies the coordinates of the center of the source source. -->
+      <version>2</version>
+      <SourceType>SHELL_SOURCE</SourceType>
+      <j_decay>3</j_decay>
+      <t_srce>0 0 0 0</t_srce>
+      <SmearingParam>
+        <!-- This refers to the smearing of the source. In this case we use gauge invariant wafefunction smearing. The smearing factor is 2 and we apply 5 iterations. We omit direction 3 from smearing so that the smearing is 'spatial' only. -->
+        <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+        <wvf_param>2.0</wvf_param>
+        <wvfIntPar>5</wvfIntPar>
+        <no_smear_dir>3</no_smear_dir>
+      </SmearingParam>
+    </Source>
+
+            <j_decay>3</j_decay>
+            <t_source>0</t_source>
+          </Param>
+          <NamedObject>
+            <gauge_id>default_gauge_field</gauge_id>
+            <source_id>sh_source_1</source_id>
+          </NamedObject>
+        </Input>
+        <Config_info><szin>
+      <cfg_version>7</cfg_version>
+      <date>Sat Jun 16 00:35:57 2001</date>
+      <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+      <FermTypeP>0</FermTypeP>
+      <Nd>4</Nd>
+      <Nc>3</Nc>
+      <BetaMC>20.1</BetaMC>
+      <BetaMD>0</BetaMD>
+      <KappaMC>0</KappaMC>
+      <KappaMD>0</KappaMD>
+      <MassMC>0</MassMC>
+      <MassMD>0</MassMD>
+      <dt>0</dt>
+      <MesTrj>1</MesTrj>
+      <TotalCG>0</TotalCG>
+      <TotalTrj>2</TotalTrj>
+      <spec_acc>0</spec_acc>
+      <NOver>2</NOver>
+      <TotalTry>12288</TotalTry>
+      <TotalFail>56</TotalFail>
+      <Nf>9.48851e+33</Nf>
+      <Npf>2</Npf>
+      <RefMomTrj>302059064</RefMomTrj>
+      <RefFnoiseTrj>36</RefFnoiseTrj>
+      <LamPl>9.454679e+33</LamPl>
+      <LamMi>0</LamMi>
+      <AlpLog>0</AlpLog>
+      <AlpExp>0</AlpExp>
+      <nrow>4 4 4 8</nrow>
+      <seed>
+        <Seed>
+          <elem>811</elem>
+          <elem>1073</elem>
+          <elem>1535</elem>
+          <elem>1310</elem>
+        </Seed>
+      </seed>
+    </szin>
+
+
+
+        </Config_info>
+        <Observables>
+          <w_plaq>0.902263118814605</w_plaq>
+          <s_plaq>0.862579366822376</s_plaq>
+          <t_plaq>0.941946870806834</t_plaq>
+          <plane_01_plaq>0.866129674299542</plane_01_plaq>
+          <plane_02_plaq>0.860100465688026</plane_02_plaq>
+          <plane_12_plaq>0.861507960479561</plane_12_plaq>
+          <plane_03_plaq>0.943066135273956</plane_03_plaq>
+          <plane_13_plaq>0.942909783076619</plane_13_plaq>
+          <plane_23_plaq>0.939864694069927</plane_23_plaq>
+          <link>0.734640950507734</link>
+          <pollp>
+            <elem>
+              <re>0.790237455994322</re>
+              <im>0.00288482547832802</im>
+            </elem>
+            <elem>
+              <re>0.785869177577656</re>
+              <im>-0.000158659344119511</im>
+            </elem>
+            <elem>
+              <re>0.803930456732242</re>
+              <im>0.00160447221135163</im>
+            </elem>
+            <elem>
+              <re>0.864751860404065</re>
+              <im>0.00215502009528636</im>
+            </elem>
+          </pollp>
+        </Observables>
+        <Source_correlator>
+          <source_corr>5.44615714763024 0 0 0 0 0 0 0</source_corr>
+        </Source_correlator>
+      </make_source>
+    </elem>
+    <elem>
+      <propagator>
+        <update_no>0</update_no>
+        <ProgramInfo>
+          <code_version>
+            <chroma>3.44.0</chroma>
+            <qdp>1.46.0</qdp>
+            <basePrecision>64</basePrecision>
+          </code_version>
+          <run_date>14 Aug 23 13:19:23 EDT</run_date>
+          <Setgeom>
+            <latt_size>4 4 4 8</latt_size>
+            <logical_size>1 1 1 1</logical_size>
+            <subgrid_size>4 4 4 8</subgrid_size>
+            <total_volume>512</total_volume>
+            <subgrid_volume>512</subgrid_volume>
+          </Setgeom>
+        </ProgramInfo>
+        <Input>
+          <Param>
+            <version>9</version>
+            <quarkSpinType>FULL</quarkSpinType>
+            <obsvP>false</obsvP><FermionAction>
+      <!-- This tag specifies the fermion action we use. -->
+      <FermAct>WILSON</FermAct>
+      <!-- This is the factory Product ID that specifies the type of fermion action to be used -->
+      <Kappa>0.11</Kappa>
+      <AnisoParam>
+        <!-- This group specifies anisotropy for the action. In this case since <anisoP> is set to false the action is not anisotropic (ie it is isotropic). If it were set to true the fields would have the following meaning: -->
+        <anisoP>false</anisoP>
+        <t_dir>3</t_dir>
+        <xi_0>1.0</xi_0>
+        <!-- The usual xi_0 term for (inverse) bare gauge anisotropy -->
+        <nu>1.0</nu>
+        <!-- The fermion anisotropy -->
+      </AnisoParam>
+      <FermState>
+        <Name>SIMPLE_FERM_STATE</Name>
+        <!-- This is the element where we specify things about our fermion link field state. In this example, we don't stout smear or anything complex, so we just call it a SIMPLE_FERM_STATE. The only subtag to set here is to do with the fermionic boundaries. -->
+        <FermionBC>
+          <!-- Specifies the fermion boundaries to be used. The <FermBC> tag is a factory key after which the parameters are specific to the type of boundary condition. Simple boundaries can be denoted with the <boundary> array which has a number for each dimension. In this case 1 means periodic, -1 means antiperiodic and 0 means Dirichlet boundaries. The example uses periodic boundaries in space and antiperiodic ones in time -->
+          <FermBC>SIMPLE_FERMBC</FermBC>
+          <boundary>1 1 1 -1</boundary>
+          <!-- <Kappa>: Speficies the Kappa parameter for Wilson fermions. Internally this is converted to the free field definition of the quark mass. One could also use a <Mass> tag here - which is more conventional in chroma. -->
+        </FermionBC>
+      </FermState>
+    </FermionAction>
+<InvertParam>
+      <!-- These are the parameters for the inversion. -->
+      <invType>CG_INVERTER</invType>
+      <!-- The type of inverter to use - this is a factory key which is followed by parameters pertinent to the inversion -->
+      <RsdCG>1.0e-8</RsdCG>
+      <!-- The target relative residuum -->
+      <MaxCG>1000</MaxCG>
+      <!-- The maximum number of iterations to perform before claiming nonconvergence. -->
+    </InvertParam>
+</Param>
+          <NamedObject>
+            <gauge_id>default_gauge_field</gauge_id>
+            <source_id>sh_source_1</source_id>
+            <prop_id>sh_prop_1</prop_id>
+          </NamedObject>
+        </Input>
+        <Config_info><szin>
+      <cfg_version>7</cfg_version>
+      <date>Sat Jun 16 00:35:57 2001</date>
+      <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+      <FermTypeP>0</FermTypeP>
+      <Nd>4</Nd>
+      <Nc>3</Nc>
+      <BetaMC>20.1</BetaMC>
+      <BetaMD>0</BetaMD>
+      <KappaMC>0</KappaMC>
+      <KappaMD>0</KappaMD>
+      <MassMC>0</MassMC>
+      <MassMD>0</MassMD>
+      <dt>0</dt>
+      <MesTrj>1</MesTrj>
+      <TotalCG>0</TotalCG>
+      <TotalTrj>2</TotalTrj>
+      <spec_acc>0</spec_acc>
+      <NOver>2</NOver>
+      <TotalTry>12288</TotalTry>
+      <TotalFail>56</TotalFail>
+      <Nf>9.48851e+33</Nf>
+      <Npf>2</Npf>
+      <RefMomTrj>302059064</RefMomTrj>
+      <RefFnoiseTrj>36</RefFnoiseTrj>
+      <LamPl>9.454679e+33</LamPl>
+      <LamMi>0</LamMi>
+      <AlpLog>0</AlpLog>
+      <AlpExp>0</AlpExp>
+      <nrow>4 4 4 8</nrow>
+      <seed>
+        <Seed>
+          <elem>811</elem>
+          <elem>1073</elem>
+          <elem>1535</elem>
+          <elem>1310</elem>
+        </Seed>
+      </seed>
+    </szin>
+
+
+
+        </Config_info>
+        <Output_version>
+          <out_version>1</out_version>
+        </Output_version>
+        <Observables>
+          <w_plaq>0.902263118814605</w_plaq>
+          <s_plaq>0.862579366822376</s_plaq>
+          <t_plaq>0.941946870806834</t_plaq>
+          <plane_01_plaq>0.866129674299542</plane_01_plaq>
+          <plane_02_plaq>0.860100465688026</plane_02_plaq>
+          <plane_12_plaq>0.861507960479561</plane_12_plaq>
+          <plane_03_plaq>0.943066135273956</plane_03_plaq>
+          <plane_13_plaq>0.942909783076619</plane_13_plaq>
+          <plane_23_plaq>0.939864694069927</plane_23_plaq>
+          <link>0.734640950507734</link>
+          <pollp>
+            <elem>
+              <re>0.790237455994322</re>
+              <im>0.00288482547832802</im>
+            </elem>
+            <elem>
+              <re>0.785869177577656</re>
+              <im>-0.000158659344119511</im>
+            </elem>
+            <elem>
+              <re>0.803930456732242</re>
+              <im>0.00160447221135163</im>
+            </elem>
+            <elem>
+              <re>0.864751860404065</re>
+              <im>0.00215502009528636</im>
+            </elem>
+          </pollp>
+        </Observables>
+        <Source_file_info><make_source>
+      <id>750601163</id>
+    </make_source>
+
+        </Source_file_info>
+        <Source_record_info><MakeSource>
+      <version>1</version>
+      <PropSource>
+        <version>6</version>
+        <Source>
+          <!-- These are the parameters for the source creation, which is now done through factories. The <SourceType> subtag is the factory object ID. The <j_decay> subtag indicates the time direction and the <t_srce> tag specifies the coordinates of the center of the source source. -->
+          <version>2</version>
+          <SourceType>SHELL_SOURCE</SourceType>
+          <j_decay>3</j_decay>
+          <t_srce>0 0 0 0</t_srce>
+          <SmearingParam>
+            <!-- This refers to the smearing of the source. In this case we use gauge invariant wafefunction smearing. The smearing factor is 2 and we apply 5 iterations. We omit direction 3 from smearing so that the smearing is 'spatial' only. -->
+            <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+            <wvf_param>2.0</wvf_param>
+            <wvfIntPar>5</wvfIntPar>
+            <no_smear_dir>3</no_smear_dir>
+          </SmearingParam>
+        </Source>
+        <j_decay>3</j_decay>
+        <t_source>0</t_source>
+      </PropSource>
+      <Config_info>
+        <szin>
+          <cfg_version>7</cfg_version>
+          <date>Sat Jun 16 00:35:57 2001</date>
+          <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+          <FermTypeP>0</FermTypeP>
+          <Nd>4</Nd>
+          <Nc>3</Nc>
+          <BetaMC>20.1</BetaMC>
+          <BetaMD>0</BetaMD>
+          <KappaMC>0</KappaMC>
+          <KappaMD>0</KappaMD>
+          <MassMC>0</MassMC>
+          <MassMD>0</MassMD>
+          <dt>0</dt>
+          <MesTrj>1</MesTrj>
+          <TotalCG>0</TotalCG>
+          <TotalTrj>2</TotalTrj>
+          <spec_acc>0</spec_acc>
+          <NOver>2</NOver>
+          <TotalTry>12288</TotalTry>
+          <TotalFail>56</TotalFail>
+          <Nf>9.48851e+33</Nf>
+          <Npf>2</Npf>
+          <RefMomTrj>302059064</RefMomTrj>
+          <RefFnoiseTrj>36</RefFnoiseTrj>
+          <LamPl>9.454679e+33</LamPl>
+          <LamMi>0</LamMi>
+          <AlpLog>0</AlpLog>
+          <AlpExp>0</AlpExp>
+          <nrow>4 4 4 8</nrow>
+          <seed>
+            <Seed>
+              <elem>811</elem>
+              <elem>1073</elem>
+              <elem>1535</elem>
+              <elem>1310</elem>
+            </Seed>
+          </seed>
+        </szin>
+      </Config_info>
+    </MakeSource>
+
+        </Source_record_info>
+        <Source_correlator>
+          <source_corr>5.44615714763024 0 0 0 0 0 0 0</source_corr>
+        </Source_correlator>
+        <QuarkProp4>
+          <Qprop>
+            <color_source>0</color_source>
+            <spin_source>0</spin_source>
+            <n_count>29</n_count>
+            <resid>2.99567471989974e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>0</color_source>
+            <spin_source>1</spin_source>
+            <n_count>29</n_count>
+            <resid>3.10157838974379e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>0</color_source>
+            <spin_source>2</spin_source>
+            <n_count>28</n_count>
+            <resid>6.16706631787526e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>0</color_source>
+            <spin_source>3</spin_source>
+            <n_count>29</n_count>
+            <resid>3.11267297252599e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>1</color_source>
+            <spin_source>0</spin_source>
+            <n_count>29</n_count>
+            <resid>2.84323958049038e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>1</color_source>
+            <spin_source>1</spin_source>
+            <n_count>29</n_count>
+            <resid>2.77023192079083e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>1</color_source>
+            <spin_source>2</spin_source>
+            <n_count>29</n_count>
+            <resid>2.9634026257638e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>1</color_source>
+            <spin_source>3</spin_source>
+            <n_count>29</n_count>
+            <resid>2.85067412006118e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>2</color_source>
+            <spin_source>0</spin_source>
+            <n_count>29</n_count>
+            <resid>2.9365417846816e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>2</color_source>
+            <spin_source>1</spin_source>
+            <n_count>29</n_count>
+            <resid>2.97422645251307e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>2</color_source>
+            <spin_source>2</spin_source>
+            <n_count>29</n_count>
+            <resid>3.16188728099121e-09</resid>
+          </Qprop>
+          <Qprop>
+            <color_source>2</color_source>
+            <spin_source>3</spin_source>
+            <n_count>29</n_count>
+            <resid>2.86163270049351e-09</resid>
+          </Qprop>
+        </QuarkProp4>
+        <Relaxation_Iterations>
+          <ncg_had>347</ncg_had>
+        </Relaxation_Iterations>
+        <Prop_correlator>
+          <prop_corr>0.147564069957243 0.00923145463746618 0.00288720708513783 0.00109398766774481 0.000683482098201572 0.00110198296906465 0.00286503780628413 0.00919641882634436</prop_corr>
+        </Prop_correlator>
+      </propagator>
+    </elem>
+    <elem>
+      <erase_named_obj>
+        <update_no>0</update_no>
+        <object_id>sh_source_1</object_id>
+      </erase_named_obj>
+    </elem>
+    <elem>
+      <qio_write_named_obj>
+        <update_no>0</update_no>
+        <object_id>sh_prop_1</object_id>
+      </qio_write_named_obj>
+    </elem>
+    <elem>
+      <sink_smear>
+        <update_no>0</update_no>
+        <Input>
+          <Param>
+            <version>5</version><Sink>
+      <version>2</version>
+      <SinkType>POINT_SINK</SinkType>
+      <j_decay>3</j_decay>
+    </Sink>
+
+            <j_decay>3</j_decay>
+          </Param>
+          <NamedObject>
+            <gauge_id>default_gauge_field</gauge_id>
+            <prop_id>sh_prop_1</prop_id>
+            <smeared_prop_id>sh_pt_sink_1</smeared_prop_id>
+          </NamedObject>
+        </Input>
+        <Config_info><szin>
+      <cfg_version>7</cfg_version>
+      <date>Sat Jun 16 00:35:57 2001</date>
+      <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+      <FermTypeP>0</FermTypeP>
+      <Nd>4</Nd>
+      <Nc>3</Nc>
+      <BetaMC>20.1</BetaMC>
+      <BetaMD>0</BetaMD>
+      <KappaMC>0</KappaMC>
+      <KappaMD>0</KappaMD>
+      <MassMC>0</MassMC>
+      <MassMD>0</MassMD>
+      <dt>0</dt>
+      <MesTrj>1</MesTrj>
+      <TotalCG>0</TotalCG>
+      <TotalTrj>2</TotalTrj>
+      <spec_acc>0</spec_acc>
+      <NOver>2</NOver>
+      <TotalTry>12288</TotalTry>
+      <TotalFail>56</TotalFail>
+      <Nf>9.48851e+33</Nf>
+      <Npf>2</Npf>
+      <RefMomTrj>302059064</RefMomTrj>
+      <RefFnoiseTrj>36</RefFnoiseTrj>
+      <LamPl>9.454679e+33</LamPl>
+      <LamMi>0</LamMi>
+      <AlpLog>0</AlpLog>
+      <AlpExp>0</AlpExp>
+      <nrow>4 4 4 8</nrow>
+      <seed>
+        <Seed>
+          <elem>811</elem>
+          <elem>1073</elem>
+          <elem>1535</elem>
+          <elem>1310</elem>
+        </Seed>
+      </seed>
+    </szin>
+
+
+
+        </Config_info>
+        <Observables>
+          <w_plaq>0.902263118814605</w_plaq>
+          <s_plaq>0.862579366822376</s_plaq>
+          <t_plaq>0.941946870806834</t_plaq>
+          <plane_01_plaq>0.866129674299542</plane_01_plaq>
+          <plane_02_plaq>0.860100465688026</plane_02_plaq>
+          <plane_12_plaq>0.86150796047956</plane_12_plaq>
+          <plane_03_plaq>0.943066135273956</plane_03_plaq>
+          <plane_13_plaq>0.942909783076619</plane_13_plaq>
+          <plane_23_plaq>0.939864694069927</plane_23_plaq>
+          <link>0.734640950507734</link>
+          <pollp>
+            <elem>
+              <re>0.790237455994322</re>
+              <im>0.00288482547832802</im>
+            </elem>
+            <elem>
+              <re>0.785869177577656</re>
+              <im>-0.000158659344119511</im>
+            </elem>
+            <elem>
+              <re>0.803930456732242</re>
+              <im>0.00160447221135163</im>
+            </elem>
+            <elem>
+              <re>0.864751860404065</re>
+              <im>0.00215502009528636</im>
+            </elem>
+          </pollp>
+        </Observables>
+        <Prop_file_info><propagator>
+      <id>750601163</id>
+    </propagator>
+
+        </Prop_file_info>
+        <Prop_record_info><Propagator>
+      <version>1</version>
+      <ForwardProp>
+        <version>9</version>
+        <quarkSpinType>FULL</quarkSpinType>
+        <obsvP>false</obsvP>
+        <FermionAction>
+          <!-- This tag specifies the fermion action we use. -->
+          <FermAct>WILSON</FermAct>
+          <!-- This is the factory Product ID that specifies the type of fermion action to be used -->
+          <Kappa>0.11</Kappa>
+          <AnisoParam>
+            <!-- This group specifies anisotropy for the action. In this case since <anisoP> is set to false the action is not anisotropic (ie it is isotropic). If it were set to true the fields would have the following meaning: -->
+            <anisoP>false</anisoP>
+            <t_dir>3</t_dir>
+            <xi_0>1.0</xi_0>
+            <!-- The usual xi_0 term for (inverse) bare gauge anisotropy -->
+            <nu>1.0</nu>
+            <!-- The fermion anisotropy -->
+          </AnisoParam>
+          <FermState>
+            <Name>SIMPLE_FERM_STATE</Name>
+            <!-- This is the element where we specify things about our fermion link field state. In this example, we don't stout smear or anything complex, so we just call it a SIMPLE_FERM_STATE. The only subtag to set here is to do with the fermionic boundaries. -->
+            <FermionBC>
+              <!-- Specifies the fermion boundaries to be used. The <FermBC> tag is a factory key after which the parameters are specific to the type of boundary condition. Simple boundaries can be denoted with the <boundary> array which has a number for each dimension. In this case 1 means periodic, -1 means antiperiodic and 0 means Dirichlet boundaries. The example uses periodic boundaries in space and antiperiodic ones in time -->
+              <FermBC>SIMPLE_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
+              <!-- <Kappa>: Speficies the Kappa parameter for Wilson fermions. Internally this is converted to the free field definition of the quark mass. One could also use a <Mass> tag here - which is more conventional in chroma. -->
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+        <InvertParam>
+          <!-- These are the parameters for the inversion. -->
+          <invType>CG_INVERTER</invType>
+          <!-- The type of inverter to use - this is a factory key which is followed by parameters pertinent to the inversion -->
+          <RsdCG>1.0e-8</RsdCG>
+          <!-- The target relative residuum -->
+          <MaxCG>1000</MaxCG>
+          <!-- The maximum number of iterations to perform before claiming nonconvergence. -->
+        </InvertParam>
+      </ForwardProp>
+      <PropSource>
+        <version>6</version>
+        <Source>
+          <!-- These are the parameters for the source creation, which is now done through factories. The <SourceType> subtag is the factory object ID. The <j_decay> subtag indicates the time direction and the <t_srce> tag specifies the coordinates of the center of the source source. -->
+          <version>2</version>
+          <SourceType>SHELL_SOURCE</SourceType>
+          <j_decay>3</j_decay>
+          <t_srce>0 0 0 0</t_srce>
+          <SmearingParam>
+            <!-- This refers to the smearing of the source. In this case we use gauge invariant wafefunction smearing. The smearing factor is 2 and we apply 5 iterations. We omit direction 3 from smearing so that the smearing is 'spatial' only. -->
+            <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+            <wvf_param>2.0</wvf_param>
+            <wvfIntPar>5</wvfIntPar>
+            <no_smear_dir>3</no_smear_dir>
+          </SmearingParam>
+        </Source>
+        <j_decay>3</j_decay>
+        <t_source>0</t_source>
+      </PropSource>
+      <Config_info>
+        <szin>
+          <cfg_version>7</cfg_version>
+          <date>Sat Jun 16 00:35:57 2001</date>
+          <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+          <FermTypeP>0</FermTypeP>
+          <Nd>4</Nd>
+          <Nc>3</Nc>
+          <BetaMC>20.1</BetaMC>
+          <BetaMD>0</BetaMD>
+          <KappaMC>0</KappaMC>
+          <KappaMD>0</KappaMD>
+          <MassMC>0</MassMC>
+          <MassMD>0</MassMD>
+          <dt>0</dt>
+          <MesTrj>1</MesTrj>
+          <TotalCG>0</TotalCG>
+          <TotalTrj>2</TotalTrj>
+          <spec_acc>0</spec_acc>
+          <NOver>2</NOver>
+          <TotalTry>12288</TotalTry>
+          <TotalFail>56</TotalFail>
+          <Nf>9.48851e+33</Nf>
+          <Npf>2</Npf>
+          <RefMomTrj>302059064</RefMomTrj>
+          <RefFnoiseTrj>36</RefFnoiseTrj>
+          <LamPl>9.454679e+33</LamPl>
+          <LamMi>0</LamMi>
+          <AlpLog>0</AlpLog>
+          <AlpExp>0</AlpExp>
+          <nrow>4 4 4 8</nrow>
+          <seed>
+            <Seed>
+              <elem>811</elem>
+              <elem>1073</elem>
+              <elem>1535</elem>
+              <elem>1310</elem>
+            </Seed>
+          </seed>
+        </szin>
+      </Config_info>
+    </Propagator>
+
+        </Prop_record_info>
+        <Forward_prop_correlator>
+          <forward_prop_corr>0.147564069957243 0.00923145463746618 0.00288720708513783 0.00109398766774481 0.000683482098201572 0.00110198296906465 0.00286503780628413 0.00919641882634436</forward_prop_corr>
+        </Forward_prop_correlator>
+        <SinkSmearedProp_correlator>
+          <sink_smeared_prop_corr>0.147564069957243 0.00923145463746618 0.00288720708513783 0.00109398766774481 0.000683482098201572 0.00110198296906465 0.00286503780628413 0.00919641882634436</sink_smeared_prop_corr>
+        </SinkSmearedProp_correlator>
+      </sink_smear>
+    </elem>
+    <elem>
+      <sink_smear>
+        <update_no>0</update_no>
+        <Input>
+          <Param>
+            <version>5</version><Sink>
+      <version>2</version>
+      <SinkType>SHELL_SINK</SinkType>
+      <j_decay>3</j_decay>
+      <SmearingParam>
+        <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+        <wvf_param>2.0</wvf_param>
+        <wvfIntPar>5</wvfIntPar>
+        <no_smear_dir>3</no_smear_dir>
+      </SmearingParam>
+    </Sink>
+
+            <j_decay>3</j_decay>
+          </Param>
+          <NamedObject>
+            <gauge_id>default_gauge_field</gauge_id>
+            <prop_id>sh_prop_1</prop_id>
+            <smeared_prop_id>sh_sh_sink_1</smeared_prop_id>
+          </NamedObject>
+        </Input>
+        <Config_info><szin>
+      <cfg_version>7</cfg_version>
+      <date>Sat Jun 16 00:35:57 2001</date>
+      <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+      <FermTypeP>0</FermTypeP>
+      <Nd>4</Nd>
+      <Nc>3</Nc>
+      <BetaMC>20.1</BetaMC>
+      <BetaMD>0</BetaMD>
+      <KappaMC>0</KappaMC>
+      <KappaMD>0</KappaMD>
+      <MassMC>0</MassMC>
+      <MassMD>0</MassMD>
+      <dt>0</dt>
+      <MesTrj>1</MesTrj>
+      <TotalCG>0</TotalCG>
+      <TotalTrj>2</TotalTrj>
+      <spec_acc>0</spec_acc>
+      <NOver>2</NOver>
+      <TotalTry>12288</TotalTry>
+      <TotalFail>56</TotalFail>
+      <Nf>9.48851e+33</Nf>
+      <Npf>2</Npf>
+      <RefMomTrj>302059064</RefMomTrj>
+      <RefFnoiseTrj>36</RefFnoiseTrj>
+      <LamPl>9.454679e+33</LamPl>
+      <LamMi>0</LamMi>
+      <AlpLog>0</AlpLog>
+      <AlpExp>0</AlpExp>
+      <nrow>4 4 4 8</nrow>
+      <seed>
+        <Seed>
+          <elem>811</elem>
+          <elem>1073</elem>
+          <elem>1535</elem>
+          <elem>1310</elem>
+        </Seed>
+      </seed>
+    </szin>
+
+
+
+        </Config_info>
+        <Observables>
+          <w_plaq>0.902263118814605</w_plaq>
+          <s_plaq>0.862579366822376</s_plaq>
+          <t_plaq>0.941946870806834</t_plaq>
+          <plane_01_plaq>0.866129674299542</plane_01_plaq>
+          <plane_02_plaq>0.860100465688026</plane_02_plaq>
+          <plane_12_plaq>0.86150796047956</plane_12_plaq>
+          <plane_03_plaq>0.943066135273956</plane_03_plaq>
+          <plane_13_plaq>0.942909783076619</plane_13_plaq>
+          <plane_23_plaq>0.939864694069927</plane_23_plaq>
+          <link>0.734640950507734</link>
+          <pollp>
+            <elem>
+              <re>0.790237455994322</re>
+              <im>0.00288482547832802</im>
+            </elem>
+            <elem>
+              <re>0.785869177577656</re>
+              <im>-0.000158659344119511</im>
+            </elem>
+            <elem>
+              <re>0.803930456732242</re>
+              <im>0.00160447221135163</im>
+            </elem>
+            <elem>
+              <re>0.864751860404065</re>
+              <im>0.00215502009528636</im>
+            </elem>
+          </pollp>
+        </Observables>
+        <Prop_file_info><propagator>
+      <id>750601163</id>
+    </propagator>
+
+        </Prop_file_info>
+        <Prop_record_info><Propagator>
+      <version>1</version>
+      <ForwardProp>
+        <version>9</version>
+        <quarkSpinType>FULL</quarkSpinType>
+        <obsvP>false</obsvP>
+        <FermionAction>
+          <!-- This tag specifies the fermion action we use. -->
+          <FermAct>WILSON</FermAct>
+          <!-- This is the factory Product ID that specifies the type of fermion action to be used -->
+          <Kappa>0.11</Kappa>
+          <AnisoParam>
+            <!-- This group specifies anisotropy for the action. In this case since <anisoP> is set to false the action is not anisotropic (ie it is isotropic). If it were set to true the fields would have the following meaning: -->
+            <anisoP>false</anisoP>
+            <t_dir>3</t_dir>
+            <xi_0>1.0</xi_0>
+            <!-- The usual xi_0 term for (inverse) bare gauge anisotropy -->
+            <nu>1.0</nu>
+            <!-- The fermion anisotropy -->
+          </AnisoParam>
+          <FermState>
+            <Name>SIMPLE_FERM_STATE</Name>
+            <!-- This is the element where we specify things about our fermion link field state. In this example, we don't stout smear or anything complex, so we just call it a SIMPLE_FERM_STATE. The only subtag to set here is to do with the fermionic boundaries. -->
+            <FermionBC>
+              <!-- Specifies the fermion boundaries to be used. The <FermBC> tag is a factory key after which the parameters are specific to the type of boundary condition. Simple boundaries can be denoted with the <boundary> array which has a number for each dimension. In this case 1 means periodic, -1 means antiperiodic and 0 means Dirichlet boundaries. The example uses periodic boundaries in space and antiperiodic ones in time -->
+              <FermBC>SIMPLE_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
+              <!-- <Kappa>: Speficies the Kappa parameter for Wilson fermions. Internally this is converted to the free field definition of the quark mass. One could also use a <Mass> tag here - which is more conventional in chroma. -->
+            </FermionBC>
+          </FermState>
+        </FermionAction>
+        <InvertParam>
+          <!-- These are the parameters for the inversion. -->
+          <invType>CG_INVERTER</invType>
+          <!-- The type of inverter to use - this is a factory key which is followed by parameters pertinent to the inversion -->
+          <RsdCG>1.0e-8</RsdCG>
+          <!-- The target relative residuum -->
+          <MaxCG>1000</MaxCG>
+          <!-- The maximum number of iterations to perform before claiming nonconvergence. -->
+        </InvertParam>
+      </ForwardProp>
+      <PropSource>
+        <version>6</version>
+        <Source>
+          <!-- These are the parameters for the source creation, which is now done through factories. The <SourceType> subtag is the factory object ID. The <j_decay> subtag indicates the time direction and the <t_srce> tag specifies the coordinates of the center of the source source. -->
+          <version>2</version>
+          <SourceType>SHELL_SOURCE</SourceType>
+          <j_decay>3</j_decay>
+          <t_srce>0 0 0 0</t_srce>
+          <SmearingParam>
+            <!-- This refers to the smearing of the source. In this case we use gauge invariant wafefunction smearing. The smearing factor is 2 and we apply 5 iterations. We omit direction 3 from smearing so that the smearing is 'spatial' only. -->
+            <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+            <wvf_param>2.0</wvf_param>
+            <wvfIntPar>5</wvfIntPar>
+            <no_smear_dir>3</no_smear_dir>
+          </SmearingParam>
+        </Source>
+        <j_decay>3</j_decay>
+        <t_source>0</t_source>
+      </PropSource>
+      <Config_info>
+        <szin>
+          <cfg_version>7</cfg_version>
+          <date>Sat Jun 16 00:35:57 2001</date>
+          <banner>(Sat Jun 16 00:21:07  2001) Source=MOTIE Target=linux Release= Quarks=g</banner>
+          <FermTypeP>0</FermTypeP>
+          <Nd>4</Nd>
+          <Nc>3</Nc>
+          <BetaMC>20.1</BetaMC>
+          <BetaMD>0</BetaMD>
+          <KappaMC>0</KappaMC>
+          <KappaMD>0</KappaMD>
+          <MassMC>0</MassMC>
+          <MassMD>0</MassMD>
+          <dt>0</dt>
+          <MesTrj>1</MesTrj>
+          <TotalCG>0</TotalCG>
+          <TotalTrj>2</TotalTrj>
+          <spec_acc>0</spec_acc>
+          <NOver>2</NOver>
+          <TotalTry>12288</TotalTry>
+          <TotalFail>56</TotalFail>
+          <Nf>9.48851e+33</Nf>
+          <Npf>2</Npf>
+          <RefMomTrj>302059064</RefMomTrj>
+          <RefFnoiseTrj>36</RefFnoiseTrj>
+          <LamPl>9.454679e+33</LamPl>
+          <LamMi>0</LamMi>
+          <AlpLog>0</AlpLog>
+          <AlpExp>0</AlpExp>
+          <nrow>4 4 4 8</nrow>
+          <seed>
+            <Seed>
+              <elem>811</elem>
+              <elem>1073</elem>
+              <elem>1535</elem>
+              <elem>1310</elem>
+            </Seed>
+          </seed>
+        </szin>
+      </Config_info>
+    </Propagator>
+
+        </Prop_record_info>
+        <Forward_prop_correlator>
+          <forward_prop_corr>0.147564069957243 0.00923145463746618 0.00288720708513783 0.00109398766774481 0.000683482098201572 0.00110198296906465 0.00286503780628413 0.00919641882634436</forward_prop_corr>
+        </Forward_prop_correlator>
+        <SinkSmearedProp_correlator>
+          <sink_smeared_prop_corr>1.73159640647174 0.0208234547430345 0.00225199903238803 0.000754794705772657 0.000478879005821919 0.000787800990767741 0.00220272241837226 0.02055080640669</sink_smeared_prop_corr>
+        </SinkSmearedProp_correlator>
+      </sink_smear>
+    </elem>
+    <elem>
+      <erase_named_obj>
+        <update_no>0</update_no>
+        <object_id>sh_prop_1</object_id>
+      </erase_named_obj>
+    </elem>
+    <elem>
+      <hadspec>
+        <update_no>0</update_no>
+        <xml_file>hadspec.dat.xml</xml_file>
+      </hadspec>
+    </elem>
+  </InlineObservables>
+</chroma>

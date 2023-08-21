@@ -1,0 +1,283 @@
+QDP use OpenMP threading. We have 16 threads
+Affinity reporting not implemented for this architecture
+Initialize done
+Linkage = bool Chroma::MapObjectDiskEnv::registerAll(): registering map obj key colorvec
+0
+InlineMeasurements are: 
+<InlineMeasurements>
+      <elem>
+        <Name>MAKE_SOURCE</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>6</version>
+          <Source>
+            <version>2</version>
+            <SourceType>SHELL_SOURCE</SourceType>
+            <j_decay>3</j_decay>
+            <t_srce>0 0 0 0</t_srce>
+            <SmearingParam>
+              <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+              <wvf_param>2.0</wvf_param>
+              <wvfIntPar>5</wvfIntPar>
+              <no_smear_dir>3</no_smear_dir>
+            </SmearingParam>
+            <LinkSmearing>
+              <LinkSmearingType>APE_SMEAR</LinkSmearingType>
+              <link_smear_fact>2.5</link_smear_fact>
+              <link_smear_num>1</link_smear_num>
+              <no_smear_dir>3</no_smear_dir>
+            </LinkSmearing>
+          </Source>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+          <source_id>sh_source_1</source_id>
+        </NamedObject>
+      </elem>
+      <elem>
+        <Name>PROPAGATOR</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>10</version>
+          <quarkSpinType>FULL</quarkSpinType>
+          <obsvP>false</obsvP>
+          <numRetries>1</numRetries>
+          <FermionAction>
+            <FermAct>WILSON</FermAct>
+            <Kappa>0.11</Kappa>
+            <AnisoParam>
+              <anisoP>false</anisoP>
+              <t_dir>3</t_dir>
+              <xi_0>1.0</xi_0>
+              <nu>1.0</nu>
+            </AnisoParam>
+            <FermionBC>
+              <FermBC>SIMPLE_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
+            </FermionBC>
+          </FermionAction>
+          <InvertParam>
+            <invType>CG_INVERTER</invType>
+            <RsdCG>1.0e-12</RsdCG>
+            <MaxCG>1000</MaxCG>
+          </InvertParam>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+          <source_id>sh_source_1</source_id>
+          <prop_id>sh_prop_1</prop_id>
+        </NamedObject>
+      </elem>
+      <elem>
+        <Name>SINK_SMEAR</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>5</version>
+          <Sink>
+            <version>2</version>
+            <SinkType>POINT_SINK</SinkType>
+            <j_decay>3</j_decay>
+            <Displacement>
+              <version>1</version>
+              <DisplacementType>NONE</DisplacementType>
+            </Displacement>
+            <LinkSmearing>
+              <LinkSmearingType>APE_SMEAR</LinkSmearingType>
+              <link_smear_fact>2.5</link_smear_fact>
+              <link_smear_num>1</link_smear_num>
+              <no_smear_dir>3</no_smear_dir>
+            </LinkSmearing>
+          </Sink>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+          <prop_id>sh_prop_1</prop_id>
+          <smeared_prop_id>sh_pt_sink_1</smeared_prop_id>
+        </NamedObject>
+      </elem>
+      <elem>
+        <Name>HADRON_CONTRACT</Name>
+        <Frequency>1</Frequency>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+          <output_file>output_file/zero_mom_2pt.lime8</output_file>
+          <Contractions>
+            <elem>
+              <version>1</version>
+              <ContractionType>diagonal_gamma_mesons</ContractionType>
+              <mom2_max>0</mom2_max>
+              <!-- zero momentum -->
+              <avg_equiv_mom>true</avg_equiv_mom>
+              <mom_origin>0 0 0</mom_origin>
+              <first_id>sh_pt_sink_1</first_id>
+              <second_id>sh_pt_sink_1</second_id>
+            </elem>
+          </Contractions>
+        </NamedObject>
+      </elem>
+    </InlineMeasurements>
+
+Lattice initialized:
+  problem size = 4 4 4 16
+  layout size = 2 4 4 16
+  logical machine size = 1 1 1 1
+  subgrid size = 4 4 4 16
+  total number of nodes = 1
+  total volume = 1024
+  subgrid volume = 1024
+Initializing QDPDefaultAllocator.
+Finished init of RNG
+Finished lattice layout
+CHROMA: Attempt to read gauge field
+CHROMA: Gauge initialization: cfg_type = SZINQIO
+Reading Double Precision
+QIO_read_finished
+CHROMA: Gauge field successfully read: time= 0.002144 secs
+CHROMA: initial plaquette measurement time=0.000278 secs
+Read contraction list
+Finished reading correlators
+CHROMA: There are 4 measurements 
+CHROMA: parsing inline measurements time=0.000781 secs
+CHROMA: Doing 4 measurements
+MAKE_SOURCE: propagator source constructor
+Source = SHELL_SOURCE
+Shell source
+Link smearing type = APE_SMEAR
+APE Smear gauge field
+Gauge field APE-smeared!
+Quark smearing type = GAUGE_INV_GAUSSIAN
+Displacement type = NONE
+color = 0
+spin = 0
+spin = 1
+spin = 2
+spin = 3
+color = 1
+spin = 0
+spin = 1
+spin = 2
+spin = 3
+color = 2
+spin = 0
+spin = 1
+spin = 2
+spin = 3
+Attempt to update source
+Source successfully update
+MAKE_SOURCE: total time = 0.015296 secs
+MAKE_SOURCE: ran successfully
+PROPAGATOR: propagator calculation
+Snarf the source from a named buffer
+Source successfully read and parsed
+FermAct = WILSON
+Try the various factories
+Suitable factory found: compute the quark prop
+Calling quarkProp
+In quarkProp()
+  ... constructing linop  ...6.2e-05 sec
+  ... constructing invLinOp  ...7.3e-05 sec
+  ... constructing PrecFermActQprop  ...0 sec
+Creating qprop took 0.000508sec 
+Entering quarkProp4
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.007212(s) Flops=101412864 => 14061.6838602329 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14061.6838602329 Mflops = 14.0616838602329 Gflops = 0.0140616838602329 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.48368307297921e-13 Relative Rsd = 8.5900468476412e-13
+CG_SOLVER_TIME: 0.008018 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.007112(s) Flops=101412864 => 14259.4015748032 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14259.4015748032 Mflops = 14.2594015748032 Gflops = 0.0142594015748032 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.67120856729554e-13 Relative Rsd = 8.96881353181022e-13
+CG_SOLVER_TIME: 0.007792 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.007292(s) Flops=101412864 => 13907.4141524959 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  13907.4141524959 Mflops = 13.9074141524959 Gflops = 0.0139074141524959 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.11532172158101e-13 Relative Rsd = 7.88432317942743e-13
+CG_SOLVER_TIME: 0.007973 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006947(s) Flops=101412864 => 14598.0803224413 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14598.0803224413 Mflops = 14.5980803224413 Gflops = 0.0145980803224413 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.5897047580314e-13 Relative Rsd = 8.81232459390662e-13
+CG_SOLVER_TIME: 0.007613 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006873(s) Flops=101412864 => 14755.2544740288 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14755.2544740288 Mflops = 14.7552544740288 Gflops = 0.0147552544740288 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.39688468826191e-13 Relative Rsd = 8.33691739164559e-13
+CG_SOLVER_TIME: 0.007528 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006818(s) Flops=101412864 => 14874.2833675565 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14874.2833675565 Mflops = 14.8742833675565 Gflops = 0.0148742833675565 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.17898524311159e-13 Relative Rsd = 7.89522236861413e-13
+CG_SOLVER_TIME: 0.007465 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006781(s) Flops=101412864 => 14955.4437398614 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14955.4437398614 Mflops = 14.9554437398614 Gflops = 0.0149554437398614 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.12335316368596e-13 Relative Rsd = 7.81827524246928e-13
+CG_SOLVER_TIME: 0.007427 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006762(s) Flops=101412864 => 14997.4658385093 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  14997.4658385093 Mflops = 14.9974658385093 Gflops = 0.0149974658385093 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.33452953460314e-13 Relative Rsd = 8.1890871941764e-13
+CG_SOLVER_TIME: 0.007405 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006689(s) Flops=101412864 => 15161.1397817312 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  15161.1397817312 Mflops = 15.1611397817312 Gflops = 0.0151611397817312 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.63164440039061e-13 Relative Rsd = 8.83847821502861e-13
+CG_SOLVER_TIME: 0.007324 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006678(s) Flops=101412864 => 15186.1132075472 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  15186.1132075472 Mflops = 15.1861132075472 Gflops = 0.0151861132075472 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.94067027514213e-13 Relative Rsd = 9.45437293406799e-13
+CG_SOLVER_TIME: 0.007309 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006656(s) Flops=101412864 => 15236.3076923077 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  15236.3076923077 Mflops = 15.2363076923077 Gflops = 0.0152363076923077 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.53799523612717e-13 Relative Rsd = 8.65976931023266e-13
+CG_SOLVER_TIME: 0.007284 sec
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.006655(s) Flops=101412864 => 15238.5971450038 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  15238.5971450038 Mflops = 15.2385971450038 Gflops = 0.0152385971450038 Tflops
+CG_SOLVER: 34 iterations. Rsd = 4.7931135604601e-13 Relative Rsd = 9.17201120340388e-13
+CG_SOLVER_TIME: 0.007284 sec
+Exiting quarkProp4
+Propagator computed: time= 0.100288 secs
+Start writing propagator info
+Propagator successfully updated
+PROPAGATOR: total time = 0.102393 secs
+PROPAGATOR: ran successfully
+SINK_SMEAR: Sink smearing for propagators
+Attempt to read forward propagator
+Sink_xml = <Sink>
+      <version>2</version>
+      <SinkType>POINT_SINK</SinkType>
+      <j_decay>3</j_decay>
+      <Displacement>
+        <version>1</version>
+        <DisplacementType>NONE</DisplacementType>
+      </Displacement>
+      <LinkSmearing>
+        <LinkSmearingType>APE_SMEAR</LinkSmearingType>
+        <link_smear_fact>2.5</link_smear_fact>
+        <link_smear_num>1</link_smear_num>
+        <no_smear_dir>3</no_smear_dir>
+      </LinkSmearing>
+    </Sink>
+
+Sink = POINT_SINK
+APE Smear gauge field
+Gauge field APE-smeared!
+Point sink
+Sink successfully updated
+SINK_SMEAR: total time = 0.003723 secs
+SINK_SMEAR: ran successfully
+HADRON_CONTRACT: hadron contracts and spectroscopy for any type of fermion
+    Volume: 4 x 4 x 4 x 16
+Contractions for id = diagonal_gamma_mesons
+HADRON_CONTRACT: start list
+Hadron2Pt: diagonal_gamma_mesons
+HADRON_CONTRACT: finished list
+HADRON_CONTRACT: total time = 0.007764 secs
+HADRON_CONTRACT: ran successfully
+CHROMA: measurements: time= 0.130721 secs
+CHROMA: total time = 0.136282 secs
+CHROMA: ran successfully

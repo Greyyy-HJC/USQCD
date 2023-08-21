@@ -1,0 +1,43 @@
+###
+### GETTING qmp
+###
+        tail -f /home/jinchen/USQCD/log/qmp/get.log
+Cloning into '/home/jinchen/USQCD/source/qmp'...
+Switched to a new branch 'mpiaccess'
+Branch 'mpiaccess' set up to track remote branch 'mpiaccess' from 'origin'.
+
+###
+### AUTOTOOLS qmp
+###
+Autotools: qmp
+        tail -f /home/jinchen/USQCD/log/qmp/autotools.qmp.log
+###
+### CONFIGURING qmp
+###
+================================================
+CC        /usr/bin/mpicc
+          gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CXX       /usr/bin/mpicxx
+          g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+CFLAGS    -O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/mpich
+CXXFLAGS  -O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/mpich
+HOST      
+qmp           /home/jinchen/USQCD/install/qmp
+qdpxx         /home/jinchen/USQCD/install/qdpxx
+chroma        /home/jinchen/USQCD/install/chroma
+================================================
+CC="/usr/bin/mpicc" CFLAGS="-O3 -march=broadwell -fpermissive -fopenmp -I/usr/include/hdf5/mpich" CXX="/usr/bin/mpicxx" CXXFLAGS="-O3 -std=c++11 -march=broadwell -ffast-math -funroll-all-loops -fpermissive -fopenmp -I/usr/include/hdf5/mpich" CPPFLAGS="" LIBS="" QUDA_LIBS="" LDFLAGS="" /home/jinchen/USQCD/source/qmp/configure --prefix=/home/jinchen/USQCD/install/qmp --with-qmp-comms-type=MPI
+
+        tail -f /home/jinchen/USQCD/log/qmp/configure.log
+
+###
+### COMPILING qmp
+###
+        tail -f /home/jinchen/USQCD/log/qmp/make.log
+
+###
+### INSTALLING qmp
+###
+        tail -f /home/jinchen/USQCD/log/qmp/install.log
+
+
