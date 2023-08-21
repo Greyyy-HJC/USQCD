@@ -16,8 +16,6 @@ for conf_num in range(1, 11):
 print(np.shape(data_list))
 
 
-print(data_list[0])
-
 
 # %%
 from liblattice.preprocess import resampling as resam
@@ -36,13 +34,5 @@ y = [meff[i].mean for i in range(len(meff))]
 yerr = [meff[i].sdev for i in range(len(meff))]
 title = 'Effective mass for pure gauge theory'
 gplt.errorbar_plot(x, y, yerr, title, save=False, ylim=[0.5,4])
-
-
-
-# %% #todo test 
-print( np.mean( [lis[0] for lis in data_resam] ) )
-print( np.std( [lis[0] for lis in data_resam] ) )
-
-print(data_avg[0])
 
 # %%

@@ -9,17 +9,17 @@ $num_args = $#ARGV + 1;
 if ($num_args != 1) { #check 输入参数是否为2，如果不是，则直接中断pl
    exit;
 }
-$conf_num=$ARGV[0] + 5; #todo
+$conf_num=$ARGV[0];
 
 ## ======================================================= ##
 ## ================= CONFIGURATION INFO ================== ##
 ## ======================================================= ##
-$ns=4; #todo
+$ns=8;
 $nt=16;
 
 $cfg_type="SZINQIO";
-# $cfg_file="../../config/pure_gauge/pure_gauge_S8_T16.lime${conf_num}"; #todo
-$cfg_file="../../config/pure_gauge_minhuan/quenched_test.lime${conf_num}"; #* use minhuan's config
+$cfg_file="../../config/pure_gauge/pure_gauge_S8_T16.lime${conf_num}";
+# $cfg_file="../../config/pure_gauge_minhuan/quenched_test.lime${conf_num}"; #* use minhuan's config
 $output_file="output_file/zero_mom_2pt.lime${conf_num}";
 
 ## ======================================================= ##
@@ -30,8 +30,8 @@ print <<"EOF";
 <?xml version="1.0"?>
 <chroma>
   <annotation>
-Hadron spectrum input
-</annotation>
+  Hadron spectrum input
+  </annotation>
   <Param>
     <InlineMeasurements>
 EOF
