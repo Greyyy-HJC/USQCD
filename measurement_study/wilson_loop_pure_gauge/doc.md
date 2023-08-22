@@ -21,11 +21,13 @@ If we set the "kind" argument to 7, which is 111 in binary, we will calculate al
 
 - wloop1 is "space-like" planar Wilson loops
 - wloop2 is "time-like" planar Wilson loops, note the lengtht = nt / 2
-- wloop3 is "time-like" off-axis Wilson loops
+- wloop3 is "time-like" off-axis Wilson loops, note the lengthr = nr + nr / 2
 
 For wloop2, each line in the out.xml has the fixed $n_r$ and varying $n_t$.
 
 ### Fit the lattice spacing
+
+Ref: Gattringer P.66
 
 We know that
 $$ W(n_t, n_z) = C \cdot \exp({-n_t} \cdot aV(n_z a) ) $$
