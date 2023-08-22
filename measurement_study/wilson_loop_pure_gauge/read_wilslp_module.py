@@ -29,7 +29,7 @@ def extract_data(file_path, start_line, end_line):
     if end_line is None:
         end_line = len(content)
 
-    pattern = r'<loop>(.*?)</loop>'
+    pattern = r'<loop>(.*?)</loop>' #! each line is varying nt with fixed nr
     matches = []
 
     for line_num, line in enumerate(content, start=1):
@@ -46,14 +46,14 @@ def extract_data(file_path, start_line, end_line):
 
 def read_wilslp(file_path):
     #* firstly find out the line number of the line start to search and the line end to search
-    str_to_start = '<wloop1>'
+    str_to_start = '<wloop2>' #! wloop2 is the time like loops
     matching_lines = find_which_line(file_path, str_to_start)
     start_line = matching_lines[0]
 
     print("Find " + str_to_start + " in line " + str(start_line) + ".")
 
 
-    str_to_end = '</wloop1>'
+    str_to_end = '</wloop2>'
     matching_lines = find_which_line(file_path, str_to_end)
     end_line = matching_lines[0]
 

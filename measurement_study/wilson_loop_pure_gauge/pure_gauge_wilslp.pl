@@ -45,7 +45,7 @@ print <<"EOF";
         <Frequency>1</Frequency>
         <Param>
           <version>3</version>
-          <kind>7</kind>
+          <kind>2</kind>
           <j_decay>3</j_decay>
           <t_dir>3</t_dir>
         </Param>
