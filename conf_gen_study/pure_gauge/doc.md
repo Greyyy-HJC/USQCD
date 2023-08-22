@@ -9,6 +9,7 @@ Suppose we have the input file "ini.xml", in which we named the configuration as
 
 ## XML input
 
+For now, 16^4 is the possible volumn on this machine.
 
 
 
