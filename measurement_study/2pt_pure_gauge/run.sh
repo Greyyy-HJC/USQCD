@@ -18,7 +18,7 @@ done
 
 
 # generate the ini.xml files
-for conf_num in {1..10}
+for conf_num in {1..20}
 do
     ini_xml=pure_gauge_meson_2pt_cfg${conf_num}.ini.xml
     ./pure_gauge_meson_2pt.pl ${conf_num} > ${ini_folder}/${ini_xml}
@@ -26,7 +26,7 @@ done
 
 
 # run the Chroma program
-for conf_num in {1..10}
+for conf_num in {1..20}
 do
     ini_xml=pure_gauge_meson_2pt_cfg${conf_num}.ini.xml
     out_xml=pure_gauge_meson_2pt_cfg${conf_num}.out.xml

@@ -75,6 +75,27 @@ avg_V = [ np.sum(data_V[i][2:5]) / 3 for i in range(8) ]
 print(avg_V)
 
 
+fit_V = []
+for i in range(8):
+    priors = gv.BufferDict()
+    priors['C'] = gv.gvar(1, 5)
+    priors['V'] = gv.gvar(1, 5)
+
+    def fcn_V(x, p):
+        nt = x
+        return p['C'] * np.exp(- p['V'] * nt)
+
+    data_t = np.arange(3, 8)
+    data_y = data_V[i][2:7]
+
+    fit_res = lsf.nonlinear_fit(data=(data_t, data_y), fcn=fcn_V, prior=priors)
+    print(fit_res)
+
+    fit_V.append(fit_res.p['V'])
+
+print(fit_V)
+
+
 # %%
 #! fit aV to get the lattice spacing a
 import lsqfit as lsf
@@ -93,12 +114,37 @@ def fcn(x, p):
     return val
 
 
-data_x = np.arange(1, 9)
-data_y = avg_V
+data_x = np.arange(4, 9)
+data_y = avg_V[3:]
 
 fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
 
 print(fit_res.format(100))
 
 
+# %%
+#! use fit V
+
+import lsqfit as lsf
+
+priors = gv.BufferDict()
+priors['a'] = gv.gvar(0.1, 0.5)
+priors['A'] = gv.gvar(1, 5)
+priors['B'] = gv.gvar(1, 5)
+
+
+def fcn(x, p):
+    nz = x
+
+    val = p['A'] * p['a'] + p['B'] / nz + 4 * p['a']**2 * ( 1.65 + p['B'] ) * nz
+
+    return val
+
+
+data_x = np.arange(1, 9)
+data_y = fit_V
+
+fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
+
+print(fit_res.format(100))
 # %%

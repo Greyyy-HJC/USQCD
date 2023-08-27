@@ -4,8 +4,8 @@
 <chroma>
   <Input><chroma>
   <annotation>
-Hadron spectrum input
-</annotation>
+  Hadron spectrum input
+  </annotation>
   <Param>
     <InlineMeasurements>
       <elem>
@@ -103,7 +103,7 @@ Hadron spectrum input
         <Frequency>1</Frequency>
         <NamedObject>
           <gauge_id>default_gauge_field</gauge_id>
-          <output_file>output_file/zero_mom_2pt.lime13</output_file>
+          <output_file>output_file/zero_mom_2pt.lime8</output_file>
           <Contractions>
             <elem>
               <version>1</version>
@@ -119,7 +119,7 @@ Hadron spectrum input
         </NamedObject>
       </elem>
     </InlineMeasurements>
-    <nrow>4 4 4 16</nrow>
+    <nrow>16 16 16 32</nrow>
   </Param>
   <RNG>
     <Seed>
@@ -131,7 +131,7 @@ Hadron spectrum input
   </RNG>
   <Cfg>
     <cfg_type>SZINQIO</cfg_type>
-    <cfg_file>../../config/pure_gauge_minhuan/quenched_test.lime13</cfg_file>
+    <cfg_file>../../config/pure_gauge/pure_gauge_S16_T32_beta6.lime8</cfg_file>
     <!-- pure gauge config -->
   </Cfg>
 </chroma>
@@ -143,13 +143,13 @@ Hadron spectrum input
       <qdp>1.46.0</qdp>
       <basePrecision>64</basePrecision>
     </code_version>
-    <run_date>21 Aug 23 14:55:58 EDT</run_date>
+    <run_date>26 Aug 23 20:47:06 EDT</run_date>
     <Setgeom>
-      <latt_size>4 4 4 16</latt_size>
+      <latt_size>16 16 16 32</latt_size>
       <logical_size>1 1 1 1</logical_size>
-      <subgrid_size>4 4 4 16</subgrid_size>
-      <total_volume>1024</total_volume>
-      <subgrid_volume>1024</subgrid_volume>
+      <subgrid_size>16 16 16 32</subgrid_size>
+      <total_volume>131072</total_volume>
+      <subgrid_volume>131072</subgrid_volume>
     </Setgeom>
   </ProgramInfo>
   <RNG>
@@ -164,22 +164,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -205,32 +205,32 @@ Hadron spectrum input
 
   </Config_info>
   <Observables>
-    <w_plaq>0.616972748470396</w_plaq>
-    <s_plaq>0.456609945996005</s_plaq>
-    <t_plaq>0.777335550944787</t_plaq>
-    <plane_01_plaq>0.451218593190161</plane_01_plaq>
-    <plane_02_plaq>0.453315793121125</plane_02_plaq>
-    <plane_12_plaq>0.46529545167673</plane_12_plaq>
-    <plane_03_plaq>0.775945551267086</plane_03_plaq>
-    <plane_13_plaq>0.777111103286332</plane_13_plaq>
-    <plane_23_plaq>0.778949998280944</plane_23_plaq>
-    <link>0.00226197503565912</link>
+    <w_plaq>0.617286230788394</w_plaq>
+    <s_plaq>0.457113410184671</s_plaq>
+    <t_plaq>0.777459051392118</t_plaq>
+    <plane_01_plaq>0.45733533100924</plane_01_plaq>
+    <plane_02_plaq>0.456687149329826</plane_02_plaq>
+    <plane_12_plaq>0.457317750214946</plane_12_plaq>
+    <plane_03_plaq>0.777697481830317</plane_03_plaq>
+    <plane_13_plaq>0.777344379429017</plane_13_plaq>
+    <plane_23_plaq>0.777335292917019</plane_23_plaq>
+    <link>0.000353473586891077</link>
     <pollp>
       <elem>
-        <re>0.132144439794536</re>
-        <im>0.0262852855449687</im>
+        <re>-0.00160426376428533</re>
+        <im>-0.00691124270402641</im>
       </elem>
       <elem>
-        <re>-0.10235336276605</re>
-        <im>0.0653553112573965</im>
+        <re>0.00187307834531406</re>
+        <im>-0.0033722851227094</im>
       </elem>
       <elem>
-        <re>-0.0847871003099216</re>
-        <im>0.0952605429612668</im>
+        <re>-0.00361280706855727</re>
+        <im>0.00377642062819542</im>
       </elem>
       <elem>
-        <re>0.00934987838096294</re>
-        <im>-0.0606950953208539</im>
+        <re>0.0001150318958045</re>
+        <im>-0.000757629127688772</im>
       </elem>
     </pollp>
   </Observables>
@@ -244,13 +244,13 @@ Hadron spectrum input
             <qdp>1.46.0</qdp>
             <basePrecision>64</basePrecision>
           </code_version>
-          <run_date>21 Aug 23 14:55:58 EDT</run_date>
+          <run_date>26 Aug 23 20:47:06 EDT</run_date>
           <Setgeom>
-            <latt_size>4 4 4 16</latt_size>
+            <latt_size>16 16 16 32</latt_size>
             <logical_size>1 1 1 1</logical_size>
-            <subgrid_size>4 4 4 16</subgrid_size>
-            <total_volume>1024</total_volume>
-            <subgrid_volume>1024</subgrid_volume>
+            <subgrid_size>16 16 16 32</subgrid_size>
+            <total_volume>131072</total_volume>
+            <subgrid_volume>131072</subgrid_volume>
           </Setgeom>
         </ProgramInfo>
         <RNG>
@@ -294,22 +294,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -337,37 +337,37 @@ Hadron spectrum input
 
         </Config_info>
         <Observables>
-          <w_plaq>0.616972748470396</w_plaq>
-          <s_plaq>0.456609945996005</s_plaq>
-          <t_plaq>0.777335550944787</t_plaq>
-          <plane_01_plaq>0.451218593190161</plane_01_plaq>
-          <plane_02_plaq>0.453315793121125</plane_02_plaq>
-          <plane_12_plaq>0.46529545167673</plane_12_plaq>
-          <plane_03_plaq>0.775945551267086</plane_03_plaq>
-          <plane_13_plaq>0.777111103286332</plane_13_plaq>
-          <plane_23_plaq>0.778949998280944</plane_23_plaq>
-          <link>0.00226197503565912</link>
+          <w_plaq>0.617286230788394</w_plaq>
+          <s_plaq>0.457113410184671</s_plaq>
+          <t_plaq>0.777459051392118</t_plaq>
+          <plane_01_plaq>0.45733533100924</plane_01_plaq>
+          <plane_02_plaq>0.456687149329826</plane_02_plaq>
+          <plane_12_plaq>0.457317750214946</plane_12_plaq>
+          <plane_03_plaq>0.777697481830317</plane_03_plaq>
+          <plane_13_plaq>0.777344379429017</plane_13_plaq>
+          <plane_23_plaq>0.777335292917019</plane_23_plaq>
+          <link>0.000353473586891077</link>
           <pollp>
             <elem>
-              <re>0.132144439794536</re>
-              <im>0.0262852855449687</im>
+              <re>-0.00160426376428533</re>
+              <im>-0.00691124270402641</im>
             </elem>
             <elem>
-              <re>-0.10235336276605</re>
-              <im>0.0653553112573965</im>
+              <re>0.00187307834531406</re>
+              <im>-0.0033722851227094</im>
             </elem>
             <elem>
-              <re>-0.0847871003099216</re>
-              <im>0.0952605429612669</im>
+              <re>-0.00361280706855727</re>
+              <im>0.00377642062819542</im>
             </elem>
             <elem>
-              <re>0.00934987838096294</re>
-              <im>-0.0606950953208539</im>
+              <re>0.0001150318958045</re>
+              <im>-0.000757629127688772</im>
             </elem>
           </pollp>
         </Observables>
         <Source_correlator>
-          <source_corr>3.3955806432824 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</source_corr>
+          <source_corr>3.51961693877119 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</source_corr>
         </Source_correlator>
       </make_source>
     </elem>
@@ -380,13 +380,13 @@ Hadron spectrum input
             <qdp>1.46.0</qdp>
             <basePrecision>64</basePrecision>
           </code_version>
-          <run_date>21 Aug 23 14:55:58 EDT</run_date>
+          <run_date>26 Aug 23 20:47:10 EDT</run_date>
           <Setgeom>
-            <latt_size>4 4 4 16</latt_size>
+            <latt_size>16 16 16 32</latt_size>
             <logical_size>1 1 1 1</logical_size>
-            <subgrid_size>4 4 4 16</subgrid_size>
-            <total_volume>1024</total_volume>
-            <subgrid_volume>1024</subgrid_volume>
+            <subgrid_size>16 16 16 32</subgrid_size>
+            <total_volume>131072</total_volume>
+            <subgrid_volume>131072</subgrid_volume>
           </Setgeom>
         </ProgramInfo>
         <Input>
@@ -423,22 +423,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -469,37 +469,37 @@ Hadron spectrum input
           <out_version>1</out_version>
         </Output_version>
         <Observables>
-          <w_plaq>0.616972748470396</w_plaq>
-          <s_plaq>0.456609945996005</s_plaq>
-          <t_plaq>0.777335550944787</t_plaq>
-          <plane_01_plaq>0.451218593190161</plane_01_plaq>
-          <plane_02_plaq>0.453315793121125</plane_02_plaq>
-          <plane_12_plaq>0.46529545167673</plane_12_plaq>
-          <plane_03_plaq>0.775945551267086</plane_03_plaq>
-          <plane_13_plaq>0.777111103286332</plane_13_plaq>
-          <plane_23_plaq>0.778949998280944</plane_23_plaq>
-          <link>0.00226197503565912</link>
+          <w_plaq>0.617286230788394</w_plaq>
+          <s_plaq>0.457113410184671</s_plaq>
+          <t_plaq>0.777459051392118</t_plaq>
+          <plane_01_plaq>0.45733533100924</plane_01_plaq>
+          <plane_02_plaq>0.456687149329826</plane_02_plaq>
+          <plane_12_plaq>0.457317750214946</plane_12_plaq>
+          <plane_03_plaq>0.777697481830317</plane_03_plaq>
+          <plane_13_plaq>0.777344379429017</plane_13_plaq>
+          <plane_23_plaq>0.777335292917019</plane_23_plaq>
+          <link>0.000353473586891077</link>
           <pollp>
             <elem>
-              <re>0.132144439794536</re>
-              <im>0.0262852855449687</im>
+              <re>-0.00160426376428533</re>
+              <im>-0.00691124270402641</im>
             </elem>
             <elem>
-              <re>-0.10235336276605</re>
-              <im>0.0653553112573965</im>
+              <re>0.00187307834531406</re>
+              <im>-0.0033722851227094</im>
             </elem>
             <elem>
-              <re>-0.0847871003099216</re>
-              <im>0.0952605429612668</im>
+              <re>-0.00361280706855727</re>
+              <im>0.00377642062819542</im>
             </elem>
             <elem>
-              <re>0.00934987838096294</re>
-              <im>-0.0606950953208539</im>
+              <re>0.0001150318958045</re>
+              <im>-0.000757629127688772</im>
             </elem>
           </pollp>
         </Observables>
         <Source_file_info><make_source>
-      <id>751211758</id>
+      <id>751664830</id>
     </make_source>
 
         </Source_file_info>
@@ -533,22 +533,22 @@ Hadron spectrum input
           <MCControl>
             <RNG>
               <Seed>
-                <elem>1035</elem>
-                <elem>2109</elem>
-                <elem>173</elem>
-                <elem>1436</elem>
+                <elem>523</elem>
+                <elem>711</elem>
+                <elem>207</elem>
+                <elem>1006</elem>
               </Seed>
             </RNG>
-            <StartUpdateNum>130</StartUpdateNum>
+            <StartUpdateNum>400</StartUpdateNum>
             <NWarmUpUpdates>0</NWarmUpUpdates>
-            <NProductionUpdates>1000</NProductionUpdates>
-            <NUpdatesThisRun>100</NUpdatesThisRun>
-            <SaveInterval>10</SaveInterval>
-            <SavePrefix>quenched_test</SavePrefix>
+            <NProductionUpdates>2000</NProductionUpdates>
+            <NUpdatesThisRun>1000</NUpdatesThisRun>
+            <SaveInterval>50</SaveInterval>
+            <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
             <SaveVolfmt>SINGLEFILE</SaveVolfmt>
           </MCControl>
           <HBItr>
-            <nrow>4 4 4 16</nrow>
+            <nrow>16 16 16 32</nrow>
             <GaugeAction>
               <Name>WILSON_GAUGEACT</Name>
               <beta>6.0</beta>
@@ -576,87 +576,87 @@ Hadron spectrum input
 
         </Source_record_info>
         <Source_correlator>
-          <source_corr>3.3955806432824 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</source_corr>
+          <source_corr>3.51961693877119 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</source_corr>
         </Source_correlator>
         <QuarkProp4>
           <Qprop>
             <color_source>0</color_source>
             <spin_source>0</spin_source>
-            <n_count>34</n_count>
-            <resid>3.74742708497456e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.82234490960549e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>0</color_source>
             <spin_source>1</spin_source>
-            <n_count>34</n_count>
-            <resid>4.03874286101081e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.96591128026943e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>0</color_source>
             <spin_source>2</spin_source>
-            <n_count>34</n_count>
-            <resid>2.68676118072458e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.774190584127e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>0</color_source>
             <spin_source>3</spin_source>
-            <n_count>34</n_count>
-            <resid>4.03079778896895e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.99420356081378e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>1</color_source>
             <spin_source>0</spin_source>
-            <n_count>33</n_count>
-            <resid>5.5850220038073e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.99876278206955e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>1</color_source>
             <spin_source>1</spin_source>
-            <n_count>33</n_count>
-            <resid>5.48663455096568e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.82474854063956e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>1</color_source>
             <spin_source>2</spin_source>
-            <n_count>33</n_count>
-            <resid>4.79015142281778e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.86296747601792e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>1</color_source>
             <spin_source>3</spin_source>
-            <n_count>33</n_count>
-            <resid>6.00322473264005e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.97898786525144e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>2</color_source>
             <spin_source>0</spin_source>
-            <n_count>34</n_count>
-            <resid>3.31839036378659e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.82392825854309e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>2</color_source>
             <spin_source>1</spin_source>
-            <n_count>34</n_count>
-            <resid>3.26253447560874e-13</resid>
+            <n_count>35</n_count>
+            <resid>4.11071075860395e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>2</color_source>
             <spin_source>2</spin_source>
-            <n_count>33</n_count>
-            <resid>5.48236250846385e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.88439653170367e-13</resid>
           </Qprop>
           <Qprop>
             <color_source>2</color_source>
             <spin_source>3</spin_source>
-            <n_count>34</n_count>
-            <resid>3.38426072967904e-13</resid>
+            <n_count>35</n_count>
+            <resid>3.9046049238819e-13</resid>
           </Qprop>
         </QuarkProp4>
         <Relaxation_Iterations>
-          <ncg_had>403</ncg_had>
+          <ncg_had>420</ncg_had>
         </Relaxation_Iterations>
         <Prop_correlator>
-          <prop_corr>0.0834769807388891 0.00196179590126102 0.00019766652305856 2.9201347931962e-05 5.03557212235095e-06 8.22715807907769e-07 1.32123127878003e-07 2.07871421568323e-08 5.13788753271765e-09 1.37022951105203e-08 8.69073769325005e-08 5.78716765263152e-07 4.02726988116363e-06 2.69804672258729e-05 0.000193397600435217 0.00192399662525163</prop_corr>
+          <prop_corr>0.085499699127084 0.00186684024913291 0.000160674774624049 2.04626448534912e-05 2.88771165176631e-06 4.18087803522393e-07 6.25150457721272e-08 9.41828019233787e-09 1.44694156933747e-09 2.21882131278962e-10 3.43199628532411e-11 5.32460997281234e-12 8.32034133460416e-13 1.30183883523915e-13 2.04099660816841e-14 3.23693683328787e-15 9.72456827269962e-16 3.11823976714185e-15 1.95396719148249e-14 1.24857365607503e-13 8.00076363949834e-13 5.16117555395424e-12 3.36122766601154e-11 2.2064239495632e-10 1.41964694564058e-09 9.37083490393098e-09 6.30980415352126e-08 4.23738634940043e-07 2.96913219269859e-06 2.16605903173117e-05 0.000169872769447396 0.00187837706179604</prop_corr>
         </Prop_correlator>
       </propagator>
     </elem>
@@ -693,22 +693,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -736,37 +736,37 @@ Hadron spectrum input
 
         </Config_info>
         <Observables>
-          <w_plaq>0.616972748470396</w_plaq>
-          <s_plaq>0.456609945996005</s_plaq>
-          <t_plaq>0.777335550944787</t_plaq>
-          <plane_01_plaq>0.451218593190161</plane_01_plaq>
-          <plane_02_plaq>0.453315793121125</plane_02_plaq>
-          <plane_12_plaq>0.46529545167673</plane_12_plaq>
-          <plane_03_plaq>0.775945551267086</plane_03_plaq>
-          <plane_13_plaq>0.777111103286332</plane_13_plaq>
-          <plane_23_plaq>0.778949998280944</plane_23_plaq>
-          <link>0.00226197503565912</link>
+          <w_plaq>0.617286230788394</w_plaq>
+          <s_plaq>0.457113410184671</s_plaq>
+          <t_plaq>0.777459051392118</t_plaq>
+          <plane_01_plaq>0.45733533100924</plane_01_plaq>
+          <plane_02_plaq>0.456687149329826</plane_02_plaq>
+          <plane_12_plaq>0.457317750214946</plane_12_plaq>
+          <plane_03_plaq>0.777697481830317</plane_03_plaq>
+          <plane_13_plaq>0.777344379429017</plane_13_plaq>
+          <plane_23_plaq>0.777335292917019</plane_23_plaq>
+          <link>0.000353473586891077</link>
           <pollp>
             <elem>
-              <re>0.132144439794536</re>
-              <im>0.0262852855449686</im>
+              <re>-0.00160426376428533</re>
+              <im>-0.00691124270402641</im>
             </elem>
             <elem>
-              <re>-0.10235336276605</re>
-              <im>0.0653553112573965</im>
+              <re>0.00187307834531406</re>
+              <im>-0.0033722851227094</im>
             </elem>
             <elem>
-              <re>-0.0847871003099216</re>
-              <im>0.0952605429612668</im>
+              <re>-0.00361280706855727</re>
+              <im>0.00377642062819542</im>
             </elem>
             <elem>
-              <re>0.00934987838096294</re>
-              <im>-0.0606950953208539</im>
+              <re>0.0001150318958045</re>
+              <im>-0.000757629127688772</im>
             </elem>
           </pollp>
         </Observables>
         <Prop_file_info><propagator>
-      <id>751211758</id>
+      <id>751664879</id>
     </propagator>
 
         </Prop_file_info>
@@ -824,22 +824,22 @@ Hadron spectrum input
           <MCControl>
             <RNG>
               <Seed>
-                <elem>1035</elem>
-                <elem>2109</elem>
-                <elem>173</elem>
-                <elem>1436</elem>
+                <elem>523</elem>
+                <elem>711</elem>
+                <elem>207</elem>
+                <elem>1006</elem>
               </Seed>
             </RNG>
-            <StartUpdateNum>130</StartUpdateNum>
+            <StartUpdateNum>400</StartUpdateNum>
             <NWarmUpUpdates>0</NWarmUpUpdates>
-            <NProductionUpdates>1000</NProductionUpdates>
-            <NUpdatesThisRun>100</NUpdatesThisRun>
-            <SaveInterval>10</SaveInterval>
-            <SavePrefix>quenched_test</SavePrefix>
+            <NProductionUpdates>2000</NProductionUpdates>
+            <NUpdatesThisRun>1000</NUpdatesThisRun>
+            <SaveInterval>50</SaveInterval>
+            <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
             <SaveVolfmt>SINGLEFILE</SaveVolfmt>
           </MCControl>
           <HBItr>
-            <nrow>4 4 4 16</nrow>
+            <nrow>16 16 16 32</nrow>
             <GaugeAction>
               <Name>WILSON_GAUGEACT</Name>
               <beta>6.0</beta>
@@ -867,10 +867,10 @@ Hadron spectrum input
 
         </Prop_record_info>
         <Forward_prop_correlator>
-          <forward_prop_corr>0.0834769807388891 0.00196179590126102 0.00019766652305856 2.9201347931962e-05 5.03557212235095e-06 8.22715807907769e-07 1.32123127878003e-07 2.07871421568323e-08 5.13788753271765e-09 1.37022951105203e-08 8.69073769325005e-08 5.78716765263152e-07 4.02726988116363e-06 2.69804672258729e-05 0.000193397600435217 0.00192399662525163</forward_prop_corr>
+          <forward_prop_corr>0.085499699127084 0.00186684024913291 0.000160674774624049 2.04626448534912e-05 2.88771165176631e-06 4.18087803522393e-07 6.25150457721272e-08 9.41828019233787e-09 1.44694156933747e-09 2.21882131278962e-10 3.43199628532411e-11 5.32460997281234e-12 8.32034133460416e-13 1.30183883523915e-13 2.04099660816841e-14 3.23693683328787e-15 9.72456827269962e-16 3.11823976714185e-15 1.95396719148249e-14 1.24857365607503e-13 8.00076363949834e-13 5.16117555395424e-12 3.36122766601154e-11 2.2064239495632e-10 1.41964694564058e-09 9.37083490393098e-09 6.30980415352126e-08 4.23738634940043e-07 2.96913219269859e-06 2.16605903173117e-05 0.000169872769447396 0.00187837706179604</forward_prop_corr>
         </Forward_prop_correlator>
         <SinkSmearedProp_correlator>
-          <sink_smeared_prop_corr>0.0834769807388891 0.00196179590126102 0.00019766652305856 2.9201347931962e-05 5.03557212235095e-06 8.22715807907769e-07 1.32123127878003e-07 2.07871421568323e-08 5.13788753271765e-09 1.37022951105203e-08 8.69073769325005e-08 5.78716765263152e-07 4.02726988116363e-06 2.69804672258729e-05 0.000193397600435217 0.00192399662525163</sink_smeared_prop_corr>
+          <sink_smeared_prop_corr>0.085499699127084 0.00186684024913291 0.000160674774624049 2.04626448534912e-05 2.88771165176631e-06 4.18087803522393e-07 6.25150457721272e-08 9.41828019233787e-09 1.44694156933747e-09 2.21882131278962e-10 3.43199628532411e-11 5.32460997281234e-12 8.32034133460416e-13 1.30183883523915e-13 2.04099660816841e-14 3.23693683328787e-15 9.72456827269962e-16 3.11823976714185e-15 1.95396719148249e-14 1.24857365607503e-13 8.00076363949834e-13 5.16117555395424e-12 3.36122766601154e-11 2.2064239495632e-10 1.41964694564058e-09 9.37083490393098e-09 6.30980415352126e-08 4.23738634940043e-07 2.96913219269859e-06 2.16605903173117e-05 0.000169872769447396 0.00187837706179604</sink_smeared_prop_corr>
         </SinkSmearedProp_correlator>
       </sink_smear>
     </elem>
@@ -883,19 +883,19 @@ Hadron spectrum input
             <qdp>1.46.0</qdp>
             <basePrecision>64</basePrecision>
           </code_version>
-          <run_date>21 Aug 23 14:55:58 EDT</run_date>
+          <run_date>26 Aug 23 20:48:00 EDT</run_date>
           <Setgeom>
-            <latt_size>4 4 4 16</latt_size>
+            <latt_size>16 16 16 32</latt_size>
             <logical_size>1 1 1 1</logical_size>
-            <subgrid_size>4 4 4 16</subgrid_size>
-            <total_volume>1024</total_volume>
-            <subgrid_volume>1024</subgrid_volume>
+            <subgrid_size>16 16 16 32</subgrid_size>
+            <total_volume>131072</total_volume>
+            <subgrid_volume>131072</subgrid_volume>
           </Setgeom>
         </ProgramInfo>
         <Input>
           <NamedObject>
             <gauge_id>default_gauge_field</gauge_id>
-            <output_file>output_file/zero_mom_2pt.lime13</output_file><elem>
+            <output_file>output_file/zero_mom_2pt.lime8</output_file><elem>
       <version>1</version>
       <ContractionType>diagonal_gamma_mesons</ContractionType>
       <mom2_max>0</mom2_max>
@@ -912,22 +912,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -958,32 +958,32 @@ Hadron spectrum input
           <out_version>1</out_version>
         </Output_version>
         <Observables>
-          <w_plaq>0.616972748470396</w_plaq>
-          <s_plaq>0.456609945996005</s_plaq>
-          <t_plaq>0.777335550944787</t_plaq>
-          <plane_01_plaq>0.451218593190161</plane_01_plaq>
-          <plane_02_plaq>0.453315793121125</plane_02_plaq>
-          <plane_12_plaq>0.46529545167673</plane_12_plaq>
-          <plane_03_plaq>0.775945551267086</plane_03_plaq>
-          <plane_13_plaq>0.777111103286332</plane_13_plaq>
-          <plane_23_plaq>0.778949998280944</plane_23_plaq>
-          <link>0.00226197503565912</link>
+          <w_plaq>0.617286230788394</w_plaq>
+          <s_plaq>0.457113410184671</s_plaq>
+          <t_plaq>0.777459051392118</t_plaq>
+          <plane_01_plaq>0.45733533100924</plane_01_plaq>
+          <plane_02_plaq>0.456687149329826</plane_02_plaq>
+          <plane_12_plaq>0.457317750214946</plane_12_plaq>
+          <plane_03_plaq>0.777697481830317</plane_03_plaq>
+          <plane_13_plaq>0.777344379429017</plane_13_plaq>
+          <plane_23_plaq>0.777335292917019</plane_23_plaq>
+          <link>0.000353473586891077</link>
           <pollp>
             <elem>
-              <re>0.132144439794536</re>
-              <im>0.0262852855449687</im>
+              <re>-0.00160426376428533</re>
+              <im>-0.00691124270402641</im>
             </elem>
             <elem>
-              <re>-0.10235336276605</re>
-              <im>0.0653553112573965</im>
+              <re>0.00187307834531406</re>
+              <im>-0.0033722851227094</im>
             </elem>
             <elem>
-              <re>-0.0847871003099216</re>
-              <im>0.0952605429612668</im>
+              <re>-0.00361280706855727</re>
+              <im>0.00377642062819542</im>
             </elem>
             <elem>
-              <re>0.00934987838096294</re>
-              <im>-0.0606950953208539</im>
+              <re>0.0001150318958045</re>
+              <im>-0.000757629127688772</im>
             </elem>
           </pollp>
         </Observables>
@@ -1078,22 +1078,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -1189,22 +1189,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -1239,68 +1239,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>0.0771384480797297</re>
-      <im>-5.65225290476288e-21</im>
+      <re>0.0788926611508356</re>
+      <im>-1.34680027032724e-20</im>
     </elem>
     <elem>
-      <re>-0.000227091413807007</re>
-      <im>2.10360455184217e-21</im>
+      <re>-0.000262779680231257</re>
+      <im>-5.23907465795092e-22</im>
     </elem>
     <elem>
-      <re>-1.65795719251463e-05</re>
-      <im>-1.04667393953045e-22</im>
+      <re>-2.09998278828882e-05</re>
+      <im>-1.09225775729886e-22</im>
     </elem>
     <elem>
-      <re>-1.63845902446867e-06</re>
-      <im>3.8115189264269e-24</im>
+      <re>-2.47496094383665e-06</re>
+      <im>-1.50497548065648e-24</im>
     </elem>
     <elem>
-      <re>-1.47983818714759e-07</re>
-      <im>2.84306557918562e-24</im>
+      <re>-3.00679681730952e-07</re>
+      <im>-7.95497744234727e-27</im>
     </elem>
     <elem>
-      <re>-1.68449529242249e-08</re>
-      <im>4.54772432466009e-25</im>
+      <re>-3.60988570871188e-08</re>
+      <im>-5.06605680506044e-26</im>
     </elem>
     <elem>
-      <re>-8.11981805489172e-10</re>
-      <im>8.40218325037679e-27</im>
+      <re>-4.67530565455514e-09</re>
+      <im>2.9991873148074e-27</im>
     </elem>
     <elem>
-      <re>9.21063504390541e-10</re>
-      <im>-5.17081402587305e-27</im>
+      <re>-6.22296590292529e-10</re>
+      <im>-3.47402305302212e-28</im>
     </elem>
     <elem>
-      <re>1.15604730580173e-09</re>
-      <im>-1.72884056277123e-27</im>
+      <re>-8.91945851275094e-11</re>
+      <im>4.01594902000914e-28</im>
     </elem>
     <elem>
-      <re>1.08998936468286e-09</re>
-      <im>4.83422551461372e-27</im>
+      <re>-1.1974229191209e-11</re>
+      <im>-3.39430362339028e-29</im>
     </elem>
     <elem>
-      <re>-3.95053892452191e-10</re>
-      <im>7.39383272858291e-26</im>
+      <re>-1.67485785133266e-12</re>
+      <im>-1.06036460723123e-30</im>
     </elem>
     <elem>
-      <re>-1.45081956747102e-08</re>
-      <im>1.87937091093663e-26</im>
+      <re>-2.27971699011124e-13</re>
+      <im>2.86159505553329e-31</im>
     </elem>
     <elem>
-      <re>-2.02349065308405e-07</re>
-      <im>-6.94496719102023e-25</im>
+      <re>-3.0736551485249e-14</re>
+      <im>-1.26995355454232e-31</im>
     </elem>
     <elem>
-      <re>-1.88334126814747e-06</re>
-      <im>1.49960353571346e-24</im>
+      <re>-4.22426234439892e-15</re>
+      <im>-1.59577974441668e-32</im>
     </elem>
     <elem>
-      <re>-1.86586843178884e-05</re>
-      <im>-4.71561312208637e-23</im>
+      <re>-6.29357225152529e-16</re>
+      <im>5.08057675595937e-34</im>
     </elem>
     <elem>
-      <re>-0.000229417148568384</re>
-      <im>-9.38468439633123e-22</im>
+      <re>-1.68390771698295e-16</re>
+      <im>-2.38380424211859e-34</im>
+    </elem>
+    <elem>
+      <re>-1.18153425411746e-16</re>
+      <im>-1.58731400120639e-34</im>
+    </elem>
+    <elem>
+      <re>-1.79872837992517e-16</re>
+      <im>2.14812751275198e-34</im>
+    </elem>
+    <elem>
+      <re>-6.83596666471937e-16</re>
+      <im>2.51819522653967e-33</im>
+    </elem>
+    <elem>
+      <re>-4.28474728938444e-15</re>
+      <im>1.42422785740513e-32</im>
+    </elem>
+    <elem>
+      <re>-2.89103744545295e-14</re>
+      <im>-3.8597779434095e-32</im>
+    </elem>
+    <elem>
+      <re>-2.01471790030872e-13</re>
+      <im>-2.43506100367172e-31</im>
+    </elem>
+    <elem>
+      <re>-1.4687498339553e-12</re>
+      <im>-2.68431004782124e-30</im>
+    </elem>
+    <elem>
+      <re>-1.07205891842555e-11</re>
+      <im>1.73978798962396e-30</im>
+    </elem>
+    <elem>
+      <re>-7.69240566980125e-11</re>
+      <im>1.04588872832566e-29</im>
+    </elem>
+    <elem>
+      <re>-5.7635246237324e-10</re>
+      <im>-3.15602585482015e-27</im>
+    </elem>
+    <elem>
+      <re>-4.58129800792236e-09</re>
+      <im>1.77511696401049e-26</im>
+    </elem>
+    <elem>
+      <re>-3.54947673401984e-08</re>
+      <im>-6.74723970273592e-26</im>
+    </elem>
+    <elem>
+      <re>-2.90364890213689e-07</re>
+      <im>-3.41797411059824e-26</im>
+    </elem>
+    <elem>
+      <re>-2.49068868019337e-06</re>
+      <im>-1.60841594812278e-24</im>
+    </elem>
+    <elem>
+      <re>-2.22440780836902e-05</re>
+      <im>3.26893082942043e-23</im>
+    </elem>
+    <elem>
+      <re>-0.000268391791638428</re>
+      <im>3.88923931953418e-22</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -1385,22 +1449,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -1496,22 +1560,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -1546,68 +1610,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>0.0816568933819266</re>
-      <im>-1.55509955159969e-19</im>
+      <re>0.0831860172867291</re>
+      <im>3.12427377309724e-20</im>
     </elem>
     <elem>
-      <re>0.0018366180418945</re>
-      <im>3.88361297593646e-22</im>
+      <re>0.00169936105050229</re>
+      <im>2.73669649997267e-21</im>
     </elem>
     <elem>
-      <re>0.000185098374678308</re>
-      <im>5.3146354356532e-23</im>
+      <re>0.000142964746185854</re>
+      <im>1.37859300375081e-22</im>
     </elem>
     <elem>
-      <re>2.73346441724954e-05</re>
-      <im>-2.4556924435168e-24</im>
+      <re>1.81202780169062e-05</re>
+      <im>3.54681198719114e-24</im>
     </elem>
     <elem>
-      <re>4.69623725091377e-06</re>
-      <im>1.55096364853693e-25</im>
+      <re>2.55371869034531e-06</re>
+      <im>1.8567394561921e-24</im>
     </elem>
     <elem>
-      <re>7.55631393575197e-07</re>
-      <im>-3.03730381171815e-25</im>
+      <re>3.68789711132448e-07</re>
+      <im>6.88652440841773e-26</im>
     </elem>
     <elem>
-      <re>1.20618445804798e-07</re>
-      <im>-1.0804238957907e-25</im>
+      <re>5.49944822438302e-08</re>
+      <im>2.99311056255301e-26</im>
     </elem>
     <elem>
-      <re>1.90469323801474e-08</re>
-      <im>1.11324050944789e-26</im>
+      <re>8.28351028912625e-09</re>
+      <im>-1.42129625673013e-27</im>
     </elem>
     <elem>
-      <re>4.70793796819492e-09</re>
-      <im>5.90067957105317e-27</im>
+      <re>1.27486882032201e-09</re>
+      <im>2.42313807653623e-28</im>
     </elem>
     <elem>
-      <re>1.25207605209954e-08</re>
-      <im>1.12270684031054e-26</im>
+      <re>1.95244204990763e-10</re>
+      <im>-3.33558155443216e-29</im>
     </elem>
     <elem>
-      <re>7.98334737289719e-08</re>
-      <im>-3.25136910695892e-26</im>
+      <re>3.01597629777587e-11</re>
+      <im>6.40737932655375e-30</im>
     </elem>
     <elem>
-      <re>5.30523003035606e-07</re>
-      <im>7.55286985094806e-26</im>
+      <re>4.67045792498857e-12</re>
+      <im>5.21509663006521e-32</im>
     </elem>
     <elem>
-      <re>3.71729350038597e-06</re>
-      <im>4.13590306276514e-25</im>
+      <re>7.27037054538778e-13</re>
+      <im>1.54754574418589e-31</im>
     </elem>
     <elem>
-      <re>2.49711047142986e-05</re>
-      <im>2.27474668452083e-24</im>
+      <re>1.13413817185375e-13</re>
+      <im>-8.94690478689234e-33</im>
     </elem>
     <elem>
-      <re>0.000179113991098803</re>
-      <im>4.13590306276514e-24</im>
+      <re>1.77656884366551e-14</re>
+      <im>4.09312946143227e-33</im>
     </elem>
     <elem>
-      <re>0.00180323862951942</re>
-      <im>-1.15805285757424e-22</im>
+      <re>2.81068122806829e-15</re>
+      <im>-1.36386858327963e-34</im>
+    </elem>
+    <elem>
+      <re>8.45408359752739e-16</re>
+      <im>6.42719142898615e-35</im>
+    </elem>
+    <elem>
+      <re>2.71792496802409e-15</re>
+      <im>2.41991281993374e-34</im>
+    </elem>
+    <elem>
+      <re>1.70606570986702e-14</re>
+      <im>2.03911710156646e-33</im>
+    </elem>
+    <elem>
+      <re>1.09274770416036e-13</re>
+      <im>1.70891638541797e-32</im>
+    </elem>
+    <elem>
+      <re>7.02222465591608e-13</re>
+      <im>1.10649419159436e-31</im>
+    </elem>
+    <elem>
+      <re>4.54309340251038e-12</re>
+      <im>2.29376528399824e-31</im>
+    </elem>
+    <elem>
+      <re>2.96524854653739e-11</re>
+      <im>3.45373445775125e-30</im>
+    </elem>
+    <elem>
+      <re>1.94878765409005e-10</re>
+      <im>-6.87540109782879e-29</im>
+    </elem>
+    <elem>
+      <re>1.25047816661984e-09</re>
+      <im>-2.63380912090644e-28</im>
+    </elem>
+    <elem>
+      <re>8.27354681798352e-09</re>
+      <im>-5.10434526066276e-28</im>
+    </elem>
+    <elem>
+      <re>5.57716334469575e-08</re>
+      <im>2.06527261760608e-26</im>
+    </elem>
+    <elem>
+      <re>3.75433649466534e-07</re>
+      <im>-5.907307658054e-26</im>
+    </elem>
+    <elem>
+      <re>2.63538336935703e-06</re>
+      <im>-6.43765169516083e-25</im>
+    </elem>
+    <elem>
+      <re>1.9234341311762e-05</re>
+      <im>6.94008755059106e-24</im>
+    </elem>
+    <elem>
+      <re>0.000151355891697411</re>
+      <im>8.28785828494857e-23</im>
+    </elem>
+    <elem>
+      <re>0.00171095084536257</re>
+      <im>-3.74351563525086e-23</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -1692,22 +1820,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -1803,22 +1931,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -1853,68 +1981,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>0.0810821631905288</re>
-      <im>-1.51486548660511e-19</im>
+      <re>0.0829811124689902</re>
+      <im>4.36278542526893e-20</im>
     </elem>
     <elem>
-      <re>0.00179110486564783</re>
-      <im>5.99705944100945e-23</im>
+      <re>0.00169417446872289</re>
+      <im>1.89381263840746e-21</im>
     </elem>
     <elem>
-      <re>0.00017824528144026</re>
-      <im>8.08569048770585e-23</im>
+      <re>0.000142592574569378</re>
+      <im>8.54703673032232e-23</im>
     </elem>
     <elem>
-      <re>2.66113426477031e-05</re>
-      <im>2.32644547280539e-25</im>
+      <re>1.80845041929599e-05</re>
+      <im>1.36308779309609e-24</im>
     </elem>
     <elem>
-      <re>4.57332703216133e-06</re>
-      <im>1.57681304267921e-24</im>
+      <re>2.55078156276483e-06</re>
+      <im>2.06848886239822e-24</im>
     </elem>
     <elem>
-      <re>7.37721185060372e-07</re>
-      <im>-1.7771458472819e-25</im>
+      <re>3.68812759813681e-07</re>
+      <im>1.44059421163241e-25</im>
     </elem>
     <elem>
-      <re>1.16962021293135e-07</re>
-      <im>-1.73069771718248e-25</im>
+      <re>5.50363999680513e-08</re>
+      <im>3.03805965690662e-26</im>
     </elem>
     <elem>
-      <re>1.86460707205982e-08</re>
-      <im>8.65853729570583e-27</im>
+      <re>8.29796635261339e-09</re>
+      <im>3.14244214743118e-28</im>
     </elem>
     <elem>
-      <re>4.56681297432058e-09</re>
-      <im>4.43655373096297e-27</im>
+      <re>1.274526661641e-09</re>
+      <im>2.62445742193716e-28</im>
     </elem>
     <elem>
-      <re>1.2209177327125e-08</re>
-      <im>8.32406027189212e-27</im>
+      <re>1.94682966115004e-10</re>
+      <im>-7.47643411975884e-29</im>
     </elem>
     <elem>
-      <re>7.83509393602808e-08</re>
-      <im>-3.81682460382134e-26</im>
+      <re>3.0042109057761e-11</re>
+      <im>4.36047916448385e-30</im>
     </elem>
     <elem>
-      <re>5.29563183733271e-07</re>
-      <im>1.3045866106183e-25</im>
+      <re>4.65276686387878e-12</re>
+      <im>9.38600501518808e-31</im>
     </elem>
     <elem>
-      <re>3.69967185189926e-06</re>
-      <im>1.46049076903894e-24</im>
+      <re>7.24817481866258e-13</re>
+      <im>5.5512996224071e-33</im>
     </elem>
     <elem>
-      <re>2.45892943577694e-05</re>
-      <im>4.65289094561078e-25</im>
+      <re>1.12801189884804e-13</re>
+      <im>3.84093036270572e-33</im>
     </elem>
     <elem>
-      <re>0.000175948350305312</re>
-      <im>4.3426982159034e-23</im>
+      <re>1.76924765011032e-14</re>
+      <im>3.34203655530357e-33</im>
     </elem>
     <elem>
-      <re>0.0017667801935001</re>
-      <im>-2.8951321439356e-22</im>
+      <re>2.80615088905682e-15</re>
+      <im>1.17194519588171e-35</im>
+    </elem>
+    <elem>
+      <re>8.45360579614824e-16</re>
+      <im>2.45925026772709e-35</im>
+    </elem>
+    <elem>
+      <re>2.69629217519839e-15</re>
+      <im>5.87204757662664e-34</im>
+    </elem>
+    <elem>
+      <re>1.69062681915545e-14</re>
+      <im>7.72691903099963e-34</im>
+    </elem>
+    <elem>
+      <re>1.07909261497397e-13</re>
+      <im>5.32022645305222e-33</im>
+    </elem>
+    <elem>
+      <re>6.92024182510968e-13</re>
+      <im>4.41739881675751e-32</im>
+    </elem>
+    <elem>
+      <re>4.47068911421827e-12</re>
+      <im>1.5394442701808e-31</im>
+    </elem>
+    <elem>
+      <re>2.91764364887707e-11</re>
+      <im>-1.0125870997014e-29</im>
+    </elem>
+    <elem>
+      <re>1.9241722853568e-10</re>
+      <im>-6.37823459598855e-29</im>
+    </elem>
+    <elem>
+      <re>1.23990131136742e-09</re>
+      <im>-2.1668308376711e-28</im>
+    </elem>
+    <elem>
+      <re>8.18891438957771e-09</re>
+      <im>-2.28478151430232e-27</im>
+    </elem>
+    <elem>
+      <re>5.52735100607969e-08</re>
+      <im>9.24523982715491e-27</im>
+    </elem>
+    <elem>
+      <re>3.71384541948887e-07</re>
+      <im>2.66898190547444e-26</im>
+    </elem>
+    <elem>
+      <re>2.60372749365146e-06</re>
+      <im>-8.4766813331121e-25</im>
+    </elem>
+    <elem>
+      <re>1.90944182815138e-05</re>
+      <im>8.018537579698e-24</im>
+    </elem>
+    <elem>
+      <re>0.00015065678666157</re>
+      <im>5.04422641432067e-23</im>
+    </elem>
+    <elem>
+      <re>0.00170509962927713</re>
+      <im>-1.42429073806323e-23</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -1999,22 +2191,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -2110,22 +2302,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -2160,68 +2352,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0807579912382181</re>
-      <im>6.29466658615101e-22</im>
+      <re>-0.0830925943578207</re>
+      <im>1.87584395787206e-20</im>
     </elem>
     <elem>
-      <re>0.000120800213875895</re>
-      <im>-2.19239840061939e-21</im>
+      <re>0.00010222178757391</re>
+      <im>5.91090490442862e-22</im>
     </elem>
     <elem>
-      <re>9.96149487604806e-06</re>
-      <im>9.96985120921852e-23</im>
+      <re>8.20483087434918e-06</re>
+      <im>1.10404642607508e-22</im>
     </elem>
     <elem>
-      <re>9.43768783823803e-07</re>
-      <im>-4.05292001106132e-24</im>
+      <re>9.7307665814404e-07</re>
+      <im>1.34418458563916e-24</im>
     </elem>
     <elem>
-      <re>8.3295962315741e-08</re>
-      <im>-2.80406627722723e-24</im>
+      <re>1.17112891126944e-07</re>
+      <im>-1.93165453858019e-27</im>
     </elem>
     <elem>
-      <re>7.07627020411448e-09</re>
-      <im>-3.61565260706934e-25</im>
+      <re>1.41554999808355e-08</re>
+      <im>7.10489422975948e-26</im>
     </elem>
     <elem>
-      <re>-9.07346422464399e-10</re>
-      <im>-2.34123129440144e-26</im>
+      <re>1.9276526763055e-09</re>
+      <im>-3.11895946571217e-27</im>
     </elem>
     <elem>
-      <re>-1.23816839698851e-09</re>
-      <im>6.90723886851607e-27</im>
+      <re>2.37345318104385e-10</re>
+      <im>3.68107885473508e-28</im>
     </elem>
     <elem>
-      <re>-1.27169193239073e-09</re>
-      <im>1.73259242630774e-27</im>
+      <re>3.13505515817245e-11</re>
+      <im>-4.26580734702602e-28</im>
     </elem>
     <elem>
-      <re>-1.05603323760605e-09</re>
-      <im>-4.85576239039031e-27</im>
+      <re>4.05449080014944e-12</re>
+      <im>2.13710372371456e-29</im>
     </elem>
     <elem>
-      <re>8.18890157022784e-10</re>
-      <im>-8.22750455359262e-26</im>
+      <re>5.53049570418287e-13</re>
+      <im>1.39416737193694e-30</im>
     </elem>
     <elem>
-      <re>1.32874713532045e-08</re>
-      <im>-4.94918591618495e-27</im>
+      <re>7.75213231459267e-14</re>
+      <im>-3.32094642015884e-31</im>
     </elem>
     <elem>
-      <re>1.45440356899632e-07</re>
-      <im>6.3660490929144e-25</im>
+      <re>1.00233311848735e-14</re>
+      <im>1.7795512162749e-31</im>
     </elem>
     <elem>
-      <re>1.27079275772406e-06</re>
-      <im>-3.47379440731492e-24</im>
+      <re>1.47501790760706e-15</re>
+      <im>1.64170086220884e-32</im>
     </elem>
     <elem>
-      <re>1.08828658110765e-05</re>
-      <im>4.82356097618496e-23</im>
+      <re>2.55415833376707e-16</re>
+      <im>-4.98873336651987e-35</im>
     </elem>
     <elem>
-      <re>0.000121953523002886</re>
-      <im>1.02787609221418e-21</im>
+      <re>1.21414413215325e-16</re>
+      <im>1.99569838910688e-34</im>
+    </elem>
+    <elem>
+      <re>1.11535935649734e-16</re>
+      <im>1.79521514197058e-34</im>
+    </elem>
+    <elem>
+      <re>1.39786344310425e-16</re>
+      <im>-1.83092432333089e-34</im>
+    </elem>
+    <elem>
+      <re>3.56664755811954e-16</re>
+      <im>-2.28865083660874e-33</im>
+    </elem>
+    <elem>
+      <re>1.75733377936492e-15</re>
+      <im>-1.35297874433795e-32</im>
+    </elem>
+    <elem>
+      <re>1.21131043900439e-14</re>
+      <im>7.64930704913898e-32</im>
+    </elem>
+    <elem>
+      <re>7.60825913982703e-14</re>
+      <im>3.12640907445644e-31</im>
+    </elem>
+    <elem>
+      <re>5.45021000096048e-13</re>
+      <im>3.06837577875631e-30</im>
+    </elem>
+    <elem>
+      <re>4.14349079827288e-12</re>
+      <im>-7.76500328254947e-30</im>
+    </elem>
+    <elem>
+      <re>2.93237896951773e-11</re>
+      <im>-1.28486212929485e-29</im>
+    </elem>
+    <elem>
+      <re>2.33490595146572e-10</re>
+      <im>3.28614962261719e-27</im>
+    </elem>
+    <elem>
+      <re>1.83825991222528e-09</re>
+      <im>-1.51222732104426e-26</im>
+    </elem>
+    <elem>
+      <re>1.3376622374273e-08</re>
+      <im>1.17052213908803e-25</im>
+    </elem>
+    <elem>
+      <re>1.12645778526121e-07</re>
+      <im>1.46436821770155e-25</im>
+    </elem>
+    <elem>
+      <re>1.01178058097869e-06</re>
+      <im>6.94088806163692e-25</im>
+    </elem>
+    <elem>
+      <re>9.46002725597775e-06</re>
+      <im>-2.74602072728916e-23</im>
+    </elem>
+    <elem>
+      <re>0.000107836879678986</re>
+      <im>-3.81458772974407e-22</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -2306,22 +2562,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -2417,22 +2673,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -2467,68 +2723,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>0.0807612789870486</re>
-      <im>6.3635831704317e-20</im>
+      <re>0.0830957191853724</re>
+      <im>-2.47789814778371e-20</im>
     </elem>
     <elem>
-      <re>0.00177647320044112</re>
-      <im>7.86648762537929e-22</im>
+      <re>0.00170253319558961</re>
+      <im>6.02297269179063e-22</im>
     </elem>
     <elem>
-      <re>0.000176827443328144</re>
-      <im>8.10637000301967e-23</im>
+      <re>0.000143105627547599</re>
+      <im>-2.05987952062121e-22</im>
     </elem>
     <elem>
-      <re>2.6394347025663e-05</re>
-      <im>-3.45347905740889e-23</im>
+      <re>1.81695131109855e-05</re>
+      <im>-2.21948343957072e-23</im>
     </elem>
     <elem>
-      <re>4.6489988033748e-06</re>
-      <im>-4.53656867197051e-24</im>
+      <re>2.56412658166643e-06</re>
+      <im>3.67295483279153e-27</im>
     </elem>
     <elem>
-      <re>7.61297258321603e-07</re>
-      <im>-2.46377037918626e-25</im>
+      <re>3.6920230754012e-07</re>
+      <im>-3.62806775157656e-25</im>
     </elem>
     <elem>
-      <re>1.22003833951141e-07</re>
-      <im>-5.42231431812715e-26</im>
+      <re>5.5295035759865e-08</re>
+      <im>4.70565345195931e-26</im>
     </elem>
     <elem>
-      <re>1.91358348118035e-08</re>
-      <im>1.92355843129092e-26</im>
+      <re>8.33632383685982e-09</re>
+      <im>-9.60539113473199e-27</im>
     </elem>
     <elem>
-      <re>4.62105214207087e-09</re>
-      <im>-1.31897543352953e-27</im>
+      <re>1.28265241860752e-09</re>
+      <im>1.1881999316701e-27</im>
     </elem>
     <elem>
-      <re>1.21514195590416e-08</re>
-      <im>2.77679038637796e-28</im>
+      <re>1.96071913932318e-10</re>
+      <im>-2.18146106340112e-29</im>
     </elem>
     <elem>
-      <re>7.681414947447e-08</re>
-      <im>-1.40556080648659e-25</im>
+      <re>3.03565336910051e-11</re>
+      <im>-1.40611915077918e-29</im>
     </elem>
     <elem>
-      <re>5.09038242001765e-07</re>
-      <im>4.52364397489937e-26</im>
+      <re>4.71616760245107e-12</re>
+      <im>-1.18122350971947e-30</im>
     </elem>
     <elem>
-      <re>3.55318217822274e-06</re>
-      <im>-4.45902048954366e-25</im>
+      <re>7.34993148730579e-13</re>
+      <im>-2.03055906922894e-31</im>
     </elem>
     <elem>
-      <re>2.38772081226508e-05</re>
-      <im>1.55871846677961e-23</im>
+      <re>1.14713460538931e-13</re>
+      <im>4.98988699642791e-32</im>
     </elem>
     <elem>
-      <re>0.000171246743795854</re>
-      <im>2.02245659769215e-22</im>
+      <re>1.79479780920098e-14</re>
+      <im>2.13772682013968e-33</im>
     </elem>
     <elem>
-      <re>0.00174295874499119</re>
-      <im>-2.63705179281905e-21</im>
+      <re>2.83889830606929e-15</re>
+      <im>-1.86860345827124e-34</im>
+    </elem>
+    <elem>
+      <re>8.50521071237673e-16</re>
+      <im>7.59748236624683e-35</im>
+    </elem>
+    <elem>
+      <re>2.72422664023278e-15</re>
+      <im>7.54684948245986e-34</im>
+    </elem>
+    <elem>
+      <re>1.71249985908004e-14</re>
+      <im>4.79719337554015e-33</im>
+    </elem>
+    <elem>
+      <re>1.09440169637802e-13</re>
+      <im>1.47830193666229e-32</im>
+    </elem>
+    <elem>
+      <re>7.02024742483962e-13</re>
+      <im>4.82370272695138e-32</im>
+    </elem>
+    <elem>
+      <re>4.54086393827084e-12</re>
+      <im>-2.28336690780697e-30</im>
+    </elem>
+    <elem>
+      <re>2.95932167080668e-11</re>
+      <im>-3.89739730271752e-30</im>
+    </elem>
+    <elem>
+      <re>1.94393551787938e-10</re>
+      <im>1.42103423199813e-28</im>
+    </elem>
+    <elem>
+      <re>1.25549902392343e-09</re>
+      <im>9.56796766050607e-28</im>
+    </elem>
+    <elem>
+      <re>8.3290140766169e-09</re>
+      <im>4.22623737883583e-28</im>
+    </elem>
+    <elem>
+      <re>5.6018392294041e-08</re>
+      <im>-3.54935351422843e-26</im>
+    </elem>
+    <elem>
+      <re>3.75671625415144e-07</re>
+      <im>9.16532314231088e-26</im>
+    </elem>
+    <elem>
+      <re>2.64050799135137e-06</re>
+      <im>4.55844154600205e-24</im>
+    </elem>
+    <elem>
+      <re>1.93260608863508e-05</re>
+      <im>-2.78761428098981e-23</im>
+    </elem>
+    <elem>
+      <re>0.000151710439127453</re>
+      <im>-1.05180016752147e-23</im>
+    </elem>
+    <elem>
+      <re>0.00171147140719563</re>
+      <im>-7.93769853924003e-22</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -2613,22 +2933,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -2724,22 +3044,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -2774,68 +3094,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0810793568186092</re>
-      <im>-4.46148135186601e-20</im>
+      <re>-0.0829773990473815</re>
+      <im>2.37129452206874e-20</im>
     </elem>
     <elem>
-      <re>9.98556982219073e-05</re>
-      <im>-3.79799978253723e-21</im>
+      <re>0.000115947651972405</re>
+      <im>-6.12764578698834e-23</im>
     </elem>
     <elem>
-      <re>7.73536780823099e-06</re>
-      <im>5.8729823491265e-23</im>
+      <re>8.85645035225994e-06</re>
+      <im>7.35484807511646e-23</im>
     </elem>
     <elem>
-      <re>8.19480025759723e-07</re>
-      <im>-1.47600040552431e-23</im>
+      <re>9.84757906959709e-07</re>
+      <im>-5.24074568464416e-24</im>
     </elem>
     <elem>
-      <re>8.55796276222417e-08</re>
-      <im>-1.32478144979196e-24</im>
+      <re>1.13625058336764e-07</re>
+      <im>-1.43476577206293e-24</im>
     </elem>
     <elem>
-      <re>7.52194098384567e-09</re>
-      <im>-8.04158495895058e-25</im>
+      <re>1.22100360047571e-08</re>
+      <im>1.87717941909324e-25</im>
     </elem>
     <elem>
-      <re>-3.89999044874424e-10</re>
-      <im>1.03801473352602e-25</im>
+      <re>1.58592732081267e-09</re>
+      <im>-2.7442013924564e-26</im>
     </elem>
     <elem>
-      <re>-1.18905877424514e-09</re>
-      <im>2.06744666040323e-26</im>
+      <re>2.18619099193762e-10</re>
+      <im>-9.8359692146424e-28</im>
     </elem>
     <elem>
-      <re>-1.32984602414043e-09</re>
-      <im>-5.42736302792056e-28</im>
+      <re>3.3478323124614e-11</re>
+      <im>5.13383998767673e-28</im>
     </elem>
     <elem>
-      <re>-1.37285156030818e-09</re>
-      <im>-2.87776458224625e-27</im>
+      <re>4.47964899975958e-12</re>
+      <im>-1.60386653207571e-28</im>
     </elem>
     <elem>
-      <re>-1.36252186277574e-09</re>
-      <im>3.91275008989622e-27</im>
+      <re>5.98267068565557e-13</re>
+      <im>4.5372080662608e-30</im>
     </elem>
     <elem>
-      <re>3.2882274482625e-09</re>
-      <im>6.46234853557053e-26</im>
+      <re>8.60072565269865e-14</re>
+      <im>3.27295670527284e-30</im>
     </elem>
     <elem>
-      <re>7.03008641682165e-08</re>
-      <im>-8.91804097908733e-24</im>
+      <re>1.07448784515041e-14</re>
+      <im>-3.527271076329e-31</im>
     </elem>
     <elem>
-      <re>7.53640656247861e-07</re>
-      <im>1.03268329598417e-23</im>
+      <re>1.63414090407427e-15</re>
+      <im>8.79299846866643e-32</im>
     </elem>
     <elem>
-      <re>8.23834162460647e-06</re>
-      <im>6.83457981121939e-23</im>
+      <re>3.46082418725694e-16</re>
+      <im>-1.67907554526327e-33</im>
     </elem>
     <elem>
-      <re>0.000104091658707262</re>
-      <im>3.47002266965995e-22</im>
+      <re>1.38210251611891e-16</re>
+      <im>-4.7820098857964e-34</im>
+    </elem>
+    <elem>
+      <re>1.13787956201758e-16</re>
+      <im>1.16874886143793e-34</im>
+    </elem>
+    <elem>
+      <re>1.34101925680511e-16</re>
+      <im>-4.03931599585898e-34</im>
+    </elem>
+    <elem>
+      <re>3.16351887571252e-16</re>
+      <im>-8.90843399067623e-33</im>
+    </elem>
+    <elem>
+      <re>1.59581936088081e-15</re>
+      <im>-4.43494140772106e-33</im>
+    </elem>
+    <elem>
+      <re>1.00829843022861e-14</re>
+      <im>3.60494928770439e-31</im>
+    </elem>
+    <elem>
+      <re>6.88599395908333e-14</re>
+      <im>2.30059781405567e-30</im>
+    </elem>
+    <elem>
+      <re>5.47191080604671e-13</re>
+      <im>2.18442510767155e-30</im>
+    </elem>
+    <elem>
+      <re>4.13975810194153e-12</re>
+      <im>-9.40958202528295e-29</im>
+    </elem>
+    <elem>
+      <re>2.99523931965698e-11</re>
+      <im>-1.37371466307159e-27</im>
+    </elem>
+    <elem>
+      <re>2.04194450902407e-10</re>
+      <im>-2.61517850917841e-27</im>
+    </elem>
+    <elem>
+      <re>1.69208875340479e-09</re>
+      <im>5.61450939301563e-26</im>
+    </elem>
+    <elem>
+      <re>1.39855999232233e-08</re>
+      <im>4.00666048540086e-26</im>
+    </elem>
+    <elem>
+      <re>1.23043166812961e-07</re>
+      <im>-1.39657395888557e-24</im>
+    </elem>
+    <elem>
+      <re>1.01452349474728e-06</re>
+      <im>7.03146043186925e-24</im>
+    </elem>
+    <elem>
+      <re>9.43180035243428e-06</re>
+      <im>-3.55299949621359e-23</im>
+    </elem>
+    <elem>
+      <re>0.000110189836508427</re>
+      <im>1.19045502571835e-21</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -2920,22 +3304,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3031,22 +3415,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3081,68 +3465,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0816540441489989</re>
-      <im>-4.16899028726726e-20</im>
+      <re>-0.0831828067618799</re>
+      <im>2.93235322148486e-20</im>
     </elem>
     <elem>
-      <re>6.29245806305612e-05</re>
-      <im>-2.97412789243441e-21</im>
+      <re>0.000105188667873623</re>
+      <im>-2.0004628459937e-23</im>
     </elem>
     <elem>
-      <re>3.38467152545937e-06</re>
-      <im>1.3648480107125e-23</im>
+      <re>8.64535875536198e-06</re>
+      <im>2.30174450025697e-22</im>
     </elem>
     <elem>
-      <re>3.80837291011105e-07</re>
-      <im>-1.35967813188404e-23</im>
+      <re>9.93230725647601e-07</re>
+      <im>-1.37877113444965e-23</im>
     </elem>
     <elem>
-      <re>3.38742865176166e-08</re>
-      <im>-2.2812090330564e-24</im>
+      <re>1.16303282474082e-07</re>
+      <im>-1.47465040151108e-24</im>
     </elem>
     <elem>
-      <re>2.88429027043616e-09</re>
-      <im>-9.70563970685999e-25</im>
+      <re>1.42883126099624e-08</re>
+      <im>3.84624253582699e-25</im>
     </elem>
     <elem>
-      <re>-5.25728175601713e-10</re>
-      <im>6.42195885722321e-26</im>
+      <re>1.80508556994379e-09</re>
+      <im>1.22779738062264e-26</im>
     </elem>
     <elem>
-      <re>-1.22614664873751e-09</re>
-      <im>1.8150111707325e-26</im>
+      <re>2.42182630491841e-10</re>
+      <im>2.67414709360894e-27</im>
     </elem>
     <elem>
-      <re>-1.34579603081123e-09</re>
-      <im>5.22541463618398e-27</im>
+      <re>3.4294739885674e-11</re>
+      <im>-9.42026398195585e-29</im>
     </elem>
     <elem>
-      <re>-1.395823182261e-09</re>
-      <im>-7.06819371078027e-28</im>
+      <re>4.9728300983275e-12</re>
+      <im>5.94984212176473e-30</im>
     </elem>
     <elem>
-      <re>-1.50159178282081e-09</re>
-      <im>-1.23693389938655e-27</im>
+      <re>6.77914822151169e-13</re>
+      <im>-2.09992608628476e-29</im>
     </elem>
     <elem>
-      <re>-8.74789565435706e-10</re>
-      <im>-8.88572923640948e-25</im>
+      <re>9.4571319801908e-14</re>
+      <im>-2.87139580384727e-30</im>
     </elem>
     <elem>
-      <re>3.5616488222906e-08</re>
-      <im>1.00166402301343e-24</im>
+      <re>1.38225301021607e-14</re>
+      <im>2.15084496148767e-31</im>
     </elem>
     <elem>
-      <re>4.25712566025624e-07</re>
-      <im>-4.35562291297454e-24</im>
+      <re>2.04603105505185e-15</re>
+      <im>5.33024735872199e-33</im>
     </elem>
     <elem>
-      <re>4.97544569083599e-06</re>
-      <im>1.75672482590949e-22</im>
+      <re>3.47140308405561e-16</re>
+      <im>6.97034090547979e-34</im>
     </elem>
     <elem>
-      <re>6.3183979782877e-05</re>
-      <im>-4.1400389658279e-22</im>
+      <re>1.40415629170493e-16</re>
+      <im>2.33236363076455e-34</im>
+    </elem>
+    <elem>
+      <re>1.10941564168952e-16</re>
+      <im>3.23021496899334e-34</im>
+    </elem>
+    <elem>
+      <re>1.24434133765133e-16</re>
+      <im>1.00346128063355e-33</im>
+    </elem>
+    <elem>
+      <re>2.50230377264274e-16</re>
+      <im>-1.35223202720539e-33</im>
+    </elem>
+    <elem>
+      <re>1.40770466332248e-15</re>
+      <im>1.74659061661161e-32</im>
+    </elem>
+    <elem>
+      <re>9.79160591075778e-15</re>
+      <im>5.20522777275301e-31</im>
+    </elem>
+    <elem>
+      <re>7.8205542255353e-14</re>
+      <im>3.17159939777529e-30</im>
+    </elem>
+    <elem>
+      <re>5.50628235226927e-13</re>
+      <im>7.17373543650931e-30</im>
+    </elem>
+    <elem>
+      <re>3.69174475271172e-12</re>
+      <im>7.9248603620021e-29</im>
+    </elem>
+    <elem>
+      <re>2.60683926573188e-11</re>
+      <im>-1.22337001874893e-27</im>
+    </elem>
+    <elem>
+      <re>1.96702273557661e-10</re>
+      <im>-5.28549842344866e-27</im>
+    </elem>
+    <elem>
+      <re>1.64817960495976e-09</re>
+      <im>2.73779348300952e-26</im>
+    </elem>
+    <elem>
+      <re>1.27352496216135e-08</re>
+      <im>-1.51614470415962e-25</im>
+    </elem>
+    <elem>
+      <re>1.01403866666814e-07</re>
+      <im>6.63313211165463e-25</im>
+    </elem>
+    <elem>
+      <re>9.58468344564853e-07</re>
+      <im>-2.22018694371754e-24</im>
+    </elem>
+    <elem>
+      <re>8.82538473489702e-06</re>
+      <im>-1.03256845511738e-23</im>
+    </elem>
+    <elem>
+      <re>0.000107372172626966</re>
+      <im>1.14694003325127e-21</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -3227,22 +3675,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3338,22 +3786,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3388,68 +3836,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0771318061668768</re>
-      <im>-6.0454495068438e-20</im>
+      <re>-0.0788859624493536</re>
+      <im>2.3403172740677e-20</im>
     </elem>
     <elem>
-      <re>-0.00155554271822346</re>
-      <im>-1.79250038740241e-21</im>
+      <re>-0.00143932234094228</re>
+      <im>-6.56144105066695e-22</im>
     </elem>
     <elem>
-      <re>-0.000156938758500571</re>
-      <im>-1.19941188820189e-22</im>
+      <re>-0.000118254957980025</re>
+      <im>2.29803624559529e-22</im>
     </elem>
     <elem>
-      <re>-2.4035129114323e-05</re>
-      <im>6.87593884184704e-24</im>
+      <re>-1.51958699443277e-05</re>
+      <im>3.04906808682549e-23</im>
     </elem>
     <elem>
-      <re>-4.21808111737813e-06</re>
-      <im>3.30872245021211e-24</im>
+      <re>-2.17779326591194e-06</re>
+      <im>1.69756941536997e-24</im>
     </elem>
     <elem>
-      <re>-6.76261517148629e-07</re>
-      <im>-6.61582931329033e-25</im>
+      <re>-3.16056723964735e-07</re>
+      <im>2.54562846702751e-25</im>
     </elem>
     <elem>
-      <re>-1.0670371279439e-07</re>
-      <im>8.39095567665486e-26</im>
+      <re>-4.75859268336469e-08</re>
+      <im>2.55335713805785e-26</im>
     </elem>
     <elem>
-      <re>-1.71552705780386e-08</re>
-      <im>-1.88064439804689e-26</im>
+      <re>-7.23584878378131e-09</re>
+      <im>6.77508371611759e-27</im>
     </elem>
     <elem>
-      <re>-4.1781786902359e-09</re>
-      <im>-2.9471843419057e-27</im>
+      <re>-1.12348540009091e-09</re>
+      <im>3.15026885342274e-28</im>
     </elem>
     <elem>
-      <re>-1.10764914306889e-08</re>
-      <im>1.33033503056471e-26</im>
+      <re>-1.72124183644826e-10</re>
+      <im>1.66712587999544e-28</im>
     </elem>
     <elem>
-      <re>-7.05938771863216e-08</re>
-      <im>1.13898892939431e-25</im>
+      <re>-2.67845397249132e-11</re>
+      <im>-3.97300674799324e-30</im>
     </elem>
     <elem>
-      <re>-4.69702585183925e-07</re>
-      <im>9.85508151674506e-26</im>
+      <re>-4.1728082695032e-12</re>
+      <im>7.0182087720545e-31</im>
     </elem>
     <elem>
-      <re>-3.26449050209417e-06</re>
-      <im>2.68833699079734e-24</im>
+      <re>-6.53149670622483e-13</re>
+      <im>4.34396711729539e-32</im>
     </elem>
     <elem>
-      <re>-2.15504582397906e-05</re>
-      <im>-2.34454004870499e-23</im>
+      <re>-1.02171712335028e-13</re>
+      <im>5.13257599909898e-33</im>
     </elem>
     <elem>
-      <re>-0.00015153726967759</re>
-      <im>-2.3367852304623e-23</im>
+      <re>-1.60741376239616e-14</re>
+      <im>1.43552942805289e-32</im>
     </elem>
     <elem>
-      <re>-0.00153989241677629</re>
-      <im>1.79994501291539e-21</im>
+      <re>-2.55915287718298e-15</re>
+      <im>7.37809904625255e-34</im>
+    </elem>
+    <elem>
+      <re>-7.81838781818948e-16</re>
+      <im>-3.27363073072599e-35</im>
+    </elem>
+    <elem>
+      <re>-2.49848712763497e-15</re>
+      <im>-1.77644169642413e-33</im>
+    </elem>
+    <elem>
+      <re>-1.56397220383134e-14</re>
+      <im>-1.88523741793033e-33</im>
+    </elem>
+    <elem>
+      <re>-9.96233283847171e-14</re>
+      <im>2.00388312088084e-32</im>
+    </elem>
+    <elem>
+      <re>-6.35428850939073e-13</re>
+      <im>-1.93932799940917e-31</im>
+    </elem>
+    <elem>
+      <re>-4.08670885404177e-12</re>
+      <im>4.28154199388329e-32</im>
+    </elem>
+    <elem>
+      <re>-2.650996744305e-11</re>
+      <im>1.90672517406918e-29</im>
+    </elem>
+    <elem>
+      <re>-1.7333718663334e-10</re>
+      <im>-7.72037995965388e-29</im>
+    </elem>
+    <elem>
+      <re>-1.1087280577373e-09</re>
+      <im>-1.12497601809306e-27</im>
+    </elem>
+    <elem>
+      <re>-7.27255874258511e-09</re>
+      <im>2.08018600980421e-27</im>
+    </elem>
+    <elem>
+      <re>-4.84879237731957e-08</re>
+      <im>1.64900706026408e-26</im>
+    </elem>
+    <elem>
+      <re>-3.22175298957264e-07</re>
+      <im>-1.43099142994975e-25</im>
+    </elem>
+    <elem>
+      <re>-2.23706300024165e-06</re>
+      <im>-1.69211864096485e-24</im>
+    </elem>
+    <elem>
+      <re>-1.62355870595981e-05</re>
+      <im>2.30832843005233e-23</im>
+    </elem>
+    <elem>
+      <re>-0.0001260821055653</re>
+      <im>-6.27251842560343e-23</im>
+    </elem>
+    <elem>
+      <re>-0.00144959386269094</re>
+      <im>1.21986133002312e-21</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -3534,22 +4046,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3645,22 +4157,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3695,68 +4207,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>0.0834668643370704</re>
-      <im>6.28169228978895e-20</im>
+      <re>0.0854891115085268</re>
+      <im>-2.45281376042846e-20</im>
     </elem>
     <elem>
-      <re>-5.52743511419109e-06</re>
-      <im>3.43279954209506e-22</im>
+      <re>-6.58268054244636e-06</re>
+      <im>1.23211359088166e-21</im>
     </elem>
     <elem>
-      <re>-2.62567186346955e-07</re>
-      <im>-1.15805285757424e-23</im>
+      <re>-3.4314566962665e-07</re>
+      <im>4.14283940153684e-23</im>
     </elem>
     <elem>
-      <re>-4.60358108136827e-08</re>
-      <im>3.262193540756e-23</im>
+      <re>-3.91534261026014e-08</re>
+      <im>1.98012005384086e-23</im>
     </elem>
     <elem>
-      <re>-6.6887461537337e-09</re>
-      <im>1.26662031297182e-24</im>
+      <re>-2.90030651840122e-09</re>
+      <im>2.27154403596129e-24</im>
     </elem>
     <elem>
-      <re>1.16983252163369e-09</re>
-      <im>5.65455496862421e-27</im>
+      <re>2.99752416864688e-11</re>
+      <im>-9.6320977636644e-26</im>
     </elem>
     <elem>
-      <re>1.42483355057427e-09</re>
-      <im>-8.77465762095436e-26</im>
+      <re>-3.62899810414235e-11</re>
+      <im>-5.43458210927769e-26</im>
     </elem>
     <elem>
-      <re>1.38576137644691e-09</re>
-      <im>2.90048377631662e-26</im>
+      <re>-1.55570551467404e-12</re>
+      <im>-5.71973178029589e-27</im>
     </elem>
     <elem>
-      <re>1.40000246863983e-09</re>
-      <im>1.53354559974965e-27</im>
+      <re>-8.84628178465473e-14</re>
+      <im>1.01196322327218e-27</im>
     </elem>
     <elem>
-      <re>1.38515729631151e-09</re>
-      <im>7.32062920045099e-28</im>
+      <re>-1.20026700645844e-13</re>
+      <im>1.28047173770023e-28</im>
     </elem>
     <elem>
-      <re>1.36254352460696e-09</re>
-      <im>-2.0073670138616e-25</im>
+      <re>4.84797986951998e-15</re>
+      <im>-3.39298445125796e-30</im>
     </elem>
     <elem>
-      <re>1.33365478222619e-09</re>
-      <im>-3.27964188180204e-25</im>
+      <re>-8.02721537528744e-16</re>
+      <im>-1.38528928053308e-30</im>
     </elem>
     <elem>
-      <re>-2.38175277849468e-09</re>
-      <im>-2.016252743098e-24</im>
+      <re>-4.06470375317093e-17</re>
+      <im>-1.18971368517623e-31</im>
     </elem>
     <elem>
-      <re>-6.7901185972595e-08</re>
-      <im>2.92356647749211e-23</im>
+      <re>-1.62845780676657e-16</re>
+      <im>4.03136959894612e-32</im>
     </elem>
     <elem>
-      <re>-6.48394712115744e-07</re>
-      <im>6.22453410946153e-23</im>
+      <re>-1.23953202550063e-16</re>
+      <im>-6.59839082228048e-33</im>
     </elem>
     <elem>
-      <re>-7.01346237718488e-06</re>
-      <im>-5.52556649185422e-22</im>
+      <re>-1.11289350535179e-16</re>
+      <im>-6.27837127564801e-34</im>
+    </elem>
+    <elem>
+      <re>-1.09991729121799e-16</re>
+      <im>-1.94342913360831e-34</im>
+    </elem>
+    <elem>
+      <re>-1.08414373204821e-16</re>
+      <im>6.7704005662532e-34</im>
+    </elem>
+    <elem>
+      <re>-1.02986250228799e-16</re>
+      <im>-1.04157927816378e-32</im>
+    </elem>
+    <elem>
+      <re>-8.91695375555532e-17</re>
+      <im>-1.27685600957748e-32</im>
+    </elem>
+    <elem>
+      <re>-1.08657503567634e-16</re>
+      <im>2.82175936689982e-32</im>
+    </elem>
+    <elem>
+      <re>-4.14882505022465e-16</re>
+      <im>4.84591071962781e-30</im>
+    </elem>
+    <elem>
+      <re>-1.67412974189611e-14</re>
+      <im>-1.28740600714637e-29</im>
+    </elem>
+    <elem>
+      <re>-1.3196780761026e-13</re>
+      <im>1.62988424054562e-28</im>
+    </elem>
+    <elem>
+      <re>-3.39352595694405e-13</re>
+      <im>-2.42114850920683e-28</im>
+    </elem>
+    <elem>
+      <re>-5.10343804645378e-14</re>
+      <im>-3.73015009832382e-27</im>
+    </elem>
+    <elem>
+      <re>-5.26191829372623e-11</re>
+      <im>-3.60579263974933e-26</im>
+    </elem>
+    <elem>
+      <re>-9.17706401591056e-11</re>
+      <im>-5.07365453181161e-26</im>
+    </elem>
+    <elem>
+      <re>-2.29996107753477e-09</re>
+      <im>-4.73328292622122e-24</im>
+    </elem>
+    <elem>
+      <re>-5.15554015655111e-08</re>
+      <im>4.85999514021619e-24</im>
+    </elem>
+    <elem>
+      <re>-6.7237687860665e-07</re>
+      <im>2.23647017098998e-22</im>
+    </elem>
+    <elem>
+      <re>-4.73380300996004e-06</re>
+      <im>-1.45877711967766e-21</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -3841,22 +4417,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -3952,22 +4528,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4002,68 +4578,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0785836262443829</re>
-      <im>-5.01867021248173e-20</im>
+      <re>-0.0807899964408099</re>
+      <im>4.2276877168019e-20</im>
     </elem>
     <elem>
-      <re>-0.00163738636492617</re>
-      <im>-8.23044709490263e-23</im>
+      <re>-0.00155769829464262</re>
+      <im>-1.56590835247421e-21</im>
     </elem>
     <elem>
-      <re>-0.000162702821545211</re>
-      <im>9.63665413624277e-23</im>
+      <re>-0.000128969513096366</re>
+      <im>1.42899282595435e-22</im>
     </elem>
     <elem>
-      <re>-2.46944253258348e-05</re>
-      <im>-1.7319094075329e-23</im>
+      <re>-1.64175544601731e-05</re>
+      <im>-1.63837759087147e-23</im>
     </elem>
     <elem>
-      <re>-4.32949969810303e-06</re>
-      <im>-2.33290782134096e-24</im>
+      <re>-2.32969224768489e-06</re>
+      <im>9.67976037504552e-25</im>
     </elem>
     <elem>
-      <re>-7.01632960488386e-07</re>
-      <im>8.92611891475679e-26</im>
+      <re>-3.35814417874881e-07</re>
+      <im>-4.92573185710982e-26</im>
     </elem>
     <elem>
-      <re>-1.10968266906339e-07</re>
-      <im>6.66429692730711e-26</im>
+      <re>-5.03011060720156e-08</re>
+      <im>-5.290750569918e-27</im>
     </elem>
     <elem>
-      <re>-1.7635473436171e-08</re>
-      <im>2.25929763255298e-26</im>
+      <re>-7.62027652050846e-09</re>
+      <im>-3.32974846780484e-27</im>
     </elem>
     <elem>
-      <re>-4.23219704694211e-09</re>
-      <im>-2.77679038637796e-28</im>
+      <re>-1.1771292466157e-09</re>
+      <im>4.64778039929251e-29</im>
     </elem>
     <elem>
-      <re>-1.12127551967319e-08</re>
-      <im>1.12081357413801e-26</im>
+      <re>-1.79460570460468e-10</re>
+      <im>1.13597154850463e-28</im>
     </elem>
     <elem>
-      <re>-7.15198391121998e-08</re>
-      <im>1.08799696048082e-26</im>
+      <re>-2.77439008149721e-11</re>
+      <im>1.82844472674236e-29</im>
     </elem>
     <elem>
-      <re>-4.79836967966493e-07</re>
-      <im>3.23117426778526e-27</im>
+      <re>-4.30594299924145e-12</re>
+      <im>-4.68621944601232e-31</im>
     </elem>
     <elem>
-      <re>-3.34821554314514e-06</re>
-      <im>-2.87574509832889e-24</im>
+      <re>-6.70895789354337e-13</re>
+      <im>4.13064500548033e-31</im>
     </elem>
     <elem>
-      <re>-2.2260680645686e-05</re>
-      <im>1.09472184192565e-23</im>
+      <re>-1.0436039182601e-13</re>
+      <im>4.97342378937668e-32</im>
     </elem>
     <elem>
-      <re>-0.000158401589105299</re>
-      <im>-8.73709522009135e-23</im>
+      <re>-1.63741458704961e-14</re>
+      <im>-2.32378618968368e-33</im>
     </elem>
     <elem>
-      <re>-0.00161466761677592</re>
-      <im>-2.14115701559351e-21</im>
+      <re>-2.59903564161182e-15</re>
+      <im>9.03876484330583e-34</im>
+    </elem>
+    <elem>
+      <re>-7.86471142763385e-16</re>
+      <im>1.15673189977973e-34</im>
+    </elem>
+    <elem>
+      <re>-2.51100526350351e-15</re>
+      <im>-4.7121229297272e-35</im>
+    </elem>
+    <elem>
+      <re>-1.57734389023814e-14</re>
+      <im>-8.60917248328769e-33</im>
+    </elem>
+    <elem>
+      <re>-1.0067597513223e-13</re>
+      <im>8.17542770210265e-32</im>
+    </elem>
+    <elem>
+      <re>-6.45209096858137e-13</re>
+      <im>4.05931975516068e-31</im>
+    </elem>
+    <elem>
+      <re>-4.16644023085202e-12</re>
+      <im>-1.83016525256713e-30</im>
+    </elem>
+    <elem>
+      <re>-2.70875254745558e-11</re>
+      <im>1.04706116459682e-29</im>
+    </elem>
+    <elem>
+      <re>-1.778596573805e-10</re>
+      <im>-7.32576263811867e-31</im>
+    </elem>
+    <elem>
+      <re>-1.14582996809619e-09</re>
+      <im>2.46251069164183e-28</im>
+    </elem>
+    <elem>
+      <re>-7.56964775988915e-09</re>
+      <im>-1.03002637617786e-26</im>
+    </elem>
+    <elem>
+      <re>-5.08033386061056e-08</re>
+      <im>-1.92168371205415e-26</im>
+    </elem>
+    <elem>
+      <re>-3.39855156946634e-07</re>
+      <im>-6.19131345923868e-26</im>
+    </elem>
+    <elem>
+      <re>-2.38100800687074e-06</re>
+      <im>-4.35992761039817e-24</im>
+    </elem>
+    <elem>
+      <re>-1.74612916939628e-05</re>
+      <im>1.0186615248484e-23</im>
+    </elem>
+    <elem>
+      <re>-0.000136826918039513</re>
+      <im>-1.2058097239108e-22</im>
+    </elem>
+    <elem>
+      <re>-0.00156565367086932</re>
+      <im>-9.0853293461357e-22</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -4148,22 +4788,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4259,22 +4899,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4309,68 +4949,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0791594281579996</re>
-      <im>-5.10999095210758e-20</im>
+      <re>-0.0809811044472008</re>
+      <im>2.20984824291751e-20</im>
     </elem>
     <elem>
-      <re>-0.00167533989278675</re>
-      <im>6.98967617607308e-23</im>
+      <re>-0.0015603437007409</re>
+      <im>-9.45547036286777e-22</im>
     </elem>
     <elem>
-      <re>-0.000167772167085191</re>
-      <im>-7.89957484988141e-23</im>
+      <re>-0.000129203288923172</re>
+      <im>-1.29770555064788e-22</im>
     </elem>
     <elem>
-      <re>-2.51679091809734e-05</re>
-      <im>-1.21492152468726e-24</im>
+      <re>-1.64328503533477e-05</re>
+      <im>4.57963256464469e-24</im>
     </elem>
     <elem>
-      <re>-4.43255120356921e-06</re>
-      <im>-3.90972086402017e-24</im>
+      <re>-2.32897855005048e-06</re>
+      <im>-5.84826550648266e-26</im>
     </elem>
     <elem>
-      <re>-7.15934006544382e-07</re>
-      <im>-6.74507628400174e-26</im>
+      <re>-3.35791235925022e-07</re>
+      <im>1.07071914027027e-25</im>
     </elem>
     <elem>
-      <re>-1.1441453807648e-07</re>
-      <im>1.32882041762669e-25</im>
+      <re>-5.03317049911787e-08</re>
+      <im>-2.29067797494516e-26</im>
     </elem>
     <elem>
-      <re>-1.81205000381569e-08</re>
-      <im>1.32023761097789e-26</im>
+      <re>-7.59679556663636e-09</re>
+      <im>-1.77484923471313e-27</im>
     </elem>
     <elem>
-      <re>-4.41860778907487e-09</re>
-      <im>4.40499929475413e-27</im>
+      <re>-1.17314342832025e-09</re>
+      <im>6.86001225065642e-28</im>
     </elem>
     <elem>
-      <re>-1.16155097859166e-08</re>
-      <im>-7.11868080871441e-27</im>
+      <re>-1.7959874631607e-10</re>
+      <im>9.21789993287775e-29</im>
     </elem>
     <elem>
-      <re>-7.33160152116397e-08</re>
-      <im>3.94556670355341e-26</im>
+      <re>-2.78483384741078e-11</re>
+      <im>-5.72685208943775e-30</im>
     </elem>
     <elem>
-      <re>-4.827184311733e-07</re>
-      <im>1.42171667782552e-25</im>
+      <re>-4.32074612465639e-12</re>
+      <im>4.36324940647002e-30</im>
     </elem>
     <elem>
-      <re>-3.38158031239719e-06</re>
-      <im>6.72084247699335e-25</im>
+      <re>-6.72204210412409e-13</re>
+      <im>-1.07474120370736e-31</im>
     </elem>
     <elem>
-      <re>-2.26597685283984e-05</re>
-      <im>-1.6401440583278e-23</im>
+      <re>-1.04831686227832e-13</re>
+      <im>6.34891276338734e-33</im>
     </elem>
     <elem>
-      <re>-0.000161642018059381</re>
-      <im>1.25421260378353e-22</im>
+      <re>-1.64133053567609e-14</re>
+      <im>-1.15349693588244e-32</im>
     </elem>
     <elem>
-      <re>-0.00165054118757211</re>
-      <im>-2.09483490129054e-21</im>
+      <re>-2.59737555704702e-15</re>
+      <im>9.06106029198137e-35</im>
+    </elem>
+    <elem>
+      <re>-7.84864512788579e-16</re>
+      <im>3.33503870197577e-34</im>
+    </elem>
+    <elem>
+      <re>-2.52508856840742e-15</re>
+      <im>-4.64647329214933e-34</im>
+    </elem>
+    <elem>
+      <re>-1.58787513675002e-14</re>
+      <im>-8.70042411231999e-33</im>
+    </elem>
+    <elem>
+      <re>-1.01489062662689e-13</re>
+      <im>-4.92722827106423e-32</im>
+    </elem>
+    <elem>
+      <re>-6.49990403504356e-13</re>
+      <im>2.0089076681685e-31</im>
+    </elem>
+    <elem>
+      <re>-4.20188701362071e-12</re>
+      <im>-2.06477462778212e-30</im>
+    </elem>
+    <elem>
+      <re>-2.73886329473317e-11</re>
+      <im>7.15789856535797e-30</im>
+    </elem>
+    <elem>
+      <re>-1.7962234232954e-10</re>
+      <im>4.1892875049597e-29</im>
+    </elem>
+    <elem>
+      <re>-1.15424755777958e-09</re>
+      <im>1.916965605754e-27</im>
+    </elem>
+    <elem>
+      <re>-7.64016340039432e-09</re>
+      <im>-5.54872707711796e-27</im>
+    </elem>
+    <elem>
+      <re>-5.12918282691015e-08</re>
+      <im>-7.69014372028038e-26</im>
+    </elem>
+    <elem>
+      <re>-3.43477797680956e-07</re>
+      <im>1.84725780090876e-26</im>
+    </elem>
+    <elem>
+      <re>-2.40855500867943e-06</re>
+      <im>-2.07682984461423e-24</im>
+    </elem>
+    <elem>
+      <re>-1.75295884152132e-05</re>
+      <im>1.63162574638549e-23</im>
+    </elem>
+    <elem>
+      <re>-0.000137322900564993</re>
+      <im>6.88552482831468e-23</im>
+    </elem>
+    <elem>
+      <re>-0.00157050084302796</re>
+      <im>-1.21575711871585e-21</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -4455,22 +5159,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4566,22 +5270,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4616,68 +5320,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0794375785153508</re>
-      <im>-6.16737592913412e-20</im>
+      <re>-0.080906234772904</re>
+      <im>2.41268100357626e-20</im>
     </elem>
     <elem>
-      <re>0.000143579658215629</re>
-      <im>-2.57997633055289e-21</im>
+      <re>0.000196239772552721</re>
+      <im>-2.61703728824527e-21</im>
     </elem>
     <elem>
-      <re>9.70188645139057e-06</re>
-      <im>3.30872245021211e-23</im>
+      <re>1.56461311633582e-05</re>
+      <im>1.22318088379707e-24</im>
     </elem>
     <elem>
-      <re>1.04681380002792e-06</re>
-      <im>-1.96455395481344e-23</im>
+      <re>1.78891198361672e-06</re>
+      <im>-3.14399788558728e-23</im>
     </elem>
     <elem>
-      <re>1.03864389674378e-07</re>
-      <im>-2.49446653473022e-24</im>
+      <re>2.13262024787224e-07</re>
+      <im>-2.03955698078276e-24</im>
     </elem>
     <elem>
-      <re>1.12110399870091e-08</re>
-      <im>8.15871502615779e-26</im>
+      <re>2.52024213754509e-08</re>
+      <im>4.60312393560966e-25</im>
     </elem>
     <elem>
-      <re>4.84530802328794e-10</re>
-      <im>4.51354655531254e-26</im>
+      <re>3.20334961596013e-09</re>
+      <im>-1.12263721937716e-26</im>
     </elem>
     <elem>
-      <re>-1.03423385784327e-09</re>
-      <im>-1.90336359211726e-26</im>
+      <re>4.39623882838831e-10</re>
+      <im>2.74013826732503e-27</im>
     </elem>
     <elem>
-      <re>-1.27944296241481e-09</re>
-      <im>-2.06366012805817e-27</im>
+      <re>6.38729541017709e-11</re>
+      <im>-1.04312846510343e-27</im>
     </elem>
     <elem>
-      <re>-1.37641865448303e-09</re>
-      <im>6.9419759659449e-27</im>
+      <re>8.72435435556789e-12</re>
+      <im>-9.51348456075642e-30</im>
     </elem>
     <elem>
-      <re>-1.46184551169951e-09</re>
-      <im>-8.48183245293632e-26</im>
+      <re>1.18459393240055e-12</re>
+      <im>2.36480182761561e-29</im>
     </elem>
     <elem>
-      <re>2.9174370605184e-09</re>
-      <im>6.33310156485912e-25</im>
+      <re>1.63108098277632e-13</re>
+      <im>-3.49598554581113e-30</im>
     </elem>
     <elem>
-      <re>9.42214404170655e-08</re>
-      <im>-2.60432645983492e-24</im>
+      <re>2.21666451964252e-14</re>
+      <im>9.85787231749031e-33</im>
     </elem>
     <elem>
-      <re>1.002925129342e-06</re>
-      <im>-1.18648719113075e-23</im>
+      <re>3.20882997015526e-15</re>
+      <im>5.05075357045116e-32</im>
     </elem>
     <elem>
-      <re>1.15319061479553e-05</re>
-      <im>5.08716076720112e-23</im>
+      <re>5.30130293558479e-16</re>
+      <im>5.58352866989415e-33</im>
     </elem>
     <elem>
-      <re>0.000148008525160507</re>
-      <im>8.60267837055149e-22</im>
+      <re>1.60690058615964e-16</re>
+      <im>1.4573847020207e-33</im>
+    </elem>
+    <elem>
+      <re>1.13760393078936e-16</re>
+      <im>-3.31440282116089e-35</im>
+    </elem>
+    <elem>
+      <re>1.49030733572195e-16</re>
+      <im>-4.16820688512798e-34</im>
+    </elem>
+    <elem>
+      <re>4.59582716929456e-16</re>
+      <im>1.1439459180082e-32</im>
+    </elem>
+    <elem>
+      <re>2.80094741120369e-15</re>
+      <im>-7.17186278970347e-33</im>
+    </elem>
+    <elem>
+      <re>1.85705277044789e-14</re>
+      <im>-1.56954336506684e-32</im>
+    </elem>
+    <elem>
+      <re>1.37235911645034e-13</re>
+      <im>-2.30015308946159e-30</im>
+    </elem>
+    <elem>
+      <re>1.02047038394849e-12</re>
+      <im>-6.90830793928908e-30</im>
+    </elem>
+    <elem>
+      <re>7.19653089575319e-12</re>
+      <im>7.74568271300518e-29</im>
+    </elem>
+    <elem>
+      <re>5.1351821264601e-11</re>
+      <im>2.16503384070786e-28</im>
+    </elem>
+    <elem>
+      <re>3.6911794593072e-10</re>
+      <im>8.34274850844561e-28</im>
+    </elem>
+    <elem>
+      <re>3.03582067953483e-09</re>
+      <im>6.1286053257098e-26</im>
+    </elem>
+    <elem>
+      <re>2.43240909522129e-08</re>
+      <im>8.65439478097174e-25</im>
+    </elem>
+    <elem>
+      <re>2.03241857101608e-07</re>
+      <im>1.88062532725536e-25</im>
+    </elem>
+    <elem>
+      <re>1.75725634913755e-06</re>
+      <im>-4.19065923750777e-25</im>
+    </elem>
+    <elem>
+      <re>1.59820104726281e-05</re>
+      <im>1.54663078055411e-23</im>
+    </elem>
+    <elem>
+      <re>0.000193828005226512</re>
+      <im>7.97556988586164e-22</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -4762,22 +5530,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4873,22 +5641,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -4923,68 +5691,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0794349134381963</re>
-      <im>3.18331286545986e-21</im>
+      <re>-0.0809041724923111</re>
+      <im>1.45350631244516e-20</im>
     </elem>
     <elem>
-      <re>-0.00168949402082055</re>
-      <im>6.04970461316254e-22</im>
+      <re>-0.00155555145990335</re>
+      <im>-6.42282031498833e-22</im>
     </elem>
     <elem>
-      <re>-0.00016967002295516</re>
-      <im>5.76711746457752e-23</im>
+      <re>-0.000128907490988938</re>
+      <im>7.60610627625273e-23</im>
     </elem>
     <elem>
-      <re>-2.54322883358438e-05</re>
-      <im>-1.15435080501615e-23</im>
+      <re>-1.63941235542904e-05</re>
+      <im>-5.39579147364167e-24</im>
     </elem>
     <elem>
-      <re>-4.36056015087462e-06</re>
-      <im>1.0891213950585e-25</im>
+      <re>-2.32252504373651e-06</re>
+      <im>4.15335702677967e-25</im>
     </elem>
     <elem>
-      <re>-6.94592000323289e-07</re>
-      <im>-5.63728104041846e-26</im>
+      <re>-3.36704942561016e-07</re>
+      <im>4.94235836049049e-26</im>
     </elem>
     <elem>
-      <re>-1.09497480593058e-07</re>
-      <im>1.08379389377268e-27</im>
+      <re>-5.03386822114315e-08</re>
+      <im>1.84039332728446e-27</im>
     </elem>
     <elem>
-      <re>-1.75668607624061e-08</re>
-      <im>8.33549771717809e-28</im>
+      <re>-7.60937460510325e-09</re>
+      <im>2.52931883455185e-27</im>
     </elem>
     <elem>
-      <re>-4.32357807772111e-09</re>
-      <im>-4.2928043714238e-28</im>
+      <re>-1.172886814698e-09</re>
+      <im>2.88393279534166e-28</im>
     </elem>
     <elem>
-      <re>-1.15328387802177e-08</re>
-      <im>-9.1408186391461e-28</im>
+      <re>-1.79538942057516e-10</re>
+      <im>-2.10328563036164e-29</im>
     </elem>
     <elem>
-      <re>-7.44316289840801e-08</re>
-      <im>-2.3518942651034e-26</im>
+      <re>-2.78039204628161e-11</re>
+      <im>3.35237754488121e-30</im>
     </elem>
     <elem>
-      <re>-5.00850825957421e-07</re>
-      <im>1.68729288944913e-25</im>
+      <re>-4.32155343711055e-12</re>
+      <im>8.1738640234413e-31</im>
     </elem>
     <elem>
-      <re>-3.4994127994386e-06</re>
-      <im>-1.00879551001218e-24</im>
+      <re>-6.7504698644164e-13</re>
+      <im>-4.90322933552308e-32</im>
     </elem>
     <elem>
-      <re>-2.32232504202058e-05</re>
-      <im>-2.45939393810239e-26</im>
+      <re>-1.05402786974311e-13</re>
+      <im>-3.61098303078541e-33</im>
     </elem>
     <elem>
-      <re>-0.000165194069118898</re>
-      <im>1.48271293588012e-23</im>
+      <re>-1.65484584950749e-14</re>
+      <im>5.80539335575949e-34</im>
     </elem>
     <elem>
-      <re>-0.00166798565591176</re>
-      <im>-6.81477665268182e-22</im>
+      <re>-2.62516046624331e-15</re>
+      <im>-1.86571830080401e-34</im>
+    </elem>
+    <elem>
+      <re>-7.92880377149378e-16</re>
+      <im>-1.51526008619031e-34</im>
+    </elem>
+    <elem>
+      <re>-2.52480718050963e-15</re>
+      <im>2.69789939452697e-34</im>
+    </elem>
+    <elem>
+      <re>-1.58016471250615e-14</re>
+      <im>-2.29969803275832e-33</im>
+    </elem>
+    <elem>
+      <re>-1.00851263594084e-13</re>
+      <im>1.0370719462697e-32</im>
+    </elem>
+    <elem>
+      <re>-6.46543341170585e-13</re>
+      <im>2.0382117428282e-32</im>
+    </elem>
+    <elem>
+      <re>-4.17418293250265e-12</re>
+      <im>6.37661857015578e-32</im>
+    </elem>
+    <elem>
+      <re>-2.72270006487878e-11</re>
+      <im>-2.52114583911789e-30</im>
+    </elem>
+    <elem>
+      <re>-1.79302658258912e-10</re>
+      <im>7.45815697864047e-30</im>
+    </elem>
+    <elem>
+      <re>-1.14999486287567e-09</re>
+      <im>3.70169976348657e-29</im>
+    </elem>
+    <elem>
+      <re>-7.57475675266346e-09</re>
+      <im>-5.96808878081204e-28</im>
+    </elem>
+    <elem>
+      <re>-5.09473412707527e-08</re>
+      <im>-8.80730683879594e-27</im>
+    </elem>
+    <elem>
+      <re>-3.41385148217039e-07</re>
+      <im>-5.17981744454783e-26</im>
+    </elem>
+    <elem>
+      <re>-2.38138070749968e-06</re>
+      <im>-4.8552241389832e-25</im>
+    </elem>
+    <elem>
+      <re>-1.73835367761554e-05</re>
+      <im>4.55496983008346e-24</im>
+    </elem>
+    <elem>
+      <re>-0.000136673218094241</re>
+      <im>7.67603876277768e-24</im>
+    </elem>
+    <elem>
+      <re>-0.00156786072297398</re>
+      <im>4.52251724318026e-23</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -5069,22 +5901,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -5180,22 +6012,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -5230,68 +6062,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0791617448768714</re>
-      <im>1.55457015600766e-19</im>
+      <re>-0.0809837234894596</re>
+      <im>-3.76007982940924e-20</im>
     </elem>
     <elem>
-      <re>0.000163333231853404</re>
-      <im>-3.08745163635418e-21</im>
+      <re>0.000186225902314552</re>
+      <im>1.76098537649018e-21</im>
     </elem>
     <elem>
-      <re>1.1809686197564e-05</re>
-      <im>-9.28510237590774e-23</im>
+      <re>1.51945016486268e-05</re>
+      <im>5.99152789911106e-23</im>
     </elem>
     <elem>
-      <re>1.13363796566623e-06</re>
-      <im>2.70643156669694e-23</im>
+      <re>1.7926751102844e-06</re>
+      <im>-4.91800668609585e-24</im>
     </elem>
     <elem>
-      <re>9.21646876405456e-08</re>
-      <im>-2.83050865857989e-24</im>
+      <re>2.14925237948515e-07</re>
+      <im>2.25208872654108e-25</im>
     </elem>
     <elem>
-      <re>9.43392917335912e-09</re>
-      <im>-1.72867823326512e-25</im>
+      <re>2.62108441935697e-08</re>
+      <im>9.52470303963836e-26</im>
     </elem>
     <elem>
-      <re>-1.73486932675563e-10</re>
-      <im>-1.43383358132971e-26</im>
+      <re>3.38147499640057e-09</re>
+      <im>8.97377779476149e-27</im>
     </elem>
     <elem>
-      <re>-1.10843405965669e-09</re>
-      <im>2.6505726415426e-27</im>
+      <re>4.37832394408557e-10</re>
+      <im>-4.47240718774475e-28</im>
     </elem>
     <elem>
-      <re>-1.22334255905785e-09</re>
-      <im>-5.11181866583216e-28</im>
+      <re>6.14964916971867e-11</re>
+      <im>4.58355026401466e-28</im>
     </elem>
     <elem>
-      <re>-1.07972930186186e-09</re>
-      <im>8.64591552122229e-28</im>
+      <re>8.40494917218392e-12</re>
+      <im>-2.65704995818978e-29</im>
     </elem>
     <elem>
-      <re>5.34563321159788e-10</re>
-      <im>7.00760919325929e-26</im>
+      <re>1.16842253327589e-12</re>
+      <im>2.68416837835213e-30</im>
     </elem>
     <elem>
-      <re>1.19263437954163e-08</re>
-      <im>2.41126379733475e-25</im>
+      <re>1.60385544142665e-13</re>
+      <im>-1.14998619761252e-30</im>
     </elem>
     <elem>
-      <re>1.56413918024535e-07</re>
-      <im>7.62557127197322e-25</im>
+      <re>2.25928617096671e-14</re>
+      <im>-1.32199548810156e-31</im>
     </elem>
     <elem>
-      <re>1.44233678357753e-06</re>
-      <im>1.29763958594256e-23</im>
+      <re>3.17728394185929e-15</re>
+      <im>4.86895931455933e-33</im>
     </elem>
     <elem>
-      <re>1.35655468256213e-05</re>
-      <im>-8.23044709490263e-23</im>
+      <re>4.63167863194121e-16</re>
+      <im>-1.50734418911772e-33</im>
     </elem>
     <elem>
-      <re>0.000160510224749634</re>
-      <im>2.72969602142499e-22</im>
+      <re>1.50914098542695e-16</re>
+      <im>5.69581135649087e-34</im>
+    </elem>
+    <elem>
+      <re>1.14839735142282e-16</re>
+      <im>-2.38818186234912e-34</im>
+    </elem>
+    <elem>
+      <re>1.54202023843458e-16</re>
+      <im>-8.81647845978504e-34</im>
+    </elem>
+    <elem>
+      <re>4.80282500904525e-16</re>
+      <im>-6.07288811608517e-33</im>
+    </elem>
+    <elem>
+      <re>2.90281386789357e-15</re>
+      <im>1.32194118393597e-32</im>
+    </elem>
+    <elem>
+      <re>2.03865726937622e-14</re>
+      <im>2.40721290501167e-31</im>
+    </elem>
+    <elem>
+      <re>1.44330977607216e-13</re>
+      <im>-1.07119911119194e-30</im>
+    </elem>
+    <elem>
+      <re>1.02061819451592e-12</re>
+      <im>5.01704747574139e-30</im>
+    </elem>
+    <elem>
+      <re>7.30497615173331e-12</re>
+      <im>3.9467124730916e-29</im>
+    </elem>
+    <elem>
+      <re>5.1308385133815e-11</re>
+      <im>-3.66829196732965e-28</im>
+    </elem>
+    <elem>
+      <re>4.00658324786084e-10</re>
+      <im>-4.55193422690598e-28</im>
+    </elem>
+    <elem>
+      <re>3.19203563191443e-09</re>
+      <im>-3.47994478649882e-27</im>
+    </elem>
+    <elem>
+      <re>2.42487087069867e-08</re>
+      <im>-2.47642371003194e-26</im>
+    </elem>
+    <elem>
+      <re>1.95244568251099e-07</re>
+      <im>9.55085259064483e-25</im>
+    </elem>
+    <elem>
+      <re>1.77167952119969e-06</re>
+      <im>1.63307683165834e-24</im>
+    </elem>
+    <elem>
+      <re>1.60555045861556e-05</re>
+      <im>-1.01637476564131e-22</im>
+    </elem>
+    <elem>
+      <re>0.000194212361784056</re>
+      <im>-6.94944294688472e-23</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -5376,22 +6272,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -5487,22 +6383,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -5537,68 +6433,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>-0.0785860080895703</re>
-      <im>1.49263087173969e-19</im>
+      <re>-0.0807920866619621</re>
+      <im>-4.23974203140397e-20</im>
     </elem>
     <elem>
-      <re>0.000195284574273688</re>
-      <im>-3.29672833133009e-21</im>
+      <re>0.00019352123772709</re>
+      <im>2.3878786465441e-21</im>
     </elem>
     <elem>
-      <re>1.55531548434705e-05</re>
-      <im>-1.03604371722267e-22</im>
+      <re>1.50953828361446e-05</re>
+      <im>4.83902152943339e-23</im>
     </elem>
     <elem>
-      <re>1.5150370387229e-06</re>
-      <im>2.33937016987653e-23</im>
+      <re>1.74873867425471e-06</re>
+      <im>4.7903543450121e-25</im>
     </elem>
     <elem>
-      <re>1.41859762855019e-07</re>
-      <im>-1.57681304267921e-24</im>
+      <re>2.09056118941393e-07</re>
+      <im>-2.86597017800581e-25</im>
     </elem>
     <elem>
-      <re>1.37509728350731e-08</re>
-      <im>-5.00832011506716e-25</im>
+      <re>2.43811610401209e-08</re>
+      <im>6.68672364880976e-26</im>
     </elem>
     <elem>
-      <re>-6.00708446004945e-11</re>
-      <im>2.32240650497066e-26</im>
+      <re>3.22090096290268e-09</re>
+      <im>1.31290724142812e-26</im>
     </elem>
     <elem>
-      <re>-1.07045431600108e-09</re>
-      <im>-1.08294825068741e-26</im>
+      <re>4.20381327987006e-10</re>
+      <im>8.50485800280215e-28</im>
     </elem>
     <elem>
-      <re>-1.20288158681595e-09</re>
-      <im>-1.05391816937527e-27</im>
+      <re>5.94573728644908e-11</re>
+      <im>2.7357380073599e-28</im>
     </elem>
     <elem>
-      <re>-1.0639201265567e-09</re>
-      <im>-2.24036497082767e-27</im>
+      <re>7.74549983733728e-12</re>
+      <im>1.97014830379313e-29</im>
     </elem>
     <elem>
-      <re>6.50014084851537e-10</re>
-      <im>1.75695100810824e-26</im>
+      <re>1.07670727771837e-12</re>
+      <im>2.46572520519391e-30</im>
     </elem>
     <elem>
-      <re>1.62436759579837e-08</re>
-      <im>2.14065295240774e-26</im>
+      <re>1.51056583003662e-13</re>
+      <im>-1.56808575207182e-30</im>
     </elem>
     <elem>
-      <re>1.96664297024076e-07</re>
-      <im>-5.68686671130207e-25</im>
+      <re>1.88770205767162e-14</re>
+      <im>-4.50682664334563e-32</im>
     </elem>
     <elem>
-      <re>1.76546388390427e-06</re>
-      <im>1.74741904401827e-23</im>
+      <re>2.61816102372117e-15</re>
+      <im>2.62047822024577e-32</im>
     </elem>
     <elem>
-      <re>1.66183112548356e-05</re>
-      <im>-9.92616735063633e-23</im>
+      <re>4.31058212553534e-16</re>
+      <im>-1.75499628284075e-33</im>
     </elem>
     <elem>
-      <re>0.000200353704189716</re>
-      <im>5.02925812432241e-22</im>
+      <re>1.42068304041582e-16</re>
+      <im>3.06293936780644e-34</im>
+    </elem>
+    <elem>
+      <re>1.15050055002931e-16</re>
+      <im>-1.969836767737e-34</im>
+    </elem>
+    <elem>
+      <re>1.62205218224576e-16</re>
+      <im>-8.56863971041607e-34</im>
+    </elem>
+    <elem>
+      <re>5.36020704095066e-16</re>
+      <im>-2.49464228467422e-33</im>
+    </elem>
+    <elem>
+      <re>3.05348093790529e-15</re>
+      <im>-1.25358684865123e-33</im>
+    </elem>
+    <elem>
+      <re>2.03879537613088e-14</re>
+      <im>2.69626294715756e-31</im>
+    </elem>
+    <elem>
+      <re>1.32465177315563e-13</re>
+      <im>-4.12947703613006e-31</im>
+    </elem>
+    <elem>
+      <re>9.78168209971966e-13</re>
+      <im>-6.73353727004128e-31</im>
+    </elem>
+    <elem>
+      <re>7.55323733060899e-12</re>
+      <im>5.436836412772e-29</im>
+    </elem>
+    <elem>
+      <re>5.57618058465131e-11</re>
+      <im>-2.83167777489886e-28</im>
+    </elem>
+    <elem>
+      <re>4.17193809267962e-10</re>
+      <im>7.98201321313564e-28</im>
+    </elem>
+    <elem>
+      <re>3.29545600201822e-09</re>
+      <im>-1.05594773883857e-26</im>
+    </elem>
+    <elem>
+      <re>2.56684962656763e-08</re>
+      <im>-7.24780549232345e-26</im>
+    </elem>
+    <elem>
+      <re>2.1766907941549e-07</re>
+      <im>1.29254062294216e-24</im>
+    </elem>
+    <elem>
+      <re>1.82882113239404e-06</re>
+      <im>-5.61829089827597e-24</im>
+    </elem>
+    <elem>
+      <re>1.67428493788149e-05</re>
+      <im>-1.08026760564804e-22</im>
+    </elem>
+    <elem>
+      <re>0.000197170620362176</re>
+      <im>-9.61883099164121e-22</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>
@@ -5683,22 +6643,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -5794,22 +6754,22 @@ Hadron spectrum input
       <MCControl>
         <RNG>
           <Seed>
-            <elem>1035</elem>
-            <elem>2109</elem>
-            <elem>173</elem>
-            <elem>1436</elem>
+            <elem>523</elem>
+            <elem>711</elem>
+            <elem>207</elem>
+            <elem>1006</elem>
           </Seed>
         </RNG>
-        <StartUpdateNum>130</StartUpdateNum>
+        <StartUpdateNum>400</StartUpdateNum>
         <NWarmUpUpdates>0</NWarmUpUpdates>
-        <NProductionUpdates>1000</NProductionUpdates>
-        <NUpdatesThisRun>100</NUpdatesThisRun>
-        <SaveInterval>10</SaveInterval>
-        <SavePrefix>quenched_test</SavePrefix>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>1000</NUpdatesThisRun>
+        <SaveInterval>50</SaveInterval>
+        <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
         <SaveVolfmt>SINGLEFILE</SaveVolfmt>
       </MCControl>
       <HBItr>
-        <nrow>4 4 4 16</nrow>
+        <nrow>16 16 16 32</nrow>
         <GaugeAction>
           <Name>WILSON_GAUGEACT</Name>
           <beta>6.0</beta>
@@ -5844,68 +6804,132 @@ Hadron spectrum input
 <Hadron2Pt>
   <ZeroMom>
     <elem>
-      <re>0.0834769807388891</re>
-      <im>1.81741344909147e-21</im>
+      <re>0.0854996991270839</re>
+      <im>-1.96079132272675e-20</im>
     </elem>
     <elem>
-      <re>0.00196179590126102</re>
-      <im>-6.36458735426956e-22</im>
+      <re>0.00186684024913291</re>
+      <im>5.05226637429032e-22</im>
     </elem>
     <elem>
-      <re>0.00019766652305856</re>
-      <im>-5.36184298152961e-23</im>
+      <re>0.000160674774624049</re>
+      <im>-7.15822735508653e-23</im>
     </elem>
     <elem>
-      <re>2.9201347931962e-05</re>
-      <im>1.26564594832451e-23</im>
+      <re>2.04626448534912e-05</re>
+      <im>5.90698012640537e-24</im>
     </elem>
     <elem>
-      <re>5.03557212235095e-06</re>
-      <im>-1.03912028080307e-25</im>
+      <re>2.8877116517663e-06</re>
+      <im>-4.49018957378877e-25</im>
     </elem>
     <elem>
-      <re>8.22715807907769e-07</re>
-      <im>9.19293605670017e-26</im>
+      <re>4.18087803522393e-07</re>
+      <im>-3.52912488304912e-26</im>
     </elem>
     <elem>
-      <re>1.32123127878003e-07</re>
-      <im>2.80011670464667e-27</im>
+      <re>6.25150457721272e-08</re>
+      <im>-5.21521839318845e-27</im>
     </elem>
     <elem>
-      <re>2.07871421568323e-08</re>
-      <im>6.68921118818828e-29</im>
+      <re>9.41828019233787e-09</re>
+      <im>-2.15945153755156e-27</im>
     </elem>
     <elem>
-      <re>5.13788753271765e-09</re>
-      <im>5.66013355795073e-28</im>
+      <re>1.44694156933747e-09</re>
+      <im>-3.13901936740688e-28</im>
     </elem>
     <elem>
-      <re>1.37022951105203e-08</re>
-      <im>1.83905881080891e-27</im>
+      <re>2.21882131278962e-10</re>
+      <im>3.01297659779441e-29</im>
     </elem>
     <elem>
-      <re>8.69073769325005e-08</re>
-      <im>3.2980113360079e-26</im>
+      <re>3.43199628532411e-11</re>
+      <im>-4.21343996865648e-30</im>
     </elem>
     <elem>
-      <re>5.78716765263152e-07</re>
-      <im>-1.93952224547488e-25</im>
+      <re>5.32460997281235e-12</re>
+      <im>-7.00636388734544e-31</im>
     </elem>
     <elem>
-      <re>4.02726988116363e-06</re>
-      <im>6.55414514348467e-25</im>
+      <re>8.32034133460415e-13</re>
+      <im>4.20995791565424e-32</im>
     </elem>
     <elem>
-      <re>2.69804672258729e-05</re>
-      <im>4.30026127450838e-24</im>
+      <re>1.30183883523915e-13</re>
+      <im>1.00779039070007e-33</im>
     </elem>
     <elem>
-      <re>0.000193397600435217</re>
-      <im>-6.59362091612373e-24</im>
+      <re>2.04099660816841e-14</re>
+      <im>-5.08170519799793e-35</im>
     </elem>
     <elem>
-      <re>0.00192399662525163</re>
-      <im>5.86710045325065e-22</im>
+      <re>3.23693683328787e-15</re>
+      <im>2.31568746653648e-34</im>
+    </elem>
+    <elem>
+      <re>9.72456827269962e-16</re>
+      <im>1.71372828017943e-34</im>
+    </elem>
+    <elem>
+      <re>3.11823976714186e-15</re>
+      <im>-2.75939630020074e-34</im>
+    </elem>
+    <elem>
+      <re>1.95396719148249e-14</re>
+      <im>2.18541925431634e-33</im>
+    </elem>
+    <elem>
+      <re>1.24857365607503e-13</re>
+      <im>-9.10642239510359e-33</im>
+    </elem>
+    <elem>
+      <re>8.00076363949834e-13</re>
+      <im>-2.1897765611398e-32</im>
+    </elem>
+    <elem>
+      <re>5.16117555395424e-12</re>
+      <im>-1.17250915629281e-31</im>
+    </elem>
+    <elem>
+      <re>3.36122766601154e-11</re>
+      <im>2.70474123100882e-30</im>
+    </elem>
+    <elem>
+      <re>2.2064239495632e-10</re>
+      <im>-4.89490166241904e-30</im>
+    </elem>
+    <elem>
+      <re>1.41964694564058e-09</re>
+      <im>-3.05647672412959e-29</im>
+    </elem>
+    <elem>
+      <re>9.37083490393098e-09</re>
+      <im>6.49806708071764e-28</im>
+    </elem>
+    <elem>
+      <re>6.30980415352126e-08</re>
+      <im>4.31911014199244e-27</im>
+    </elem>
+    <elem>
+      <re>4.23738634940043e-07</re>
+      <im>4.55065417422395e-26</im>
+    </elem>
+    <elem>
+      <re>2.96913219269859e-06</re>
+      <im>4.05175844096674e-25</im>
+    </elem>
+    <elem>
+      <re>2.16605903173117e-05</re>
+      <im>-1.66178333003996e-24</im>
+    </elem>
+    <elem>
+      <re>0.000169872769447396</re>
+      <im>-3.19088645577462e-24</im>
+    </elem>
+    <elem>
+      <re>0.00187837706179604</re>
+      <im>-6.14737546317499e-23</im>
     </elem>
   </ZeroMom>
 </Hadron2Pt>

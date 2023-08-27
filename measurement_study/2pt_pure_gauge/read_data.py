@@ -21,7 +21,7 @@ print(np.shape(data_list))
 from liblattice.preprocess import resampling as resam
 from liblattice.general import general_plot_funcs as gplt
 
-data_resam = resam.bootstrap(data_list, samp_times=20)
+data_resam = resam.bootstrap(data_list, samp_times=50)
 data_avg = gv.dataset.avg_data(data_resam, bstrap=True)
 
 print(data_avg)
@@ -34,5 +34,6 @@ y = [meff[i].mean for i in range(len(meff))]
 yerr = [meff[i].sdev for i in range(len(meff))]
 title = 'Effective mass for pure gauge theory'
 gplt.errorbar_plot(x, y, yerr, title, save=False, ylim=[0.5,4])
+
 
 # %%

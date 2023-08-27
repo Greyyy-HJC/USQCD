@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <purgaug> 
   <Cfg>
-    <!-- <cfg_type>SZINQIO</cfg_type> -->
-    <!-- <cfg_file>pure_gauge_S8_T16.lime1</cfg_file> -->
-    <cfg_type>WEAK_FIELD</cfg_type>
-    <cfg_file>dummy</cfg_file>
+    <cfg_type>SZINQIO</cfg_type>
+    <cfg_file>pure_gauge_S16_T32_beta6.lime1</cfg_file>
+    <!-- <cfg_type>WEAK_FIELD</cfg_type>
+    <cfg_file>dummy</cfg_file> -->
   </Cfg>
 
   <MCControl>
@@ -19,10 +19,11 @@
 
     <StartUpdateNum>0</StartUpdateNum>
     <NWarmUpUpdates>50</NWarmUpUpdates>  
-    <NProductionUpdates>1000</NProductionUpdates>
-    <NUpdatesThisRun>50</NUpdatesThisRun>
+    <NProductionUpdates>2000</NProductionUpdates>
+    <NUpdatesThisRun>1000</NUpdatesThisRun>
     <SaveInterval>50</SaveInterval>
-    <SavePrefix>../../config/pure_gauge/pure_gauge_S32_T32_beta6</SavePrefix>
+    <SavePrefix>../../config/pure_gauge/pure_gauge_S16_T32_beta6</SavePrefix>
+    <!-- <SavePrefix>pure_gauge_S16_T32_beta6</SavePrefix> -->
     <SaveVolfmt>SINGLEFILE</SaveVolfmt>
   </MCControl>
 
@@ -47,7 +48,7 @@
       <nOver>3</nOver>
       <NmaxHB>1</NmaxHB>
     </HBParams>
-    <nrow>16 16 16 16</nrow>
+    <nrow>16 16 16 32</nrow>
   </HBItr>
 
 </purgaug>

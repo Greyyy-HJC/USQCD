@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+
+<purgaug>
+  <Cfg>
+    <cfg_type>SZINQIO</cfg_type>
+    <cfg_file>pure_gauge_S16_T32_beta6.lime1</cfg_file>
+  </Cfg>
+  <MCControl>
+    <RNG>
+      <Seed>
+        <elem>1547</elem>
+        <elem>3294</elem>
+        <elem>1415</elem>
+        <elem>520</elem>
+      </Seed>
+    </RNG>
+    <StartUpdateNum>100</StartUpdateNum>
+    <NWarmUpUpdates>0</NWarmUpUpdates>
+    <NProductionUpdates>1000</NProductionUpdates>
+    <NUpdatesThisRun>100</NUpdatesThisRun>
+    <SaveInterval>100</SaveInterval>
+    <SavePrefix>pure_gauge_S16_T32_beta6</SavePrefix>
+    <SaveVolfmt>SINGLEFILE</SaveVolfmt>
+  </MCControl>
+<InlineMeasurements>
+</InlineMeasurements>
+  <HBItr>
+    <nrow>16 16 16 32</nrow><GaugeAction>
+       <Name>WILSON_GAUGEACT</Name>
+       <beta>6.0</beta>
+       <AnisoParam>
+         <anisoP>true</anisoP>
+         <t_dir>3</t_dir>
+         <xi_0>2.464</xi_0>
+         <nu>1.0</nu>
+       </AnisoParam>
+       <GaugeState>
+         <Name>SIMPLE_GAUGE_STATE</Name>
+         <GaugeBC>
+           <Name>PERIODIC_GAUGEBC</Name>
+         </GaugeBC>
+       </GaugeState>
+    </GaugeAction>
+
+    <HBParams>
+      <NmaxHB>1</NmaxHB>
+      <nOver>3</nOver>
+    </HBParams>
+  </HBItr>
+</purgaug>
