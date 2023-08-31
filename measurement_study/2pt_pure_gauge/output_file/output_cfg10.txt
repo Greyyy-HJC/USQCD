@@ -118,13 +118,13 @@ InlineMeasurements are:
     </InlineMeasurements>
 
 Lattice initialized:
-  problem size = 16 16 16 32
-  layout size = 8 16 16 32
+  problem size = 16 16 16 16
+  layout size = 8 16 16 16
   logical machine size = 1 1 1 1
-  subgrid size = 16 16 16 32
+  subgrid size = 16 16 16 16
   total number of nodes = 1
-  total volume = 131072
-  subgrid volume = 131072
+  total volume = 65536
+  subgrid volume = 65536
 Initializing QDPDefaultAllocator.
 Finished init of RNG
 Finished lattice layout
@@ -132,12 +132,12 @@ CHROMA: Attempt to read gauge field
 CHROMA: Gauge initialization: cfg_type = SZINQIO
 Reading Double Precision
 QIO_read_finished
-CHROMA: Gauge field successfully read: time= 0.214994 secs
-CHROMA: initial plaquette measurement time=0.228407 secs
+CHROMA: Gauge field successfully read: time= 0.091894 secs
+CHROMA: initial plaquette measurement time=0.04479 secs
 Read contraction list
 Finished reading correlators
 CHROMA: There are 4 measurements 
-CHROMA: parsing inline measurements time=0.009403 secs
+CHROMA: parsing inline measurements time=0.004146 secs
 CHROMA: Doing 4 measurements
 MAKE_SOURCE: propagator source constructor
 Source = SHELL_SOURCE
@@ -164,7 +164,7 @@ spin = 2
 spin = 3
 Attempt to update source
 Source successfully update
-MAKE_SOURCE: total time = 4.2312 secs
+MAKE_SOURCE: total time = 1.898449 secs
 MAKE_SOURCE: ran successfully
 PROPAGATOR: propagator calculation
 Snarf the source from a named buffer
@@ -174,76 +174,76 @@ Try the various factories
 Suitable factory found: compute the quark prop
 Calling quarkProp
 In quarkProp()
-  ... constructing linop  ...0.013343 sec
-  ... constructing invLinOp  ...0.013905 sec
-  ... constructing PrecFermActQprop  ...0 sec
-Creating qprop took 0.027306sec 
+  ... constructing linop  ...0.005969 sec
+  ... constructing invLinOp  ...0.006385 sec
+  ... constructing PrecFermActQprop  ...1e-06 sec
+Creating qprop took 0.012603sec 
 Entering quarkProp4
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.913345(s) Flops=13352042496 => 3411.92573003402 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3411.92573003402 Mflops = 3.41192573003402 Gflops = 0.00341192573003402 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.99860513226654e-13 Relative Rsd = 7.65572587228512e-13
-CG_SOLVER_TIME: 4.084986 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.582045(s) Flops=6676021248 => 4219.86811247468 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4219.86811247468 Mflops = 4.21986811247468 Gflops = 0.00421986811247468 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.58204385719173e-13 Relative Rsd = 6.82694580395944e-13
+CG_SOLVER_TIME: 1.650019 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.877448(s) Flops=13352042496 => 3443.51297451313 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3443.51297451313 Mflops = 3.44351297451313 Gflops = 0.00344351297451313 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.87542670854002e-13 Relative Rsd = 7.42146181434264e-13
-CG_SOLVER_TIME: 4.045549 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.63114(s) Flops=6676021248 => 4092.85606876173 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4092.85606876173 Mflops = 4.09285606876173 Gflops = 0.00409285606876173 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.55273373594501e-13 Relative Rsd = 6.77133655150272e-13
+CG_SOLVER_TIME: 1.701355 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.859373(s) Flops=13352042496 => 3459.64033432374 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3459.64033432374 Mflops = 3.45964033432374 Gflops = 0.00345964033432374 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.82941240539221e-13 Relative Rsd = 7.33178962609718e-13
-CG_SOLVER_TIME: 4.028896 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=2.018187(s) Flops=6676021248 => 3307.92996288253 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3307.92996288253 Mflops = 3.30792996288253 Gflops = 0.00330792996288253 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.43833770437515e-13 Relative Rsd = 6.553059119126e-13
+CG_SOLVER_TIME: 2.089544 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.869377(s) Flops=13352042496 => 3450.69567943367 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3450.69567943367 Mflops = 3.45069567943367 Gflops = 0.00345069567943367 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.93460494884441e-13 Relative Rsd = 7.53478844485051e-13
-CG_SOLVER_TIME: 4.038173 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.640825(s) Flops=6676021248 => 4068.69790989289 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4068.69790989289 Mflops = 4.06869790989289 Gflops = 0.00406869790989289 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.62265040735405e-13 Relative Rsd = 6.90459430394317e-13
+CG_SOLVER_TIME: 1.711775 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.848225(s) Flops=13352042496 => 3469.66263563071 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3469.66263563071 Mflops = 3.46966263563071 Gflops = 0.00346966263563071 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.45336386929053e-13 Relative Rsd = 6.562749205917e-13
-CG_SOLVER_TIME: 4.016801 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.637757(s) Flops=6676021248 => 4076.31977637708 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4076.31977637708 Mflops = 4.07631977637708 Gflops = 0.00407631977637708 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.61734426560273e-13 Relative Rsd = 6.89527879736887e-13
+CG_SOLVER_TIME: 1.709682 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.862611(s) Flops=13352042496 => 3456.7401418367 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3456.7401418367 Mflops = 3.4567401418367 Gflops = 0.0034567401418367 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.28869112504722e-13 Relative Rsd = 6.20802174693797e-13
-CG_SOLVER_TIME: 4.031003 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.633717(s) Flops=6676021248 => 4086.40006072043 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4086.40006072043 Mflops = 4.08640006072043 Gflops = 0.00408640006072043 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.31374080360627e-13 Relative Rsd = 6.31502102014248e-13
+CG_SOLVER_TIME: 1.782757 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.863812(s) Flops=13352042496 => 3455.66567317457 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3455.66567317457 Mflops = 3.45566567317457 Gflops = 0.00345566567317458 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.53741195306175e-13 Relative Rsd = 6.72247361258421e-13
-CG_SOLVER_TIME: 4.032831 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.633875(s) Flops=6676021248 => 4086.00489511132 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4086.00489511132 Mflops = 4.08600489511132 Gflops = 0.00408600489511132 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.50855564791202e-13 Relative Rsd = 6.68790902720606e-13
+CG_SOLVER_TIME: 1.704445 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=4.016385(s) Flops=13352042496 => 3324.39307885076 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3324.39307885076 Mflops = 3.32439307885076 Gflops = 0.00332439307885076 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.27652314838417e-13 Relative Rsd = 6.18505240720122e-13
-CG_SOLVER_TIME: 4.186892 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.846281(s) Flops=6676021248 => 3615.92912888125 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3615.92912888125 Mflops = 3.61592912888125 Gflops = 0.00361592912888125 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.25549552377828e-13 Relative Rsd = 6.20402254795129e-13
+CG_SOLVER_TIME: 1.916872 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.827934(s) Flops=13352042496 => 3488.0545213162 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3488.0545213162 Mflops = 3.4880545213162 Gflops = 0.0034880545213162 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.83711906288403e-13 Relative Rsd = 7.35614343072269e-13
-CG_SOLVER_TIME: 3.994665 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.652426(s) Flops=6676021248 => 4040.13326345628 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4040.13326345628 Mflops = 4.04013326345628 Gflops = 0.00404013326345628 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.08838971913202e-13 Relative Rsd = 5.85920705135136e-13
+CG_SOLVER_TIME: 1.723047 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.817786(s) Flops=13352042496 => 3497.32606699275 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3497.32606699275 Mflops = 3.49732606699275 Gflops = 0.00349732606699275 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.62701299202861e-13 Relative Rsd = 6.99288173442776e-13
-CG_SOLVER_TIME: 3.985669 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.690188(s) Flops=6676021248 => 3949.86903705387 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3949.86903705387 Mflops = 3.94986903705387 Gflops = 0.00394986903705387 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.39941524569775e-13 Relative Rsd = 6.44444389724108e-13
+CG_SOLVER_TIME: 1.762851 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.829(s) Flops=13352042496 => 3487.08344110734 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3487.08344110734 Mflops = 3.48708344110734 Gflops = 0.00348708344110734 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.67086111817534e-13 Relative Rsd = 7.03741021767115e-13
-CG_SOLVER_TIME: 3.99669 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.807676(s) Flops=6676021248 => 3693.15145413227 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3693.15145413227 Mflops = 3.69315145413227 Gflops = 0.00369315145413227 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.13382730262516e-13 Relative Rsd = 5.9454099706106e-13
+CG_SOLVER_TIME: 1.878596 sec
 InvCG2: starting
-QDP:FlopCount:invcg2 Performance/CPU: t=3.816128(s) Flops=13352042496 => 3498.84555654318 Mflops/cpu.
-QDP:FlopCount:invcg2 Total performance:  3498.84555654318 Mflops = 3.49884555654318 Gflops = 0.00349884555654318 Tflops
-CG_SOLVER: 35 iterations. Rsd = 3.7329457828228e-13 Relative Rsd = 7.19712017510875e-13
-CG_SOLVER_TIME: 3.983842 sec
+QDP:FlopCount:invcg2 Performance/CPU: t=1.63917(s) Flops=6676021248 => 4072.80590054723 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4072.80590054723 Mflops = 4.07280590054723 Gflops = 0.00407280590054723 Tflops
+CG_SOLVER: 35 iterations. Rsd = 3.28772688425371e-13 Relative Rsd = 6.23271060569578e-13
+CG_SOLVER_TIME: 1.710463 sec
 Exiting quarkProp4
-Propagator computed: time= 51.344417 secs
+Propagator computed: time= 22.623356 secs
 Start writing propagator info
 Propagator successfully updated
-PROPAGATOR: total time = 51.598294 secs
+PROPAGATOR: total time = 22.68481 secs
 PROPAGATOR: ran successfully
 SINK_SMEAR: Sink smearing for propagators
 Attempt to read forward propagator
@@ -268,16 +268,16 @@ APE Smear gauge field
 Gauge field APE-smeared!
 Point sink
 Sink successfully updated
-SINK_SMEAR: total time = 0.803505 secs
+SINK_SMEAR: total time = 0.228829 secs
 SINK_SMEAR: ran successfully
 HADRON_CONTRACT: hadron contracts and spectroscopy for any type of fermion
-    Volume: 16 x 16 x 16 x 32
+    Volume: 16 x 16 x 16 x 16
 Contractions for id = diagonal_gamma_mesons
 HADRON_CONTRACT: start list
 Hadron2Pt: diagonal_gamma_mesons
 HADRON_CONTRACT: finished list
-HADRON_CONTRACT: total time = 1.325963 secs
+HADRON_CONTRACT: total time = 0.538282 secs
 HADRON_CONTRACT: ran successfully
-CHROMA: measurements: time= 57.985545 secs
-CHROMA: total time = 58.476097 secs
+CHROMA: measurements: time= 25.360195 secs
+CHROMA: total time = 25.532643 secs
 CHROMA: ran successfully

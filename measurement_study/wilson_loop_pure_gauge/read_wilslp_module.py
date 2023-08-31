@@ -22,7 +22,7 @@ def find_which_line(file_path, str_to_find):
     return matching_lines
 
 
-def extract_data(file_path, start_line, end_line):
+def extract_data(file_path, start_line, end_line, Ns, Nt):
     with open(file_path, 'r') as file:
         content = file.readlines()
 
@@ -39,12 +39,12 @@ def extract_data(file_path, start_line, end_line):
                 numbers = match.group(1).split()
                 matches.extend(numbers)
 
-    matches = np.array([float(match) for match in matches]).reshape(8, 8)
+    matches = np.array([float(match) for match in matches]).reshape(int(Ns), int(Nt/2))
 
     return matches
 
 
-def read_wilslp(file_path):
+def read_wilslp(file_path, Ns, Nt):
     #* firstly find out the line number of the line start to search and the line end to search
     str_to_start = '<wloop2>' #! wloop2 is the time like loops
     matching_lines = find_which_line(file_path, str_to_start)
@@ -61,9 +61,9 @@ def read_wilslp(file_path):
 
 
     #* secondly find out the string between start_string and end_string, which is the data we want
-    wloop1 = extract_data(file_path, start_line, end_line)
+    wloop = extract_data(file_path, start_line, end_line, Ns, Nt)
 
-    return wloop1
+    return wloop
 
 
 #! Usage: read the file at "file_path" and get the 2pt data for gamma_value = "gamma_val"

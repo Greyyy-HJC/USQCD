@@ -18,18 +18,18 @@ done
 
 
 # generate the ini.xml files
-for conf_num in {1..10}
+for conf_num in {1..1024..64}
 do
-    ini_xml=pure_gauge_wilslp_cfg${conf_num}.ini.xml
+    ini_xml=pure_gauge_S16_T16_wilslp_cfg${conf_num}.ini.xml
     ./pure_gauge_wilslp.pl ${conf_num} > ${ini_folder}/${ini_xml}
 done
 
 
 # run the Chroma program
-for conf_num in {1..10}
+for conf_num in {1..1024..64}
 do
-    ini_xml=pure_gauge_wilslp_cfg${conf_num}.ini.xml
-    out_xml=pure_gauge_wilslp_cfg${conf_num}.out.xml
+    ini_xml=pure_gauge_S16_T16_wilslp_cfg${conf_num}.ini.xml
+    out_xml=pure_gauge_S16_T16_wilslp_cfg${conf_num}.out.xml
     output_txt=output_cfg${conf_num}.txt
 
     ./chroma_double -i ${ini_folder}/${ini_xml} -o ${out_folder}/${out_xml} > ${output_folder}/${output_txt}

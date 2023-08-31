@@ -15,10 +15,10 @@ $conf_num=$ARGV[0];
 ## ================= CONFIGURATION INFO ================== ##
 ## ======================================================= ##
 $ns=16;
-$nt=32;
+$nt=16;
 
 $cfg_type="SZINQIO";
-$cfg_file="../../config/pure_gauge/pure_gauge_S16_T32_beta6.lime${conf_num}";
+$cfg_file="../../config/pure_gauge/pure_gauge_S16_T16_beta6.lime${conf_num}";
 # $cfg_file="../../config/pure_gauge_minhuan/quenched_test.lime${conf_num}"; #* use minhuan's config
 $output_file="output_file/zero_mom_2pt.lime${conf_num}";
 

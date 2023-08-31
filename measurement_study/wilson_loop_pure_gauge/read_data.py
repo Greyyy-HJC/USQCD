@@ -2,15 +2,16 @@
 #! read the 2pt real part from out.xml file and plot the effective mass
 
 import gvar as gv
+import lsqfit as lsf
 from read_wilslp_module import *
 
 data_list = []
 
-for conf_num in range(1, 11):
-    file_path = 'out_xml/pure_gauge_wilslp_cfg{}.out.xml'.format(conf_num)
+for conf_num in range(1, 1024, 64):
+    file_path = 'out_xml/pure_gauge_S16_T16_wilslp_cfg{}.out.xml'.format(conf_num)
 
-    data_list.append([])
-    data_list[conf_num - 1] = read_wilslp(file_path)
+    temp = read_wilslp(file_path, Ns=16, Nt=16)
+    data_list.append(temp)
 
 print(np.shape(data_list))
 
@@ -51,6 +52,7 @@ plt.show()
 
 # %%
 #! plot the linear potential aV(nz*a)
+
 data_V = []
 for i in range(8):
     potential = [np.log( data_avg[i][j] / data_avg[i][j + 1] ) for j in range(7)]
@@ -70,62 +72,13 @@ gplt.errorbar_ls_plot(x_ls, y_ls, yerr_ls, label_ls, title, save=False, head=ax)
 plt.xlabel('Lt')
 plt.show()
 
-#! take Lt = 3, 4, 5 to average to get the aV
-avg_V = [ np.sum(data_V[i][2:5]) / 3 for i in range(8) ]
+#! take Lt = {...} to average to get the aV
+avg_V = [ np.sum(data_V[i][4:8]) / 4 for i in range(8) ]
 print(avg_V)
-
-
-fit_V = []
-for i in range(8):
-    priors = gv.BufferDict()
-    priors['C'] = gv.gvar(1, 5)
-    priors['V'] = gv.gvar(1, 5)
-
-    def fcn_V(x, p):
-        nt = x
-        return p['C'] * np.exp(- p['V'] * nt)
-
-    data_t = np.arange(3, 8)
-    data_y = data_V[i][2:7]
-
-    fit_res = lsf.nonlinear_fit(data=(data_t, data_y), fcn=fcn_V, prior=priors)
-    print(fit_res)
-
-    fit_V.append(fit_res.p['V'])
-
-print(fit_V)
 
 
 # %%
 #! fit aV to get the lattice spacing a
-import lsqfit as lsf
-
-priors = gv.BufferDict()
-priors['a'] = gv.gvar(0.1, 0.5)
-priors['A'] = gv.gvar(1, 5)
-priors['B'] = gv.gvar(1, 5)
-
-
-def fcn(x, p):
-    nz = x
-
-    val = p['A'] * p['a'] + p['B'] / nz + 4 * p['a']**2 * ( 1.65 + p['B'] ) * nz
-
-    return val
-
-
-data_x = np.arange(4, 9)
-data_y = avg_V[3:]
-
-fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
-
-print(fit_res.format(100))
-
-
-# %%
-#! use fit V
-
-import lsqfit as lsf
 
 priors = gv.BufferDict()
 priors['a'] = gv.gvar(0.1, 0.5)
@@ -142,9 +95,59 @@ def fcn(x, p):
 
 
 data_x = np.arange(1, 9)
-data_y = fit_V
+data_y = avg_V[:]
 
 fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
 
 print(fit_res.format(100))
+
+
+# %%
+#! fit to get aV
+if False:
+    fit_V = []
+    for i in range(8):
+        priors = gv.BufferDict()
+        priors['C'] = gv.gvar(1, 5)
+        priors['V'] = gv.gvar(1, 5)
+
+        def fcn_V(x, p):
+            nt = x
+            return p['C'] * np.exp(- p['V'] * nt)
+
+        data_t = np.arange(4, 8)
+        data_y = data_V[i][3:7]
+
+        fit_res = lsf.nonlinear_fit(data=(data_t, data_y), fcn=fcn_V, prior=priors)
+        print(fit_res)
+
+        fit_V.append(fit_res.p['V'])
+
+    print(fit_V)
+
+
+
+
+#! use fit V
+if False:
+    priors = gv.BufferDict()
+    priors['a'] = gv.gvar(0.1, 0.5)
+    priors['A'] = gv.gvar(1, 5)
+    priors['B'] = gv.gvar(1, 5)
+
+
+    def fcn(x, p):
+        nz = x
+
+        val = p['A'] * p['a'] + p['B'] / nz + 4 * p['a']**2 * ( 1.65 + p['B'] ) * nz
+
+        return val
+
+
+    data_x = np.arange(1, 9)
+    data_y = fit_V
+
+    fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
+
+    print(fit_res.format(100))
 # %%
