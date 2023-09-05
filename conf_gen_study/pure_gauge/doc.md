@@ -12,8 +12,31 @@ Suppose we have the input file "ini.xml", in which we named the configuration as
 For now, 16^4 is the possible volumn on this machine.
 
 
+The index to start with
+```
+    <StartUpdateNum>0</StartUpdateNum>
+```
+How many times to update in the warm up stage
+```
+    <NWarmUpUpdates>10</NWarmUpUpdates>  
+```
+How many times to update in the production stage (upper limit)
+```
+    <NProductionUpdates>1000</NProductionUpdates>
+```
+How many times to update in this run, should be less than the production stage
+```
+    <NUpdatesThisRun>50</NUpdatesThisRun>
+```
+The interval to save the configuration
+```
+    <SaveInterval>50</SaveInterval>
+```
+
 
 ## XML output
+
+measurement results will be stored here. 
 
 
 ## Configuration file

@@ -1,0 +1,1509 @@
+QDP use OpenMP threading. We have 16 threads
+Affinity reporting not implemented for this architecture
+Initialize done
+Linkage = bool Chroma::MapObjectDiskEnv::registerAll(): registering map obj key colorvec
+0
+Monomials xml is:
+<Monomials>
+      <elem>
+        <Name>TWO_FLAVOR_EOPREC_CONSTDET_FERM_MONOMIAL</Name>
+        <InvertParam>
+          <invType>CG_INVERTER</invType>
+          <RsdCG>1.0e-7</RsdCG>
+          <MaxCG>1000</MaxCG>
+        </InvertParam>
+        <FermionAction>
+          <FermAct>WILSON</FermAct>
+          <Kappa>0.11</Kappa>
+          <FermionBC>
+            <FermBC>SIMPLE_FERMBC</FermBC>
+            <boundary>1 1 1 -1</boundary>
+          </FermionBC>
+        </FermionAction>
+        <ChronologicalPredictor>
+          <Name>LAST_SOLUTION_4D_PREDICTOR</Name>
+        </ChronologicalPredictor>
+        <NamedObject>
+          <monomial_id>wilson_two_flav</monomial_id>
+        </NamedObject>
+      </elem>
+      <elem>
+        <Name>GAUGE_MONOMIAL</Name>
+        <GaugeAction>
+          <Name>WILSON_GAUGEACT</Name>
+          <beta>5.7</beta>
+          <GaugeBC>
+            <Name>PERIODIC_GAUGEBC</Name>
+          </GaugeBC>
+        </GaugeAction>
+        <NamedObject>
+          <monomial_id>gauge</monomial_id>
+        </NamedObject>
+      </elem>
+    </Monomials>
+
+HMC_xml is: 
+<Hamiltonian>
+      <monomial_ids>
+        <elem>wilson_two_flav</elem>
+        <elem>gauge</elem>
+      </monomial_ids>
+    </Hamiltonian>
+Integrator XML is: 
+<MDIntegrator>
+      <tau0>0.5</tau0>
+      <Integrator>
+        <Name>LCM_STS_LEAPFROG</Name>
+        <n_steps>25</n_steps>
+        <monomial_ids>
+          <elem>wilson_two_flav</elem>
+          <elem>gauge</elem>
+        </monomial_ids>
+      </Integrator>
+    </MDIntegrator>
+
+Setting serial write mode for saving configurations
+InlineMeasurements are: 
+<InlineMeasurements>
+      <elem>
+        <Name>POLYAKOV_LOOP</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>2</version>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+        </NamedObject>
+      </elem>
+    </InlineMeasurements>
+
+Call QDP create layout
+Lattice initialized:
+  problem size = 4 4 4 4
+  layout size = 2 4 4 4
+  logical machine size = 1 1 1 1
+  subgrid size = 4 4 4 4
+  total number of nodes = 1
+  total volume = 256
+  subgrid volume = 256
+Initializing QDPDefaultAllocator.
+Finished init of RNG
+Finished lattice layout
+Finished with QDP create layout
+Initialize gauge field
+Gauge initialization: cfg_type = WEAK_FIELD
+Starting up a weak field config
+Gauge field successfully initialized: time= 0.00052 secs
+Gauge field reunitarization found 0 unitarity violations
+Gauge field reunitarized: time=0.000201 secs
+TwoFlavorWilsonTypeFermMonomialParams: read 
+WILSON
+EvanOddPrecConstDetTwoFlavorWilsonTypeFermMonomial: construct WILSON
+Read Monomial with monomial id: wilson_two_flav
+Create monomial: GAUGE_MONOMIAL
+GaugeMonomialParams: read 
+<GaugeAction>
+      <Name>WILSON_GAUGEACT</Name>
+      <beta>5.7</beta>
+      <GaugeBC>
+        <Name>PERIODIC_GAUGEBC</Name>
+      </GaugeBC>
+    </GaugeAction>
+
+GaugeBC Callback: Creating PeriodicGaugeBC 
+Read Monomial with monomial id: gauge
+ExactHamiltonian::create(): Trying to bind monomial with ID wilson_two_flav
+ExactHamiltonian::create(): Trying to bind monomial with ID gauge
+Binding Monomials
+There are 2 IDs to bind 
+Monomial with ID = wilson_two_flav bound
+Monomial with ID = gauge bound
+All monomials successfully bound
+<InlineMeasurements>
+      <elem>
+        <Name>POLYAKOV_LOOP</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>2</version>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+        </NamedObject>
+      </elem>
+    </InlineMeasurements>
+
+There are 1 user measurements 
+Setting Force monitoring to 1
+MC Control: About to do 2 updates
+Doing Update: 1 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.000189 
+TwoFlavWilson4DMonomial: resetting Predictor after field refresh
+HMC_TIME: Pseudofermion Refres Time: 0.00031 
+TwoFlavWilson4DMonomial: resetting Predictor before energy calc solve
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00335(s) Flops=13753344 => 4105.47582089552 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4105.47582089552 Mflops = 4.10547582089552 Gflops = 0.00410547582089552 Tflops
+CG_SOLVER: 18 iterations. Rsd = 1.1485400811628e-05 Relative Rsd = 6.2710631847769e-08
+CG_SOLVER_TIME: 0.003916 sec
+2Flav::invert,  n_count = 18
+HMC_TIME: Start Energy Time: 0.00435 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+LastSolution4DChronoPredictor: No available last guess. Giving you zero
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.005475(s) Flops=13753344 => 2512.02630136986 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  2512.02630136986 Mflops = 2.51202630136986 Gflops = 0.00251202630136986 Tflops
+CG_SOLVER: 18 iterations. Rsd = 1.14854008103975e-05 Relative Rsd = 6.27106318410502e-08
+CG_SOLVER_TIME: 0.006013 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 18
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.007205
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002446(s) Flops=10128384 => 4140.79476696648 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4140.79476696648 Mflops = 4.14079476696648 Gflops = 0.00414079476696648 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.57694943820036e-05 Relative Rsd = 8.61019108374598e-08
+CG_SOLVER_TIME: 0.002994 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004177
+Monitoring force
+FORCE TIME: gauge : 0.000495
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002464(s) Flops=10128384 => 4110.54545454545 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4110.54545454545 Mflops = 4.11054545454545 Gflops = 0.00411054545454545 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.57929797527753e-05 Relative Rsd = 8.62301416640921e-08
+CG_SOLVER_TIME: 0.003017 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.0042
+Monitoring force
+FORCE TIME: gauge : 0.000543
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002466(s) Flops=10128384 => 4107.21167883212 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4107.21167883212 Mflops = 4.10721167883212 Gflops = 0.00410721167883212 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.59263832518894e-05 Relative Rsd = 8.69585287580519e-08
+CG_SOLVER_TIME: 0.003018 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004192
+Monitoring force
+FORCE TIME: gauge : 0.00049
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002473(s) Flops=10128384 => 4095.58592802264 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4095.58592802264 Mflops = 4.09558592802264 Gflops = 0.00409558592802264 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.61176005530578e-05 Relative Rsd = 8.80025809398751e-08
+CG_SOLVER_TIME: 0.003025 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004208
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002469(s) Flops=10128384 => 4102.22114216282 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4102.22114216282 Mflops = 4.10222114216282 Gflops = 0.00410222114216282 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.63130643664366e-05 Relative Rsd = 8.90698192053392e-08
+CG_SOLVER_TIME: 0.003032 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004243
+Monitoring force
+FORCE TIME: gauge : 0.000493
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002461(s) Flops=10128384 => 4115.5562779358 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4115.5562779358 Mflops = 4.1155562779358 Gflops = 0.0041155562779358 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.64815556391883e-05 Relative Rsd = 8.99897865924937e-08
+CG_SOLVER_TIME: 0.003024 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.0042
+Monitoring force
+FORCE TIME: gauge : 0.000498
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002457(s) Flops=10128384 => 4122.25641025641 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4122.25641025641 Mflops = 4.12225641025641 Gflops = 0.00412225641025641 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.66214558788672e-05 Relative Rsd = 9.07536460841916e-08
+CG_SOLVER_TIME: 0.003015 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004197
+Monitoring force
+FORCE TIME: gauge : 0.000495
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002435(s) Flops=10128384 => 4159.50061601643 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4159.50061601643 Mflops = 4.15950061601643 Gflops = 0.00415950061601643 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.67452711579478e-05 Relative Rsd = 9.14296812100787e-08
+CG_SOLVER_TIME: 0.002994 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004187
+Monitoring force
+FORCE TIME: gauge : 0.000535
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002457(s) Flops=10128384 => 4122.25641025641 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4122.25641025641 Mflops = 4.12225641025641 Gflops = 0.00412225641025641 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.6857642279881e-05 Relative Rsd = 9.20432308957578e-08
+CG_SOLVER_TIME: 0.003014 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004232
+Monitoring force
+FORCE TIME: gauge : 0.000499
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002456(s) Flops=10128384 => 4123.9348534202 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4123.9348534202 Mflops = 4.1239348534202 Gflops = 0.00412393485342019 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.69459739408973e-05 Relative Rsd = 9.2525524406045e-08
+CG_SOLVER_TIME: 0.003015 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004189
+Monitoring force
+FORCE TIME: gauge : 0.000495
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002441(s) Flops=10128384 => 4149.27652601393 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4149.27652601393 Mflops = 4.14927652601393 Gflops = 0.00414927652601393 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.69867168475197e-05 Relative Rsd = 9.27479818944257e-08
+CG_SOLVER_TIME: 0.003002 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004185
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002453(s) Flops=10128384 => 4128.97839380351 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4128.97839380351 Mflops = 4.12897839380351 Gflops = 0.00412897839380351 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.69575558044748e-05 Relative Rsd = 9.25887617274784e-08
+CG_SOLVER_TIME: 0.00302 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004256
+Monitoring force
+FORCE TIME: gauge : 0.0005
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002468(s) Flops=10128384 => 4103.88330632091 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4103.88330632091 Mflops = 4.10388330632091 Gflops = 0.00410388330632091 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.68460641819076e-05 Relative Rsd = 9.19800141346349e-08
+CG_SOLVER_TIME: 0.003033 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004232
+Monitoring force
+FORCE TIME: gauge : 0.000502
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00248(s) Flops=10128384 => 4084.02580645161 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4084.02580645161 Mflops = 4.08402580645161 Gflops = 0.00408402580645161 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.66520580795139e-05 Relative Rsd = 9.09207350147357e-08
+CG_SOLVER_TIME: 0.003044 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004236
+Monitoring force
+FORCE TIME: gauge : 0.000547
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002465(s) Flops=10128384 => 4108.87789046653 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4108.87789046653 Mflops = 4.10887789046653 Gflops = 0.00410887789046653 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.63855413727705e-05 Relative Rsd = 8.94655458270022e-08
+CG_SOLVER_TIME: 0.003023 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004223
+Monitoring force
+FORCE TIME: gauge : 0.000556
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002484(s) Flops=10128384 => 4077.44927536232 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4077.44927536232 Mflops = 4.07744927536232 Gflops = 0.00407744927536232 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.60629436756762e-05 Relative Rsd = 8.77041527551179e-08
+CG_SOLVER_TIME: 0.003042 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004598
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002475(s) Flops=10128384 => 4092.27636363636 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4092.27636363636 Mflops = 4.09227636363636 Gflops = 0.00409227636363636 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.57033624163447e-05 Relative Rsd = 8.57408283276004e-08
+CG_SOLVER_TIME: 0.003036 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004221
+Monitoring force
+FORCE TIME: gauge : 0.000537
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002466(s) Flops=10128384 => 4107.21167883212 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4107.21167883212 Mflops = 4.10721167883212 Gflops = 0.00410721167883212 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.53255311139236e-05 Relative Rsd = 8.36778581191334e-08
+CG_SOLVER_TIME: 0.00303 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004263
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00249(s) Flops=10128384 => 4067.62409638554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4067.62409638554 Mflops = 4.06762409638554 Gflops = 0.00406762409638554 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.49457251387473e-05 Relative Rsd = 8.16041061383796e-08
+CG_SOLVER_TIME: 0.003048 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004292
+Monitoring force
+FORCE TIME: gauge : 0.0005
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002503(s) Flops=10128384 => 4046.49780263684 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4046.49780263684 Mflops = 4.04649780263684 Gflops = 0.00404649780263684 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.45766018648972e-05 Relative Rsd = 7.95886820262827e-08
+CG_SOLVER_TIME: 0.003065 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004256
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002473(s) Flops=10128384 => 4095.58592802264 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4095.58592802264 Mflops = 4.09558592802264 Gflops = 0.00409558592802264 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.42268720891432e-05 Relative Rsd = 7.76791469936602e-08
+CG_SOLVER_TIME: 0.00304 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004243
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002494(s) Flops=10128384 => 4061.10024057739 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4061.10024057739 Mflops = 4.06110024057739 Gflops = 0.00406110024057739 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.39016611903434e-05 Relative Rsd = 7.59034857623284e-08
+CG_SOLVER_TIME: 0.003066 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004306
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00249(s) Flops=10128384 => 4067.62409638554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4067.62409638554 Mflops = 4.06762409638554 Gflops = 0.00406762409638554 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.36033934185002e-05 Relative Rsd = 7.42749348097854e-08
+CG_SOLVER_TIME: 0.003051 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004247
+Monitoring force
+FORCE TIME: gauge : 0.000499
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002479(s) Flops=10128384 => 4085.6732553449 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4085.6732553449 Mflops = 4.0856732553449 Gflops = 0.0040856732553449 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.3332961551941e-05 Relative Rsd = 7.27983687323938e-08
+CG_SOLVER_TIME: 0.003039 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004238
+Monitoring force
+FORCE TIME: gauge : 0.000506
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003099(s) Flops=10128384 => 3268.27492739593 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3268.27492739593 Mflops = 3.26827492739593 Gflops = 0.00326827492739593 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.30908618189333e-05 Relative Rsd = 7.14764969513305e-08
+CG_SOLVER_TIME: 0.00367 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004876
+Monitoring force
+FORCE TIME: gauge : 0.000553
+HMC_TIME: Traj MD Time: 0.143228 
+TwoFlavWilson4DMonomial: resetting Predictor before energy calc solve
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003562(s) Flops=14478336 => 4064.66479505896 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4064.66479505896 Mflops = 4.06466479505896 Gflops = 0.00406466479505896 Tflops
+CG_SOLVER: 19 iterations. Rsd = 6.20625255492625e-06 Relative Rsd = 3.38863245183594e-08
+CG_SOLVER_TIME: 0.004131 sec
+2Flav::invert,  n_count = 19
+HMC_TIME: Finish Energy Time: 0.004553 
+Delta H = 1.912948397533
+AccProb = 0.147644429751662
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+LastSolution4DChronoPredictor: No available last guess. Giving you zero
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003544(s) Flops=14478336 => 4085.30925507901 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4085.30925507901 Mflops = 4.08530925507901 Gflops = 0.00408530925507901 Tflops
+CG_SOLVER: 19 iterations. Rsd = 6.20625255581753e-06 Relative Rsd = 3.38863245232258e-08
+CG_SOLVER_TIME: 0.004111 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 19
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00534
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002486(s) Flops=10128384 => 4074.16894609815 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4074.16894609815 Mflops = 4.07416894609815 Gflops = 0.00407416894609815 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.31295326253997e-05 Relative Rsd = 7.16876407109039e-08
+CG_SOLVER_TIME: 0.003051 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004246
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002501(s) Flops=10128384 => 4049.73370651739 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4049.73370651739 Mflops = 4.04973370651739 Gflops = 0.00404973370651739 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.33649348225648e-05 Relative Rsd = 7.29729437460082e-08
+CG_SOLVER_TIME: 0.00307 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00426
+Monitoring force
+FORCE TIME: gauge : 0.000559
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002501(s) Flops=10128384 => 4049.73370651739 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4049.73370651739 Mflops = 4.04973370651739 Gflops = 0.00404973370651739 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.36257122395407e-05 Relative Rsd = 7.43967962400049e-08
+CG_SOLVER_TIME: 0.003068 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004268
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002499(s) Flops=10128384 => 4052.97478991597 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4052.97478991597 Mflops = 4.05297478991597 Gflops = 0.00405297478991597 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.3910885867473e-05 Relative Rsd = 7.5953852775276e-08
+CG_SOLVER_TIME: 0.003065 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004263
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002479(s) Flops=10128384 => 4085.6732553449 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4085.6732553449 Mflops = 4.0856732553449 Gflops = 0.0040856732553449 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.4218831724205e-05 Relative Rsd = 7.76352463606886e-08
+CG_SOLVER_TIME: 0.003048 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004246
+Monitoring force
+FORCE TIME: gauge : 0.000562
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002724(s) Flops=10128384 => 3718.20264317181 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3718.20264317181 Mflops = 3.71820264317181 Gflops = 0.00371820264317181 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.45459970236587e-05 Relative Rsd = 7.94215786780279e-08
+CG_SOLVER_TIME: 0.003289 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004522
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002502(s) Flops=10128384 => 4048.11510791367 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4048.11510791367 Mflops = 4.04811510791367 Gflops = 0.00404811510791367 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.48859433820978e-05 Relative Rsd = 8.12776959595844e-08
+CG_SOLVER_TIME: 0.003069 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004266
+Monitoring force
+FORCE TIME: gauge : 0.000502
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002498(s) Flops=10128384 => 4054.59727782226 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4054.59727782226 Mflops = 4.05459727782226 Gflops = 0.00405459727782226 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.52288637016761e-05 Relative Rsd = 8.31500511578828e-08
+CG_SOLVER_TIME: 0.003059 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004262
+Monitoring force
+FORCE TIME: gauge : 0.000515
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002484(s) Flops=10128384 => 4077.44927536232 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4077.44927536232 Mflops = 4.07744927536232 Gflops = 0.00407744927536232 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.55617009564144e-05 Relative Rsd = 8.49673525206688e-08
+CG_SOLVER_TIME: 0.003047 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00431
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002509(s) Flops=10128384 => 4036.82104424073 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4036.82104424073 Mflops = 4.03682104424073 Gflops = 0.00403682104424073 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.58688837547842e-05 Relative Rsd = 8.66445797846089e-08
+CG_SOLVER_TIME: 0.003073 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004275
+Monitoring force
+FORCE TIME: gauge : 0.000506
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002505(s) Flops=10128384 => 4043.26706586826 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4043.26706586826 Mflops = 4.04326706586826 Gflops = 0.00404326706586826 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.6133704169657e-05 Relative Rsd = 8.80905071680092e-08
+CG_SOLVER_TIME: 0.003077 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00427
+Monitoring force
+FORCE TIME: gauge : 0.000499
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002508(s) Flops=10128384 => 4038.43062200957 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4038.43062200957 Mflops = 4.03843062200957 Gflops = 0.00403843062200957 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.63404369352212e-05 Relative Rsd = 8.92192742493493e-08
+CG_SOLVER_TIME: 0.003074 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004456
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002501(s) Flops=10128384 => 4049.73370651739 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4049.73370651739 Mflops = 4.04973370651739 Gflops = 0.00404973370651739 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.64773035922886e-05 Relative Rsd = 8.99665702892839e-08
+CG_SOLVER_TIME: 0.003078 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004288
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002511(s) Flops=10128384 => 4033.60573476702 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4033.60573476702 Mflops = 4.03360573476702 Gflops = 0.00403360573476703 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.6540102054465e-05 Relative Rsd = 9.03094517704565e-08
+CG_SOLVER_TIME: 0.003076 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004277
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002495(s) Flops=10128384 => 4059.47254509018 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4059.47254509018 Mflops = 4.05947254509018 Gflops = 0.00405947254509018 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.65354729241143e-05 Relative Rsd = 9.02841765803294e-08
+CG_SOLVER_TIME: 0.003068 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004275
+Monitoring force
+FORCE TIME: gauge : 0.000648
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00249(s) Flops=10128384 => 4067.62409638554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4067.62409638554 Mflops = 4.06762409638554 Gflops = 0.00406762409638554 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.64814107424265e-05 Relative Rsd = 8.99889954518416e-08
+CG_SOLVER_TIME: 0.003062 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004295
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002508(s) Flops=10128384 => 4038.43062200957 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4038.43062200957 Mflops = 4.03843062200957 Gflops = 0.00403843062200957 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.64019059549e-05 Relative Rsd = 8.95548969347345e-08
+CG_SOLVER_TIME: 0.003076 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004274
+Monitoring force
+FORCE TIME: gauge : 0.000497
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002502(s) Flops=10128384 => 4048.11510791367 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4048.11510791367 Mflops = 4.04811510791367 Gflops = 0.00404811510791367 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.63150013256267e-05 Relative Rsd = 8.90803950604329e-08
+CG_SOLVER_TIME: 0.003066 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004264
+Monitoring force
+FORCE TIME: gauge : 0.000506
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00249(s) Flops=10128384 => 4067.62409638554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4067.62409638554 Mflops = 4.06762409638554 Gflops = 0.00406762409638554 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.62204405536563e-05 Relative Rsd = 8.8564090418084e-08
+CG_SOLVER_TIME: 0.003063 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004268
+Monitoring force
+FORCE TIME: gauge : 0.000499
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002506(s) Flops=10128384 => 4041.65363128492 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4041.65363128492 Mflops = 4.04165363128492 Gflops = 0.00404165363128492 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.60995682204835e-05 Relative Rsd = 8.79041238648484e-08
+CG_SOLVER_TIME: 0.003078 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004274
+Monitoring force
+FORCE TIME: gauge : 0.000498
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002507(s) Flops=10128384 => 4040.04148384523 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4040.04148384523 Mflops = 4.04004148384523 Gflops = 0.00404004148384523 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.59354189688597e-05 Relative Rsd = 8.70078640428799e-08
+CG_SOLVER_TIME: 0.003079 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004271
+Monitoring force
+FORCE TIME: gauge : 0.000515
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002497(s) Flops=10128384 => 4056.22106527833 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4056.22106527833 Mflops = 4.05622106527833 Gflops = 0.00405622106527833 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.57423582806237e-05 Relative Rsd = 8.595374691255e-08
+CG_SOLVER_TIME: 0.003063 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00432
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.0025(s) Flops=10128384 => 4051.3536 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4051.3536 Mflops = 4.0513536 Gflops = 0.0040513536 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.55786993386145e-05 Relative Rsd = 8.50601641957372e-08
+CG_SOLVER_TIME: 0.003062 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004254
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.0025(s) Flops=10128384 => 4051.3536 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4051.3536 Mflops = 4.0513536 Gflops = 0.0040513536 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.5523727974884e-05 Relative Rsd = 8.47600189061118e-08
+CG_SOLVER_TIME: 0.003064 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004257
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002491(s) Flops=10128384 => 4065.99116820554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4065.99116820554 Mflops = 4.06599116820554 Gflops = 0.00406599116820554 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.56312031271234e-05 Relative Rsd = 8.53468364508721e-08
+CG_SOLVER_TIME: 0.003052 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004273
+Monitoring force
+FORCE TIME: gauge : 0.000557
+TwoFlavWilson4DMonomial: resetting Predictor before energy calc solve
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003388(s) Flops=13753344 => 4059.42857142857 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4059.42857142857 Mflops = 4.05942857142857 Gflops = 0.00405942857142857 Tflops
+CG_SOLVER: 18 iterations. Rsd = 1.14854008092129e-05 Relative Rsd = 6.27106318345823e-08
+CG_SOLVER_TIME: 0.003953 sec
+2Flav::invert,  n_count = 18
+Reversibility: DeltaDeltaH = 3.32994272156384e-08
+Reversibility: DeltaQ      = 1.24241640645529e-09
+Reversibility: DeltaP      = 5.57888016806119e-09
+HMC_TIME: Reverse Check Time: 0.142453 
+After HMC trajectory call: time= 0.290981 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+wilson_two_flav
+HMC: finished default measurement = 0
+Doing 1 user measurements
+HMC: considering user measurement number = 0
+HMC: calling user measurement number = 0
+HMC: finished user measurement number = 0
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.001026 secs
+Doing Update: 2 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.000132 
+TwoFlavWilson4DMonomial: resetting Predictor after field refresh
+HMC_TIME: Pseudofermion Refres Time: 0.000253 
+TwoFlavWilson4DMonomial: resetting Predictor before energy calc solve
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003386(s) Flops=13753344 => 4061.82634376846 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4061.82634376846 Mflops = 4.06182634376846 Gflops = 0.00406182634376846 Tflops
+CG_SOLVER: 18 iterations. Rsd = 1.14622701309501e-05 Relative Rsd = 6.30668464218501e-08
+CG_SOLVER_TIME: 0.003959 sec
+2Flav::invert,  n_count = 18
+HMC_TIME: Start Energy Time: 0.004405 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+LastSolution4DChronoPredictor: No available last guess. Giving you zero
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003368(s) Flops=13753344 => 4083.53444180523 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4083.53444180523 Mflops = 4.08353444180523 Gflops = 0.00408353444180523 Tflops
+CG_SOLVER: 18 iterations. Rsd = 1.14622701314795e-05 Relative Rsd = 6.3066846424763e-08
+CG_SOLVER_TIME: 0.00393 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 18
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.005128
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002516(s) Flops=10128384 => 4025.58982511924 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4025.58982511924 Mflops = 4.02558982511924 Gflops = 0.00402558982511924 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.56314670268669e-05 Relative Rsd = 8.60062901213367e-08
+CG_SOLVER_TIME: 0.003081 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004271
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002706(s) Flops=10128384 => 3742.93569844789 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3742.93569844789 Mflops = 3.74293569844789 Gflops = 0.00374293569844789 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.59199181573596e-05 Relative Rsd = 8.75933843826968e-08
+CG_SOLVER_TIME: 0.003568 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004774
+Monitoring force
+FORCE TIME: gauge : 0.000513
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002492(s) Flops=10128384 => 4064.3595505618 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4064.3595505618 Mflops = 4.0643595505618 Gflops = 0.0040643595505618 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.63961829172573e-05 Relative Rsd = 9.02138527650905e-08
+CG_SOLVER_TIME: 0.003059 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004243
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002506(s) Flops=10128384 => 4041.65363128492 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4041.65363128492 Mflops = 4.04165363128492 Gflops = 0.00404165363128492 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.6988215858348e-05 Relative Rsd = 9.34712921855441e-08
+CG_SOLVER_TIME: 0.003074 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004275
+Monitoring force
+FORCE TIME: gauge : 0.000509
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00259(s) Flops=10128384 => 3910.57297297297 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3910.57297297297 Mflops = 3.91057297297297 Gflops = 0.00391057297297297 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.76272333099166e-05 Relative Rsd = 9.69872462695558e-08
+CG_SOLVER_TIME: 0.003164 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004417
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00268(s) Flops=10853376 => 4049.7671641791 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4049.7671641791 Mflops = 4.0497671641791 Gflops = 0.0040497671641791 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.57129283708932e-06 Relative Rsd = 4.16582018323089e-08
+CG_SOLVER_TIME: 0.003245 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004437
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002682(s) Flops=10853376 => 4046.74720357942 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4046.74720357942 Mflops = 4.04674720357942 Gflops = 0.00404674720357942 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.54500846779086e-06 Relative Rsd = 4.15135819391374e-08
+CG_SOLVER_TIME: 0.003242 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00444
+Monitoring force
+FORCE TIME: gauge : 0.000509
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002711(s) Flops=10853376 => 4003.45850239764 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4003.45850239764 Mflops = 4.00345850239764 Gflops = 0.00400345850239764 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.56452807244636e-06 Relative Rsd = 4.16209812496543e-08
+CG_SOLVER_TIME: 0.003271 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004484
+Monitoring force
+FORCE TIME: gauge : 0.000554
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002672(s) Flops=10853376 => 4061.89221556886 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4061.89221556886 Mflops = 4.06189221556886 Gflops = 0.00406189221556886 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.61845094449345e-06 Relative Rsd = 4.1917671647906e-08
+CG_SOLVER_TIME: 0.003239 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004434
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002725(s) Flops=10853376 => 3982.89027522936 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3982.89027522936 Mflops = 3.98289027522936 Gflops = 0.00398289027522936 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.68922505947218e-06 Relative Rsd = 4.23070796961384e-08
+CG_SOLVER_TIME: 0.003289 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004485
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002672(s) Flops=10853376 => 4061.89221556886 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4061.89221556886 Mflops = 4.06189221556886 Gflops = 0.00406189221556886 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.75605138832838e-06 Relative Rsd = 4.26747665304881e-08
+CG_SOLVER_TIME: 0.003238 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004445
+Monitoring force
+FORCE TIME: gauge : 0.000553
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002667(s) Flops=10853376 => 4069.50731158605 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4069.50731158605 Mflops = 4.06950731158605 Gflops = 0.00406950731158605 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.79872426440764e-06 Relative Rsd = 4.29095580413601e-08
+CG_SOLVER_TIME: 0.003238 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004433
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002676(s) Flops=10853376 => 4055.82062780269 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4055.82062780269 Mflops = 4.05582062780269 Gflops = 0.00405582062780269 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.80119821215975e-06 Relative Rsd = 4.29231700118647e-08
+CG_SOLVER_TIME: 0.003244 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004444
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002679(s) Flops=10853376 => 4051.27883538634 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4051.27883538634 Mflops = 4.05127883538634 Gflops = 0.00405127883538634 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.75385548887762e-06 Relative Rsd = 4.26626844165755e-08
+CG_SOLVER_TIME: 0.003252 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004456
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002706(s) Flops=10853376 => 4010.85587583149 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4010.85587583149 Mflops = 4.01085587583148 Gflops = 0.00401085587583149 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.65401617776397e-06 Relative Rsd = 4.21133560174945e-08
+CG_SOLVER_TIME: 0.004032 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.005579
+Monitoring force
+FORCE TIME: gauge : 0.000514
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002669(s) Flops=10853376 => 4066.45784938179 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4066.45784938179 Mflops = 4.06645784938179 Gflops = 0.00406645784938179 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.50493155287511e-06 Relative Rsd = 4.12930737318471e-08
+CG_SOLVER_TIME: 0.003236 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004432
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002694(s) Flops=10853376 => 4028.72160356347 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4028.72160356347 Mflops = 4.02872160356347 Gflops = 0.00402872160356347 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.31395819788067e-06 Relative Rsd = 4.0242314404724e-08
+CG_SOLVER_TIME: 0.003314 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004544
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002691(s) Flops=10853376 => 4033.21293199554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4033.21293199554 Mflops = 4.03321293199554 Gflops = 0.00403321293199554 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.09063948581257e-06 Relative Rsd = 3.90135868702808e-08
+CG_SOLVER_TIME: 0.00326 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004508
+Monitoring force
+FORCE TIME: gauge : 0.000512
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002489(s) Flops=10128384 => 4069.2583366814 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4069.2583366814 Mflops = 4.0692583366814 Gflops = 0.0040692583366814 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.78372671288385e-05 Relative Rsd = 9.81428786573821e-08
+CG_SOLVER_TIME: 0.00306 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004262
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002492(s) Flops=10128384 => 4064.3595505618 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4064.3595505618 Mflops = 4.0643595505618 Gflops = 0.0040643595505618 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.72135160810746e-05 Relative Rsd = 9.47109222399031e-08
+CG_SOLVER_TIME: 0.003055 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004256
+Monitoring force
+FORCE TIME: gauge : 0.001675
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002612(s) Flops=10128384 => 3877.63552833078 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3877.63552833078 Mflops = 3.87763552833078 Gflops = 0.00387763552833078 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.6574614240321e-05 Relative Rsd = 9.11956042610809e-08
+CG_SOLVER_TIME: 0.003188 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004383
+Monitoring force
+FORCE TIME: gauge : 0.000553
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002505(s) Flops=10128384 => 4043.26706586826 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4043.26706586826 Mflops = 4.04326706586826 Gflops = 0.00404326706586826 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.59379060021314e-05 Relative Rsd = 8.76923557584125e-08
+CG_SOLVER_TIME: 0.003066 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004251
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00252(s) Flops=10128384 => 4019.2 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4019.2 Mflops = 4.0192 Gflops = 0.0040192 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.53186914071381e-05 Relative Rsd = 8.42853594724705e-08
+CG_SOLVER_TIME: 0.003076 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004251
+Monitoring force
+FORCE TIME: gauge : 0.000506
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002629(s) Flops=10128384 => 3852.5614302016 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3852.5614302016 Mflops = 3.8525614302016 Gflops = 0.0038525614302016 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.47298091978199e-05 Relative Rsd = 8.10452557729991e-08
+CG_SOLVER_TIME: 0.003185 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004362
+Monitoring force
+FORCE TIME: gauge : 0.000499
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002509(s) Flops=10128384 => 4036.82104424073 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4036.82104424073 Mflops = 4.03682104424073 Gflops = 0.00403682104424073 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.41818012342446e-05 Relative Rsd = 7.80300472949306e-08
+CG_SOLVER_TIME: 0.00307 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004249
+Monitoring force
+FORCE TIME: gauge : 0.000503
+HMC_TIME: Traj MD Time: 0.14703 
+TwoFlavWilson4DMonomial: resetting Predictor before energy calc solve
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003573(s) Flops=14478336 => 4052.15113350126 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4052.15113350126 Mflops = 4.05215113350126 Gflops = 0.00405215113350126 Tflops
+CG_SOLVER: 19 iterations. Rsd = 7.12419680650141e-06 Relative Rsd = 3.91982234532643e-08
+CG_SOLVER_TIME: 0.004135 sec
+2Flav::invert,  n_count = 19
+HMC_TIME: Finish Energy Time: 0.004543 
+Delta H = 1.90426419839241
+AccProb = 0.148932186858298
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+LastSolution4DChronoPredictor: No available last guess. Giving you zero
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00356(s) Flops=14478336 => 4066.94831460674 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4066.94831460674 Mflops = 4.06694831460674 Gflops = 0.00406694831460674 Tflops
+CG_SOLVER: 19 iterations. Rsd = 7.12419680594543e-06 Relative Rsd = 3.91982234502052e-08
+CG_SOLVER_TIME: 0.004119 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 19
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.005336
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002516(s) Flops=10128384 => 4025.58982511924 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4025.58982511924 Mflops = 4.02558982511924 Gflops = 0.00402558982511924 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.43026353098969e-05 Relative Rsd = 7.86948915190352e-08
+CG_SOLVER_TIME: 0.003069 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004253
+Monitoring force
+FORCE TIME: gauge : 0.000506
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002501(s) Flops=10128384 => 4049.73370651739 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4049.73370651739 Mflops = 4.04973370651739 Gflops = 0.00404973370651739 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.48441343323845e-05 Relative Rsd = 8.16742869877039e-08
+CG_SOLVER_TIME: 0.003054 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004242
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002507(s) Flops=10128384 => 4040.04148384523 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4040.04148384523 Mflops = 4.04004148384523 Gflops = 0.00404004148384523 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.54179032366155e-05 Relative Rsd = 8.48312353889688e-08
+CG_SOLVER_TIME: 0.003064 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004252
+Monitoring force
+FORCE TIME: gauge : 0.000499
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002498(s) Flops=10128384 => 4054.59727782226 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4054.59727782226 Mflops = 4.05459727782226 Gflops = 0.00405459727782226 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.60119478367594e-05 Relative Rsd = 8.80997432095829e-08
+CG_SOLVER_TIME: 0.003052 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004232
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002518(s) Flops=10128384 => 4022.39237490071 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4022.39237490071 Mflops = 4.02239237490071 Gflops = 0.00402239237490072 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.66122300502017e-05 Relative Rsd = 9.1402571160105e-08
+CG_SOLVER_TIME: 0.003075 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004302
+Monitoring force
+FORCE TIME: gauge : 0.000508
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002508(s) Flops=10128384 => 4038.43062200957 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4038.43062200957 Mflops = 4.03843062200957 Gflops = 0.00403843062200957 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.72026457590302e-05 Relative Rsd = 9.46511123660209e-08
+CG_SOLVER_TIME: 0.003067 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004251
+Monitoring force
+FORCE TIME: gauge : 0.000684
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002538(s) Flops=10128384 => 3990.69503546099 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3990.69503546099 Mflops = 3.99069503546099 Gflops = 0.00399069503546099 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.77655283281775e-05 Relative Rsd = 9.77481627876559e-08
+CG_SOLVER_TIME: 0.003113 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.0043
+Monitoring force
+FORCE TIME: gauge : 0.00051
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002678(s) Flops=10853376 => 4052.79163554892 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4052.79163554892 Mflops = 4.05279163554892 Gflops = 0.00405279163554892 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.12416090851333e-06 Relative Rsd = 3.9198025938036e-08
+CG_SOLVER_TIME: 0.003234 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004408
+Monitoring force
+FORCE TIME: gauge : 0.000501
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002683(s) Flops=10853376 => 4045.23891166605 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4045.23891166605 Mflops = 4.04523891166605 Gflops = 0.00404523891166605 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.32392489129982e-06 Relative Rsd = 4.02971524006897e-08
+CG_SOLVER_TIME: 0.00324 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004441
+Monitoring force
+FORCE TIME: gauge : 0.0005
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002677(s) Flops=10853376 => 4054.30556593201 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4054.30556593201 Mflops = 4.05430556593201 Gflops = 0.00405430556593201 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.48604828895305e-06 Relative Rsd = 4.11891756477755e-08
+CG_SOLVER_TIME: 0.003233 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004486
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002734(s) Flops=10853376 => 3969.77907827359 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3969.77907827359 Mflops = 3.96977907827359 Gflops = 0.00396977907827359 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.6028345548274e-06 Relative Rsd = 4.18317483153129e-08
+CG_SOLVER_TIME: 0.003295 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004482
+Monitoring force
+FORCE TIME: gauge : 0.000547
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002676(s) Flops=10853376 => 4055.82062780269 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4055.82062780269 Mflops = 4.05582062780269 Gflops = 0.00405582062780269 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.67026893109857e-06 Relative Rsd = 4.22027807027249e-08
+CG_SOLVER_TIME: 0.003229 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00442
+Monitoring force
+FORCE TIME: gauge : 0.000505
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002699(s) Flops=10853376 => 4021.258243794 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4021.258243794 Mflops = 4.021258243794 Gflops = 0.004021258243794 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.68990427898285e-06 Relative Rsd = 4.23108168469887e-08
+CG_SOLVER_TIME: 0.003256 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00444
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002691(s) Flops=10853376 => 4033.21293199554 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4033.21293199554 Mflops = 4.03321293199554 Gflops = 0.00403321293199554 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.67008030790917e-06 Relative Rsd = 4.22017428743034e-08
+CG_SOLVER_TIME: 0.003248 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004423
+Monitoring force
+FORCE TIME: gauge : 0.000507
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002665(s) Flops=10853376 => 4072.56135084428 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4072.56135084428 Mflops = 4.07256135084428 Gflops = 0.00407256135084428 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.6257176419198e-06 Relative Rsd = 4.19576539276242e-08
+CG_SOLVER_TIME: 0.003219 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004453
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002694(s) Flops=10853376 => 4028.72160356347 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4028.72160356347 Mflops = 4.02872160356347 Gflops = 0.00402872160356347 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.57628975085662e-06 Relative Rsd = 4.16856954779432e-08
+CG_SOLVER_TIME: 0.003247 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00443
+Monitoring force
+FORCE TIME: gauge : 0.000504
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002678(s) Flops=10853376 => 4052.79163554892 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4052.79163554892 Mflops = 4.05279163554892 Gflops = 0.00405279163554892 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.54224855617696e-06 Relative Rsd = 4.14983965596355e-08
+CG_SOLVER_TIME: 0.003265 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00448
+Monitoring force
+FORCE TIME: gauge : 0.00051
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00276(s) Flops=10853376 => 3932.38260869565 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3932.38260869565 Mflops = 3.93238260869565 Gflops = 0.00393238260869565 Tflops
+CG_SOLVER: 14 iterations. Rsd = 7.54088328770027e-06 Relative Rsd = 4.14908846814159e-08
+CG_SOLVER_TIME: 0.003345 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 14
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004604
+Monitoring force
+FORCE TIME: gauge : 0.000498
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003457(s) Flops=10128384 => 2929.81891813711 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  2929.81891813711 Mflops = 2.92981891813711 Gflops = 0.00292981891813711 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.79973999628146e-05 Relative Rsd = 9.90239495737093e-08
+CG_SOLVER_TIME: 0.004019 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.0052
+Monitoring force
+FORCE TIME: gauge : 0.000503
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002504(s) Flops=10128384 => 4044.88178913738 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4044.88178913738 Mflops = 4.04488178913738 Gflops = 0.00404488178913738 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.74436070255598e-05 Relative Rsd = 9.59769114456294e-08
+CG_SOLVER_TIME: 0.003061 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00424
+Monitoring force
+FORCE TIME: gauge : 0.000506
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002503(s) Flops=10128384 => 4046.49780263684 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4046.49780263684 Mflops = 4.04649780263684 Gflops = 0.00404649780263684 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.68748860454651e-05 Relative Rsd = 9.28477373554404e-08
+CG_SOLVER_TIME: 0.003061 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004242
+Monitoring force
+FORCE TIME: gauge : 0.000554
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.00252(s) Flops=10128384 => 4019.2 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4019.2 Mflops = 4.0192 Gflops = 0.0040192 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.63439865236292e-05 Relative Rsd = 8.99266616674186e-08
+CG_SOLVER_TIME: 0.00308 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.00426
+Monitoring force
+FORCE TIME: gauge : 0.000502
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002633(s) Flops=10128384 => 3846.70869730346 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  3846.70869730346 Mflops = 3.84670869730346 Gflops = 0.00384670869730346 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.59179416250573e-05 Relative Rsd = 8.75825092543209e-08
+CG_SOLVER_TIME: 0.003188 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004369
+Monitoring force
+FORCE TIME: gauge : 0.0005
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.0025(s) Flops=10128384 => 4051.3536 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4051.3536 Mflops = 4.0513536 Gflops = 0.0040513536 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.56702555444772e-05 Relative Rsd = 8.62197094052232e-08
+CG_SOLVER_TIME: 0.003063 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004245
+Monitoring force
+FORCE TIME: gauge : 0.0005
+LastSolution4DChronoPredictor: Giving you the last solution
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.002501(s) Flops=10128384 => 4049.73370651739 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4049.73370651739 Mflops = 4.04973370651739 Gflops = 0.00404973370651739 Tflops
+CG_SOLVER: 13 iterations. Rsd = 1.56603505445074e-05 Relative Rsd = 8.61652108543456e-08
+CG_SOLVER_TIME: 0.00306 sec
+LastSolutionPredictor: registering new solution
+2Flav::invert,  n_count = 13
+Monitoring force
+FORCE TIME: wilson_two_flav : 0.004232
+Monitoring force
+FORCE TIME: gauge : 0.000507
+TwoFlavWilson4DMonomial: resetting Predictor before energy calc solve
+InvCG2: starting
+QDP:FlopCount:invcg2 Performance/CPU: t=0.003425(s) Flops=13753344 => 4015.57489051095 Mflops/cpu.
+QDP:FlopCount:invcg2 Total performance:  4015.57489051095 Mflops = 4.01557489051095 Gflops = 0.00401557489051095 Tflops
+CG_SOLVER: 18 iterations. Rsd = 1.14622700793399e-05 Relative Rsd = 6.30668461378844e-08
+CG_SOLVER_TIME: 0.003983 sec
+2Flav::invert,  n_count = 18
+Reversibility: DeltaDeltaH = 6.60465673263388e-08
+Reversibility: DeltaQ      = 1.15025161878967e-09
+Reversibility: DeltaP      = 4.61546626008577e-09
+HMC_TIME: Reverse Check Time: 0.144865 
+After HMC trajectory call: time= 0.297062 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+wilson_two_flav
+HMC: finished default measurement = 0
+Doing 1 user measurements
+HMC: considering user measurement number = 0
+HMC: calling user measurement number = 0
+HMC: finished user measurement number = 0
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.000937 secs
+After saving state: time= 0.001277 secs
+HMC: total time = 0.603504 secs
