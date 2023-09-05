@@ -7,7 +7,7 @@ from read_wilslp_module import *
 
 data_list = []
 
-for conf_num in range(1, 1024, 64):
+for conf_num in range(1, 1025):
     file_path = 'out_xml/pure_gauge_S16_T16_wilslp_cfg{}.out.xml'.format(conf_num)
 
     temp = read_wilslp(file_path, Ns=16, Nt=16)
@@ -26,7 +26,7 @@ from liblattice.general import general_plot_funcs as gplt
 from liblattice.general.plot_settings import *
 
 #* time like Wilson loops
-data_resam = resam.bootstrap(data_list, samp_times=20)
+data_resam = resam.bootstrap(data_list, samp_times=500)
 data_avg = gv.dataset.avg_data(data_resam, bstrap=True) 
 
 print( np.shape(data_avg) ) 
@@ -70,6 +70,7 @@ fig = plt.figure(figsize=fig_size)
 ax = plt.axes(plt_axes)
 gplt.errorbar_ls_plot(x_ls, y_ls, yerr_ls, label_ls, title, save=False, head=ax)
 plt.xlabel('Lt')
+# plt.ylim(0.1, 0.3)
 plt.show()
 
 #! take Lt = {...} to average to get the aV
@@ -104,22 +105,24 @@ print(fit_res.format(100))
 
 # %%
 #! fit to get aV
-if False:
+if True:
     fit_V = []
     for i in range(8):
         priors = gv.BufferDict()
-        priors['C'] = gv.gvar(1, 5)
+        priors['C0'] = gv.gvar(1, 5)
+        priors['C1'] = gv.gvar(1, 5)
         priors['V'] = gv.gvar(1, 5)
+        priors['E1'] = gv.gvar(1, 5)
 
         def fcn_V(x, p):
             nt = x
-            return p['C'] * np.exp(- p['V'] * nt)
+            return p['C0'] * np.exp(- p['V'] * nt) * (1 + p['C1'] * np.exp(- p['E1'] * nt) )
 
-        data_t = np.arange(4, 8)
-        data_y = data_V[i][3:7]
+        data_t = np.arange(2, 8)
+        data_y = data_V[i][1:7]
 
         fit_res = lsf.nonlinear_fit(data=(data_t, data_y), fcn=fcn_V, prior=priors)
-        print(fit_res)
+        print(fit_res.format(100))
 
         fit_V.append(fit_res.p['V'])
 
@@ -129,7 +132,7 @@ if False:
 
 
 #! use fit V
-if False:
+if True:
     priors = gv.BufferDict()
     priors['a'] = gv.gvar(0.1, 0.5)
     priors['A'] = gv.gvar(1, 5)

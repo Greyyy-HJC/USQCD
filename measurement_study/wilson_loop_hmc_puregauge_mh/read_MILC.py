@@ -1,22 +1,41 @@
 # %%
-#! read the 2pt real part from out.xml file and plot the effective mass
-
 import gvar as gv
 import lsqfit as lsf
 from read_wilslp_module import *
 
-data_list = []
+def read_wilslp_milc(file_path, Ns, Nt):
+    #* firstly find out the line number of the line start to search and the line end to search
+    str_to_start = '<wloop2>' #! wloop2 is the time like loops
+    start_lines = find_which_line(file_path, str_to_start)
 
-for conf_num in range(220, 620, 20):
-    file_path = 'out_xml/hmc_puregauge_S8_T16_wilslp_cfg{}.out.xml'.format(conf_num)
+    str_to_end = '</wloop2>'
+    end_lines = find_which_line(file_path, str_to_end)
 
-    temp = read_wilslp(file_path, Ns=8, Nt=16)
-    data_list.append(temp)
+    num_conf = len(start_lines)
 
-print(np.shape(data_list))
+    wloop_ls = []
 
-Ns = 8
-Nt = 16 / 2
+    for i in range(num_conf):
+        start_line = start_lines[i]
+        print("Find " + str_to_start + " in line " + str(start_line) + ".")
+
+        
+        end_line = end_lines[i]
+        print("Find " + str_to_end + " in line " + str(end_line) + ".")
+
+        #* secondly find out the string between start_string and end_string, which is the data we want
+        wloop = extract_data(file_path, start_line, end_line, Ns, Nt)
+        wloop_ls.append(wloop)
+
+    return wloop_ls
+
+
+Ns = 24
+Nt = 32
+
+file_path = 'a12m310_wlp.txt'
+
+wloop_ls = read_wilslp_milc(file_path, Ns, Nt*2)
 
 
 # %%
@@ -28,9 +47,8 @@ from liblattice.general import general_plot_funcs as gplt
 from liblattice.general.plot_settings import *
 
 #* time like Wilson loops
-data_resam = resam.bootstrap(data_list, samp_times=50)
-# data_avg = gv.dataset.avg_data(data_resam, bstrap=True) 
-data_avg = gv.dataset.avg_data(data_list, bstrap=False)
+data_resam = resam.bootstrap(wloop_ls, samp_times=50)
+data_avg = gv.dataset.avg_data(data_resam, bstrap=True)
 
 print( np.shape(data_avg) ) 
 
@@ -56,6 +74,8 @@ plt.show()
 # %%
 #! plot the linear potential aV(nz*a)
 
+Ns = 10
+
 data_V = []
 for i in range(Ns):
     potential = [np.log( data_avg[i][j] / data_avg[i][j + 1] ) for j in range(Nt-1)]
@@ -77,9 +97,8 @@ plt.ylim([-1, 2])
 plt.show()
 
 #! take Lt = {...} to average to get the aV
-avg_V = [ np.sum(data_V[i][4:8]) / 4 for i in range(8) ]
+avg_V = [ np.sum(data_V[i][4:7]) / 3 for i in range(Ns) ]
 print(avg_V)
-
 
 # %%
 #! fit aV to get the lattice spacing a
@@ -98,64 +117,10 @@ def fcn(x, p):
     return val
 
 
-data_x = np.arange(3, 7)
-data_y = avg_V[2:-2]
+data_x = np.arange(1, Ns+1)[2:-1]
+data_y = avg_V[2:-1]
 
 fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
 
 print(fit_res.format(100))
-
-
-# %%
-#! fit to get aV
-if True:
-    fit_V = []
-    for i in range(4, 7):
-        priors = gv.BufferDict()
-        priors['C'] = gv.gvar(1, 5)
-        priors['V'] = gv.gvar(1, 5)
-
-        def fcn_V(x, p):
-            nt = x
-            return p['C'] * np.exp(- p['V'] * nt)
-
-        data_t = np.arange(2, 8)
-        data_y = data_avg[i][1:-1]
-
-        fit_res = lsf.nonlinear_fit(data=(data_t, data_y), fcn=fcn_V, prior=priors)
-        print(fit_res)
-
-        fit_V.append(fit_res.p['V'])
-
-    print(fit_V)
-
-    plt.plot(data_t, gv.mean(data_y), 'o')
-
-
-
-
-#! use fit V
-if False:
-    priors = gv.BufferDict()
-    priors['a'] = gv.gvar(0.1, 0.5)
-    priors['A'] = gv.gvar(1, 5)
-    priors['B'] = gv.gvar(1, 5)
-
-
-    def fcn(x, p):
-        nz = x
-
-        val = p['A'] * p['a'] + p['B'] / nz + 4 * p['a']**2 * ( 1.65 + p['B'] ) * nz
-
-        return val
-
-
-    data_x = np.arange(1, 9)
-    data_y = fit_V
-
-    fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
-
-    print(fit_res.format(100))
-
-
 # %%
