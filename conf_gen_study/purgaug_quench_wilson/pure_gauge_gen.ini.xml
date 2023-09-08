@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<purgaug> 
+  <Cfg>
+    <!-- <cfg_type>SZINQIO</cfg_type> -->
+    <!-- <cfg_file>pure_gauge_S16_T16_beta6.lime1</cfg_file> -->
+    <cfg_type>WEAK_FIELD</cfg_type>
+    <cfg_file>dummy</cfg_file>
+  </Cfg>
+
+  <MCControl>
+    <RNG>
+      <Seed>	
+        <elem>11</elem>
+        <elem>10 </elem>
+        <elem>200 </elem>
+        <elem>3 </elem>
+      </Seed>
+    </RNG>
+
+    <StartUpdateNum>0</StartUpdateNum>
+    <NWarmUpUpdates>10</NWarmUpUpdates>  
+    <NProductionUpdates>300000</NProductionUpdates>
+    <NUpdatesThisRun>50</NUpdatesThisRun>
+    <SaveInterval>50</SaveInterval>
+    <!-- <SavePrefix>../../config/purgaug_quench_wilson/pure_gauge_S16_T16_beta6</SavePrefix> -->
+    <SavePrefix>pure_gauge_S16_T16_beta6</SavePrefix>
+    <SaveVolfmt>SINGLEFILE</SaveVolfmt>
+  </MCControl>
+
+  <HBItr>
+    <GaugeAction>
+       <Name>WILSON_GAUGEACT</Name>
+       <beta>6.0</beta>
+       <!-- <AnisoParam>
+         <anisoP>true</anisoP>
+         <t_dir>3</t_dir>
+         <xi_0>2.464</xi_0>
+         <nu>1.0</nu>
+       </AnisoParam> -->
+       <!-- <GaugeState> -->
+         <!-- <Name>SIMPLE_GAUGE_STATE</Name> -->
+         <GaugeBC>
+           <Name>PERIODIC_GAUGEBC</Name>
+         </GaugeBC>
+       <!-- </GaugeState> -->
+    </GaugeAction>
+    <HBParams>
+      <nOver>3</nOver>
+      <NmaxHB>1</NmaxHB>
+    </HBParams>
+    <nrow>8 8 8 16</nrow>
+  </HBItr>
+
+</purgaug>
+
+
