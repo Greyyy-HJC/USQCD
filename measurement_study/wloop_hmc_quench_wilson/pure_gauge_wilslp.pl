@@ -18,7 +18,7 @@ $ns=16;
 $nt=16;
 
 $cfg_type="SZINQIO";
-$cfg_file="../../config/hmc_quench_wilson/wilson_S16_T16_beta6_cfg_${conf_num}.lime";
+$cfg_file="../../config/hmc_quench_wilson/wilson_S16_T16_beta6_nstep10_cfg_${conf_num}.lime";
 
 ## ======================================================= ##
 ## ===================== XML FILE HEAD =================== ##

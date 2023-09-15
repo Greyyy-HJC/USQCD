@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+
+
+<chroma>
+  <Input><chroma>
+  <annotation>
+  Calculate the Wilson loop
+  </annotation>
+  <Param>
+    <InlineMeasurements>
+      <elem>
+        <!-- Wilson loops -->
+        <Name>WILSLP</Name>
+        <Frequency>1</Frequency>
+        <Param>
+          <version>3</version>
+          <kind>2</kind>
+          <j_decay>3</j_decay>
+          <t_dir>3</t_dir>
+        </Param>
+        <NamedObject>
+          <gauge_id>default_gauge_field</gauge_id>
+        </NamedObject>
+      </elem>
+    </InlineMeasurements>
+    <nrow>16 16 16 24</nrow>
+  </Param>
+  <Cfg>
+    <cfg_type>SZINQIO</cfg_type>
+    <cfg_file>../../config/hmc_quench_wilson_S16T24_beta6/hmc_wilson_S16T24_beta6_nstep75_cfg_687.lime</cfg_file>
+    <!-- pure gauge config -->
+  </Cfg>
+</chroma>
+
+  </Input>
+  <ProgramInfo>
+    <code_version>
+      <chroma>3.44.0</chroma>
+      <qdp>1.46.0</qdp>
+      <basePrecision>64</basePrecision>
+    </code_version>
+    <run_date>14 Sep 23 09:54:31 EDT</run_date>
+    <Setgeom>
+      <latt_size>16 16 16 24</latt_size>
+      <logical_size>1 1 1 1</logical_size>
+      <subgrid_size>16 16 16 24</subgrid_size>
+      <total_volume>98304</total_volume>
+      <subgrid_volume>98304</subgrid_volume>
+    </Setgeom>
+  </ProgramInfo>
+  <RNG>
+    <Seed>
+      <elem>11</elem>
+      <elem>0</elem>
+      <elem>0</elem>
+      <elem>0</elem>
+    </Seed>
+  </RNG>
+  <Config_info><Params>
+      <MCControl>
+        <Cfg>
+          <cfg_type>SZINQIO</cfg_type>
+          <cfg_file>../../config/hmc_quench_wilson_S16T24_beta6/hmc_wilson_S16T24_beta6_nstep75_cfg_687.lime</cfg_file>
+          <parallel_io>false</parallel_io>
+          <reunit>false</reunit>
+        </Cfg>
+        <RNG>
+          <Seed>
+            <elem>3651</elem>
+            <elem>880</elem>
+            <elem>2417</elem>
+            <elem>125</elem>
+          </Seed>
+        </RNG>
+        <StartUpdateNum>687</StartUpdateNum>
+        <NWarmUpUpdates>0</NWarmUpUpdates>
+        <NProductionUpdates>2000</NProductionUpdates>
+        <NUpdatesThisRun>768</NUpdatesThisRun>
+        <SaveInterval>3</SaveInterval>
+        <SavePrefix>../../config/hmc_quench_wilson_S16T24_beta6/hmc_wilson_S16T24_beta6_nstep75</SavePrefix>
+        <SaveVolfmt>SINGLEFILE</SaveVolfmt>
+        <ParallelIO>false</ParallelIO>
+        <ReproCheckP>false</ReproCheckP>
+        <ReverseCheckP>true</ReverseCheckP>
+        <ReverseCheckFrequency>1</ReverseCheckFrequency>
+        <MonitorForces>true</MonitorForces>
+        <InlineMeasurements>
+</InlineMeasurements>
+      </MCControl>
+      <HMCTrj>
+        <nrow>16 16 16 24</nrow>
+        <Monomials>
+          <elem>
+            <Name>GAUGE_MONOMIAL</Name>
+            <GaugeAction>
+              <Name>WILSON_GAUGEACT</Name>
+              <beta>6.0</beta>
+              <GaugeBC>
+                <Name>PERIODIC_GAUGEBC</Name>
+              </GaugeBC>
+            </GaugeAction>
+            <NamedObject>
+              <monomial_id>gauge</monomial_id>
+            </NamedObject>
+          </elem>
+        </Monomials>
+        <Hamiltonian>
+          <monomial_ids>
+            <elem>gauge</elem>
+          </monomial_ids>
+        </Hamiltonian>
+        <MDIntegrator>
+          <tau0>0.5</tau0>
+          <Integrator>
+            <Name>LCM_STS_LEAPFROG</Name>
+            <n_steps>75</n_steps>
+            <monomial_ids>
+              <elem>gauge</elem>
+            </monomial_ids>
+          </Integrator>
+        </MDIntegrator>
+      </HMCTrj>
+    </Params>
+
+  </Config_info>
+  <Observables>
+    <w_plaq>0.594258060080529</w_plaq>
+    <s_plaq>0.594257695203082</s_plaq>
+    <t_plaq>0.594258424957976</t_plaq>
+    <plane_01_plaq>0.593818685439776</plane_01_plaq>
+    <plane_02_plaq>0.59490543785466</plane_02_plaq>
+    <plane_12_plaq>0.594048962314811</plane_12_plaq>
+    <plane_03_plaq>0.594284347304064</plane_03_plaq>
+    <plane_13_plaq>0.594452873266693</plane_13_plaq>
+    <plane_23_plaq>0.594038054303171</plane_23_plaq>
+    <link>-0.000398601359616626</link>
+    <pollp>
+      <elem>
+        <re>-5.10554213258507e-05</re>
+        <im>0.00266011562519005</im>
+      </elem>
+      <elem>
+        <re>0.00637422431867956</re>
+        <im>-0.00164943261696123</im>
+      </elem>
+      <elem>
+        <re>-0.000459066602587463</re>
+        <im>-0.00350079679866294</im>
+      </elem>
+      <elem>
+        <re>-0.00536283345841231</re>
+        <im>0.00124888411666753</im>
+      </elem>
+    </pollp>
+  </Observables>
+  <InlineObservables>
+    <elem>
+      <WilsonLoop>
+        <update_no>0</update_no>
+        <decay_dir>3</decay_dir>
+        <t_dir>3</t_dir>
+        <Observables>
+          <w_plaq>0.594258060080529</w_plaq>
+          <s_plaq>0.594257695203082</s_plaq>
+          <t_plaq>0.594258424957976</t_plaq>
+          <plane_01_plaq>0.593818685439776</plane_01_plaq>
+          <plane_02_plaq>0.594905437854661</plane_02_plaq>
+          <plane_12_plaq>0.594048962314811</plane_12_plaq>
+          <plane_03_plaq>0.594284347304064</plane_03_plaq>
+          <plane_13_plaq>0.594452873266693</plane_13_plaq>
+          <plane_23_plaq>0.594038054303172</plane_23_plaq>
+          <link>-0.000398601359616626</link>
+          <pollp>
+            <elem>
+              <re>-5.10554213258509e-05</re>
+              <im>0.00266011562519005</im>
+            </elem>
+            <elem>
+              <re>0.00637422431867956</re>
+              <im>-0.00164943261696123</im>
+            </elem>
+            <elem>
+              <re>-0.000459066602587463</re>
+              <im>-0.00350079679866294</im>
+            </elem>
+            <elem>
+              <re>-0.00536283345841231</re>
+              <im>0.00124888411666753</im>
+            </elem>
+          </pollp>
+        </Observables>
+        <Link_observables>
+          <w_plaq>0.594258060080529</w_plaq>
+          <s_plaq>0.594257695203082</s_plaq>
+          <t_plaq>0.594258424957976</t_plaq>
+          <plane_01_plaq>0.593818685439776</plane_01_plaq>
+          <plane_02_plaq>0.594905437854661</plane_02_plaq>
+          <plane_12_plaq>0.594048962314811</plane_12_plaq>
+          <plane_03_plaq>0.594284347304064</plane_03_plaq>
+          <plane_13_plaq>0.594452873266693</plane_13_plaq>
+          <plane_23_plaq>0.594038054303172</plane_23_plaq>
+          <link>-0.000398601359616626</link>
+          <pollp>
+            <elem>
+              <re>-5.1055421325851e-05</re>
+              <im>0.00266011562519005</im>
+            </elem>
+            <elem>
+              <re>0.00637422431867956</re>
+              <im>-0.00164943261696123</im>
+            </elem>
+            <elem>
+              <re>-0.000459066602587462</re>
+              <im>-0.00350079679866294</im>
+            </elem>
+            <elem>
+              <re>-0.00536283345841231</re>
+              <im>0.00124888411666753</im>
+            </elem>
+          </pollp>
+        </Link_observables>
+        <wils_loop2>
+          <lengthr>16</lengthr>
+          <lengtht>12</lengtht>
+          <wloop2>
+            <elem>
+              <r>0</r>
+              <loop>0.594258424957978 0.38415538116519 0.252844408160158 0.166875620926553 0.110332595580652 0.0732967285192672 0.0487603650150306 0.0326937503431036 0.0220951711089885 0.0146117232969582 0.00970098810280648 0.00621734724869864</loop>
+            </elem>
+            <elem>
+              <r>1</r>
+              <loop>0.384874578222487 0.190578873234855 0.101474387324359 0.0548299422114071 0.0305816996123744 0.0162987661832864 0.00954623662254906 0.0049304844198346 0.00281038264602725 0.00144148581543868 0.000467813656862744 0.000627118489590851</loop>
+            </elem>
+            <elem>
+              <r>2</r>
+              <loop>0.254144172811274 0.102053179111641 0.0471615293287733 0.0229088683243801 0.0109037165913546 0.00477231868068346 0.00340028578908842 0.00161180476821093 0.000127949781668245 -0.000103651501616559 -0.000324454852632149 -0.000841492878514872</loop>
+            </elem>
+            <elem>
+              <r>3</r>
+              <loop>0.168820567127836 0.0557284245131056 0.0230265424713333 0.0107257526584998 0.00473505937844929 0.00257194731795941 0.00129919239634218 5.65453439882696e-05 0.000227399026095365 -0.000355562166499864 -0.000639948955828869 -0.000339046721812645</loop>
+            </elem>
+            <elem>
+              <r>4</r>
+              <loop>0.112202837491912 0.0307167644649288 0.010865488752643 0.00463142773768581 0.00180897367431784 0.000848009791656558 0.00051559602438887 0.000426985340211343 0.000489775747450831 -0.00038963854470647 -0.000188892097504539 -0.000712707500114077</loop>
+            </elem>
+            <elem>
+              <r>5</r>
+              <loop>0.0742007469950747 0.016858836075358 0.00521410396223918 0.00173318450292392 0.000735559628106059 0.00119809378124886 -6.16042928611675e-05 0.000145526258840653 -0.000879525500530518 -0.000241197641297243 -0.00120429572671226 0.000165171413273007</loop>
+            </elem>
+            <elem>
+              <r>6</r>
+              <loop>0.0494883796045802 0.00961928148284611 0.00207714021572877 0.000960916879303119 0.000304157061225287 0.00137823530537475 0.00048995224156292 0.000549315273721915 0.000264885257151714 0.000755615995172906 0.000225608522600549 0.000693268791202342</loop>
+            </elem>
+            <elem>
+              <r>7</r>
+              <loop>0.0325347308405028 0.00623274102829329 0.000745621057140259 -0.00038323471761695 0.000380628033992928 0.000654657342763723 0.000532447356591949 0.000258470813065231 -0.000211581746502969 0.0002561045671059 0.00075794635303984 -4.34889658593606e-05</loop>
+            </elem>
+            <elem>
+              <r>8</r>
+              <loop>0.0216234571180378 0.00362441662997264 0.000548633927786986 -0.000303707687349554 0.000303622423494854 -0.00025123308837529 0.000125355893736082 0.000139724101023436 0.000636763596387702 5.77419901060053e-05 -5.9778213543987e-05 -0.000269885806173365</loop>
+            </elem>
+            <elem>
+              <r>9</r>
+              <loop>0.0150081017827218 0.00219216322313761 0.000309671102290363 -0.000619991246296869 -1.98948923979941e-06 -0.000590776654249122 0.000411512187001821 4.14712836685275e-05 -0.000686628542079095 -0.000865055904604087 -0.00044126879689211 0.000659596062475482</loop>
+            </elem>
+            <elem>
+              <r>10</r>
+              <loop>0.00993745836592282 0.00183983502048847 -0.00015125751887611 -0.000271081484285873 0.000129506518724853 0.000490397451748832 0.000124336614701827 -0.000299053659264744 -0.000208635302156496 -0.000410153726104602 0.000193716475832723 -7.52550596784904e-05</loop>
+            </elem>
+            <elem>
+              <r>11</r>
+              <loop>0.00666443877690638 0.0014565254605156 -0.000124001094906998 -5.3083107497798e-05 -0.00020656949405632 0.000235214994877012 -0.000725943395378499 7.95431893921222e-05 -9.50362358085732e-06 0.000720809131385758 -0.000166715892045756 -5.75790786078579e-05</loop>
+            </elem>
+            <elem>
+              <r>12</r>
+              <loop>0.00452006668996187 0.00065687580072021 -0.000222617833200408 -0.000461916433060887 0.000197078226259381 0.000781053549713084 0.000498950291565156 0.000279657937045687 -0.000576080125733236 0.000349902467349605 0.000247064284400414 -0.000143671786241457</loop>
+            </elem>
+            <elem>
+              <r>13</r>
+              <loop>0.00327843018408452 -0.000152334994306096 -0.000848327002760714 -3.90287907313839e-05 -0.00015249933111091 -0.000381125406756 0.0011353241587843 0.000402260783023322 0.000632541498080235 4.56439156973709e-05 -3.89217339772489e-05 3.06490770915069e-05</loop>
+            </elem>
+            <elem>
+              <r>14</r>
+              <loop>0.00168623389069593 -1.73723186452703e-05 3.21289957716119e-05 -0.000122036600910168 0.000110577288043067 -0.00073791947414904 -0.000427220352303226 -0.000372535514659607 1.70984018803825e-05 -0.000641054783356323 4.56875512106958e-05 -0.000271184924207651</loop>
+            </elem>
+            <elem>
+              <r>15</r>
+              <loop>0.00119544733019349 0.000339970205989597 0.000344553441777947 0.000180127455305957 0.000194231758198801 -0.0017997947130288 2.33743360979905e-05 0.00038296050191133 0.000174204732990098 0.000565981366909421 -0.0003954472190326 0.000406389514835837</loop>
+            </elem>
+          </wloop2>
+        </wils_loop2>
+      </WilsonLoop>
+    </elem>
+  </InlineObservables>
+</chroma>

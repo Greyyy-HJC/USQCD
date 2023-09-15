@@ -7,7 +7,7 @@ from read_wilslp_module import *
 
 data_list = []
 
-for conf_num in range(1, 31):
+for conf_num in range(1, 1025, 256):
     file_path = 'out_xml/wilson_S16_T16_beta6_cfg_{}.out.xml'.format(conf_num)
 
     temp = read_wilslp(file_path, Ns=16, Nt=16)
@@ -52,6 +52,7 @@ plt.yscale('log')
 plt.xlabel('Lt')
 plt.show()
 
+print(yerr_ls[11])
 
 # %%
 #! plot the linear potential aV(nz*a)
@@ -79,7 +80,7 @@ plt.ylim([-1, 2])
 plt.show()
 
 #! take Lt = {...} to average to get the aV
-avg_V = [ np.sum(data_V[i][4:8]) / 4 for i in range(8) ]
+avg_V = [ np.sum(data_V[i][6:7]) for i in range(8) ]
 print(avg_V)
 
 
@@ -100,8 +101,8 @@ def fcn(x, p):
     return val
 
 
-data_x = np.arange(3, 7)
-data_y = avg_V[2:-2]
+data_x = np.arange(1, 7)
+data_y = avg_V[:6]
 
 fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
 

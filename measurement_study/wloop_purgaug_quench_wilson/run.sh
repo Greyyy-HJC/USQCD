@@ -18,7 +18,7 @@ done
 
 
 # generate the ini.xml files
-for conf_num in {1..30}
+for conf_num in {1..1024..8}
 do
     ini_xml=wilson_S16_T16_beta6_cfg_${conf_num}.ini.xml
     ./pure_gauge_wilslp.pl ${conf_num} > ${ini_folder}/${ini_xml}
@@ -26,7 +26,7 @@ done
 
 
 # run the Chroma program
-for conf_num in {1..30}
+for conf_num in {1..1024..8}
 do
     ini_xml=wilson_S16_T16_beta6_cfg_${conf_num}.ini.xml
     out_xml=wilson_S16_T16_beta6_cfg_${conf_num}.out.xml

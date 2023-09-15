@@ -7,7 +7,7 @@ from read_wilslp_module import *
 
 data_list = []
 
-for conf_num in range(20, 620, 20):
+for conf_num in range(20, 620, 20*4):
     file_path = 'out_xml/wilson_S16_T16_beta6_cfg_{}.out.xml'.format(conf_num)
 
     temp = read_wilslp(file_path, Ns=16, Nt=16)
@@ -52,6 +52,7 @@ plt.yscale('log')
 plt.xlabel('Lt')
 plt.show()
 
+print(yerr_ls[11])
 
 # %%
 #! plot the linear potential aV(nz*a)

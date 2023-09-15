@@ -112,7 +112,7 @@ priors['B'] = gv.gvar(1, 5)
 def fcn(x, p):
     nz = x
 
-    val = p['A'] * p['a'] + p['B'] / nz + 4 * p['a']**2 * ( 1.65 + p['B'] ) * nz
+    val = p['A'] * (nz + 12) * p['a'] + p['B'] / nz + 4 * p['a']**2 * ( 1.65 + p['B'] ) * nz
 
     return val
 
@@ -123,4 +123,15 @@ data_y = avg_V[1:]
 fit_res = lsf.nonlinear_fit(data=(data_x, data_y), fcn=fcn, prior=priors)
 
 print(fit_res.format(100))
+
+
+# %%
+aV_fix_nt = [ data_V[i][8] for i in range(Ns) ]
+fig = plt.figure(figsize=fig_size)
+ax = plt.axes(plt_axes)
+ax.errorbar(np.arange(1, Ns+1), [v.mean for v in aV_fix_nt], [v.sdev for v in aV_fix_nt], fmt='o', label='data', **errorb)
+plt.legend()
+plt.xlabel('Lz')
+plt.show()
+
 # %%

@@ -1,0 +1,1265 @@
+QDP use OpenMP threading. We have 16 threads
+Affinity reporting not implemented for this architecture
+Initialize done
+Linkage = bool Chroma::MapObjectDiskEnv::registerAll(): registering map obj key colorvec
+0
+Monomials xml is:
+<Monomials>
+      <elem>
+        <Name>GAUGE_MONOMIAL</Name>
+        <GaugeAction>
+          <Name>WILSON_GAUGEACT</Name>
+          <beta>6.0</beta>
+          <GaugeBC>
+            <Name>PERIODIC_GAUGEBC</Name>
+          </GaugeBC>
+        </GaugeAction>
+        <NamedObject>
+          <monomial_id>gauge</monomial_id>
+        </NamedObject>
+      </elem>
+    </Monomials>
+
+HMC_xml is: 
+<Hamiltonian>
+      <monomial_ids>
+        <elem>gauge</elem>
+      </monomial_ids>
+    </Hamiltonian>
+Integrator XML is: 
+<MDIntegrator>
+      <tau0>0.5</tau0>
+      <Integrator>
+        <Name>LCM_STS_LEAPFROG</Name>
+        <n_steps>5</n_steps>
+        <monomial_ids>
+          <elem>gauge</elem>
+        </monomial_ids>
+      </Integrator>
+    </MDIntegrator>
+
+Setting serial write mode for saving configurations
+Call QDP create layout
+Lattice initialized:
+  problem size = 24 24 24 32
+  layout size = 12 24 24 32
+  logical machine size = 1 1 1 1
+  subgrid size = 24 24 24 32
+  total number of nodes = 1
+  total volume = 442368
+  subgrid volume = 442368
+Initializing QDPDefaultAllocator.
+Finished init of RNG
+Finished lattice layout
+Finished with QDP create layout
+Initialize gauge field
+Gauge initialization: cfg_type = WEAK_FIELD
+Starting up a weak field config
+Gauge field successfully initialized: time= 0.483507 secs
+Gauge field reunitarization found 0 unitarity violations
+Gauge field reunitarized: time=0.238534 secs
+Create monomial: GAUGE_MONOMIAL
+GaugeMonomialParams: read 
+<GaugeAction>
+      <Name>WILSON_GAUGEACT</Name>
+      <beta>6.0</beta>
+      <GaugeBC>
+        <Name>PERIODIC_GAUGEBC</Name>
+      </GaugeBC>
+    </GaugeAction>
+
+GaugeBC Callback: Creating PeriodicGaugeBC 
+Read Monomial with monomial id: gauge
+ExactHamiltonian::create(): Trying to bind monomial with ID gauge
+Binding Monomials
+There are 1 IDs to bind 
+Monomial with ID = gauge bound
+All monomials successfully bound
+<InlineMeasurements>
+</InlineMeasurements>
+
+There are 0 user measurements 
+Setting Force monitoring to 1
+MC Control: About to do 20 updates
+Doing Update: 1 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.351205 
+HMC_TIME: Pseudofermion Refres Time: 0 
+HMC_TIME: Start Energy Time: 0.309218 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 2.015759
+Monitoring force
+FORCE TIME: gauge : 1.605758
+Monitoring force
+FORCE TIME: gauge : 1.594661
+Monitoring force
+FORCE TIME: gauge : 1.606351
+Monitoring force
+FORCE TIME: gauge : 1.673875
+Monitoring force
+FORCE TIME: gauge : 1.605003
+HMC_TIME: Traj MD Time: 14.979006 
+HMC_TIME: Finish Energy Time: 0.247773 
+Delta H = 90695.5988615742
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.860229
+Monitoring force
+FORCE TIME: gauge : 1.550613
+Monitoring force
+FORCE TIME: gauge : 1.554379
+Monitoring force
+FORCE TIME: gauge : 1.692121
+Monitoring force
+FORCE TIME: gauge : 1.556881
+Monitoring force
+FORCE TIME: gauge : 1.709494
+Reversibility: DeltaDeltaH = 1.87992554856464e-09
+Reversibility: DeltaQ      = 8.610005980081e-19
+Reversibility: DeltaP      = 1.61136353275686e-18
+HMC_TIME: Reverse Check Time: 14.415663 
+After HMC trajectory call: time= 30.272293 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.366407 secs
+Doing Update: 2 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.347127 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.242751 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.702159
+Monitoring force
+FORCE TIME: gauge : 1.714085
+Monitoring force
+FORCE TIME: gauge : 1.700821
+Monitoring force
+FORCE TIME: gauge : 1.701747
+Monitoring force
+FORCE TIME: gauge : 1.712906
+Monitoring force
+FORCE TIME: gauge : 1.702704
+HMC_TIME: Traj MD Time: 14.968446 
+HMC_TIME: Finish Energy Time: 0.255258 
+Delta H = 90765.8811441027
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.554153
+Monitoring force
+FORCE TIME: gauge : 1.776867
+Monitoring force
+FORCE TIME: gauge : 1.553284
+Monitoring force
+FORCE TIME: gauge : 1.681212
+Monitoring force
+FORCE TIME: gauge : 1.545533
+Monitoring force
+FORCE TIME: gauge : 1.682554
+Reversibility: DeltaDeltaH = 5.6843418860808e-12
+Reversibility: DeltaQ      = 8.614388448804e-19
+Reversibility: DeltaP      = 1.61104476568913e-18
+HMC_TIME: Reverse Check Time: 14.005625 
+After HMC trajectory call: time= 29.826722 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.367694 secs
+Doing Update: 3 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.343894 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.25412 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.781745
+Monitoring force
+FORCE TIME: gauge : 1.878882
+Monitoring force
+FORCE TIME: gauge : 1.703991
+Monitoring force
+FORCE TIME: gauge : 1.781449
+Monitoring force
+FORCE TIME: gauge : 1.70947
+Monitoring force
+FORCE TIME: gauge : 1.779545
+HMC_TIME: Traj MD Time: 15.166494 
+HMC_TIME: Finish Energy Time: 0.248597 
+Delta H = 90819.6383474255
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.551914
+Monitoring force
+FORCE TIME: gauge : 1.664108
+Monitoring force
+FORCE TIME: gauge : 1.561461
+Monitoring force
+FORCE TIME: gauge : 1.652951
+Monitoring force
+FORCE TIME: gauge : 1.524691
+Monitoring force
+FORCE TIME: gauge : 1.660779
+Reversibility: DeltaDeltaH = 8.86757334228605e-12
+Reversibility: DeltaQ      = 8.61361837386883e-19
+Reversibility: DeltaP      = 1.61188490706328e-18
+HMC_TIME: Reverse Check Time: 13.907692 
+After HMC trajectory call: time= 29.906857 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.36851 secs
+Doing Update: 4 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.34931 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.24725 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.692902
+Monitoring force
+FORCE TIME: gauge : 1.790013
+Monitoring force
+FORCE TIME: gauge : 1.670046
+Monitoring force
+FORCE TIME: gauge : 1.808881
+Monitoring force
+FORCE TIME: gauge : 1.674724
+Monitoring force
+FORCE TIME: gauge : 1.859238
+HMC_TIME: Traj MD Time: 14.818528 
+HMC_TIME: Finish Energy Time: 0.246254 
+Delta H = 90736.1392666493
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.530033
+Monitoring force
+FORCE TIME: gauge : 1.657941
+Monitoring force
+FORCE TIME: gauge : 1.524813
+Monitoring force
+FORCE TIME: gauge : 1.526037
+Monitoring force
+FORCE TIME: gauge : 1.519142
+Monitoring force
+FORCE TIME: gauge : 1.520613
+Reversibility: DeltaDeltaH = 1.87196746992413e-09
+Reversibility: DeltaQ      = 8.61481920131309e-19
+Reversibility: DeltaP      = 1.61221969857145e-18
+HMC_TIME: Reverse Check Time: 13.654554 
+After HMC trajectory call: time= 29.309723 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.483134 secs
+Doing Update: 5 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.346236 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.246317 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.667842
+Monitoring force
+FORCE TIME: gauge : 1.736837
+Monitoring force
+FORCE TIME: gauge : 1.664926
+Monitoring force
+FORCE TIME: gauge : 1.657325
+Monitoring force
+FORCE TIME: gauge : 1.663176
+Monitoring force
+FORCE TIME: gauge : 1.667062
+HMC_TIME: Traj MD Time: 14.589243 
+HMC_TIME: Finish Energy Time: 0.310596 
+Delta H = 90787.1972525194
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.5774
+Monitoring force
+FORCE TIME: gauge : 1.51173
+Monitoring force
+FORCE TIME: gauge : 1.644735
+Monitoring force
+FORCE TIME: gauge : 1.512794
+Monitoring force
+FORCE TIME: gauge : 1.665553
+Monitoring force
+FORCE TIME: gauge : 1.529082
+Reversibility: DeltaDeltaH = 7.73070496506989e-12
+Reversibility: DeltaQ      = 8.61122733609169e-19
+Reversibility: DeltaP      = 1.61231913245673e-18
+HMC_TIME: Reverse Check Time: 13.589446 
+After HMC trajectory call: time= 29.07387 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.363845 secs
+Doing Update: 6 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.345029 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.246985 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.804142
+Monitoring force
+FORCE TIME: gauge : 1.660827
+Monitoring force
+FORCE TIME: gauge : 1.794506
+Monitoring force
+FORCE TIME: gauge : 1.663843
+Monitoring force
+FORCE TIME: gauge : 1.792745
+Monitoring force
+FORCE TIME: gauge : 1.667941
+HMC_TIME: Traj MD Time: 14.713483 
+HMC_TIME: Finish Energy Time: 0.248428 
+Delta H = 90762.8798177121
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.670807
+Monitoring force
+FORCE TIME: gauge : 1.515078
+Monitoring force
+FORCE TIME: gauge : 1.69252
+Monitoring force
+FORCE TIME: gauge : 1.524585
+Monitoring force
+FORCE TIME: gauge : 1.51713
+Monitoring force
+FORCE TIME: gauge : 1.514805
+Reversibility: DeltaDeltaH = 5.5970303947106e-09
+Reversibility: DeltaQ      = 8.61413075666901e-19
+Reversibility: DeltaP      = 1.61266658800877e-18
+HMC_TIME: Reverse Check Time: 13.713914 
+After HMC trajectory call: time= 29.25929 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.364591 secs
+Doing Update: 7 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.365336 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.24805 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.8776
+Monitoring force
+FORCE TIME: gauge : 1.665624
+Monitoring force
+FORCE TIME: gauge : 1.789468
+Monitoring force
+FORCE TIME: gauge : 1.668311
+Monitoring force
+FORCE TIME: gauge : 1.793695
+Monitoring force
+FORCE TIME: gauge : 1.669328
+HMC_TIME: Traj MD Time: 14.795735 
+HMC_TIME: Finish Energy Time: 0.247454 
+Delta H = 90756.6351698805
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.52135
+Monitoring force
+FORCE TIME: gauge : 1.519296
+Monitoring force
+FORCE TIME: gauge : 1.518937
+Monitoring force
+FORCE TIME: gauge : 1.707769
+Monitoring force
+FORCE TIME: gauge : 1.519118
+Monitoring force
+FORCE TIME: gauge : 1.659846
+Reversibility: DeltaDeltaH = 1.36424205265939e-11
+Reversibility: DeltaQ      = 8.61238557877029e-19
+Reversibility: DeltaP      = 1.61170276936928e-18
+HMC_TIME: Reverse Check Time: 13.707388 
+After HMC trajectory call: time= 29.355532 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.366406 secs
+Doing Update: 8 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.348035 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.248497 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.683138
+Monitoring force
+FORCE TIME: gauge : 1.740614
+Monitoring force
+FORCE TIME: gauge : 1.668755
+Monitoring force
+FORCE TIME: gauge : 1.68162
+Monitoring force
+FORCE TIME: gauge : 1.667894
+Monitoring force
+FORCE TIME: gauge : 1.722287
+HMC_TIME: Traj MD Time: 14.814256 
+HMC_TIME: Finish Energy Time: 0.246823 
+Delta H = 90813.3170522898
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.529661
+Monitoring force
+FORCE TIME: gauge : 1.65309
+Monitoring force
+FORCE TIME: gauge : 1.516137
+Monitoring force
+FORCE TIME: gauge : 1.700278
+Monitoring force
+FORCE TIME: gauge : 1.521447
+Monitoring force
+FORCE TIME: gauge : 1.593113
+Reversibility: DeltaDeltaH = 1.25055521493778e-11
+Reversibility: DeltaQ      = 8.61495164281535e-19
+Reversibility: DeltaP      = 1.61206734326361e-18
+HMC_TIME: Reverse Check Time: 13.740403 
+After HMC trajectory call: time= 29.389866 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.374802 secs
+Doing Update: 9 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.352444 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.247614 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.667002
+Monitoring force
+FORCE TIME: gauge : 1.803261
+Monitoring force
+FORCE TIME: gauge : 1.729856
+Monitoring force
+FORCE TIME: gauge : 1.794575
+Monitoring force
+FORCE TIME: gauge : 1.670131
+Monitoring force
+FORCE TIME: gauge : 1.822027
+HMC_TIME: Traj MD Time: 14.810802 
+HMC_TIME: Finish Energy Time: 0.246222 
+Delta H = 90772.2712314986
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.524391
+Monitoring force
+FORCE TIME: gauge : 1.602712
+Monitoring force
+FORCE TIME: gauge : 1.521786
+Monitoring force
+FORCE TIME: gauge : 1.518246
+Monitoring force
+FORCE TIME: gauge : 1.52136
+Monitoring force
+FORCE TIME: gauge : 1.520159
+Reversibility: DeltaDeltaH = 9.09494701772928e-13
+Reversibility: DeltaQ      = 8.61076703201545e-19
+Reversibility: DeltaP      = 1.61201569285418e-18
+HMC_TIME: Reverse Check Time: 13.549328 
+After HMC trajectory call: time= 29.198407 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.409823 secs
+Doing Update: 10 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.446813 
+HMC_TIME: Pseudofermion Refres Time: 0 
+HMC_TIME: Start Energy Time: 0.256391 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.668105
+Monitoring force
+FORCE TIME: gauge : 1.664069
+Monitoring force
+FORCE TIME: gauge : 1.666289
+Monitoring force
+FORCE TIME: gauge : 1.669248
+Monitoring force
+FORCE TIME: gauge : 1.525309
+Monitoring force
+FORCE TIME: gauge : 1.525178
+HMC_TIME: Traj MD Time: 14.448613 
+HMC_TIME: Finish Energy Time: 0.217163 
+Delta H = 90763.8458756907
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.738261
+Monitoring force
+FORCE TIME: gauge : 1.502979
+Monitoring force
+FORCE TIME: gauge : 1.629159
+Monitoring force
+FORCE TIME: gauge : 1.499322
+Monitoring force
+FORCE TIME: gauge : 1.637028
+Monitoring force
+FORCE TIME: gauge : 1.739187
+Reversibility: DeltaDeltaH = 1.18234311230481e-11
+Reversibility: DeltaQ      = 8.60870482958563e-19
+Reversibility: DeltaP      = 1.61144820307837e-18
+HMC_TIME: Reverse Check Time: 13.712335 
+After HMC trajectory call: time= 29.053144 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.363869 secs
+Doing Update: 11 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.356433 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.223337 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.658592
+Monitoring force
+FORCE TIME: gauge : 1.532222
+Monitoring force
+FORCE TIME: gauge : 1.666008
+Monitoring force
+FORCE TIME: gauge : 1.530072
+Monitoring force
+FORCE TIME: gauge : 1.611546
+Monitoring force
+FORCE TIME: gauge : 1.531302
+HMC_TIME: Traj MD Time: 13.797604 
+HMC_TIME: Finish Energy Time: 0.223142 
+Delta H = 90767.3937509907
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.663482
+Monitoring force
+FORCE TIME: gauge : 1.70859
+Monitoring force
+FORCE TIME: gauge : 1.505234
+Monitoring force
+FORCE TIME: gauge : 1.567991
+Monitoring force
+FORCE TIME: gauge : 1.506641
+Monitoring force
+FORCE TIME: gauge : 1.651375
+Reversibility: DeltaDeltaH = 1.86571469384944e-09
+Reversibility: DeltaQ      = 8.61056065282444e-19
+Reversibility: DeltaP      = 1.61120753655162e-18
+HMC_TIME: Reverse Check Time: 13.973616 
+After HMC trajectory call: time= 28.581711 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.374512 secs
+Doing Update: 12 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.355774 
+HMC_TIME: Pseudofermion Refres Time: 0 
+HMC_TIME: Start Energy Time: 0.225829 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.541054
+Monitoring force
+FORCE TIME: gauge : 1.724198
+Monitoring force
+FORCE TIME: gauge : 1.535815
+Monitoring force
+FORCE TIME: gauge : 1.68396
+Monitoring force
+FORCE TIME: gauge : 1.546286
+Monitoring force
+FORCE TIME: gauge : 1.656905
+HMC_TIME: Traj MD Time: 13.921342 
+HMC_TIME: Finish Energy Time: 0.225978 
+Delta H = 90794.6609299192
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.504507
+Monitoring force
+FORCE TIME: gauge : 1.501685
+Monitoring force
+FORCE TIME: gauge : 1.497453
+Monitoring force
+FORCE TIME: gauge : 1.501967
+Monitoring force
+FORCE TIME: gauge : 1.506323
+Monitoring force
+FORCE TIME: gauge : 1.504413
+Reversibility: DeltaDeltaH = 1.86719262273982e-09
+Reversibility: DeltaQ      = 8.61335335792985e-19
+Reversibility: DeltaP      = 1.61095974758674e-18
+HMC_TIME: Reverse Check Time: 13.423555 
+After HMC trajectory call: time= 28.158632 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.365583 secs
+Doing Update: 13 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.463925 
+HMC_TIME: Pseudofermion Refres Time: 0 
+HMC_TIME: Start Energy Time: 0.228535 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.549801
+Monitoring force
+FORCE TIME: gauge : 1.539669
+Monitoring force
+FORCE TIME: gauge : 1.537686
+Monitoring force
+FORCE TIME: gauge : 1.541506
+Monitoring force
+FORCE TIME: gauge : 1.720172
+Monitoring force
+FORCE TIME: gauge : 1.537609
+HMC_TIME: Traj MD Time: 13.794489 
+HMC_TIME: Finish Energy Time: 0.231825 
+Delta H = 90798.7294933731
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.626512
+Monitoring force
+FORCE TIME: gauge : 1.502989
+Monitoring force
+FORCE TIME: gauge : 1.572117
+Monitoring force
+FORCE TIME: gauge : 1.499908
+Monitoring force
+FORCE TIME: gauge : 1.497814
+Monitoring force
+FORCE TIME: gauge : 1.548167
+Reversibility: DeltaDeltaH = 1.87355908565223e-09
+Reversibility: DeltaQ      = 8.61362723746202e-19
+Reversibility: DeltaP      = 1.61089460637931e-18
+HMC_TIME: Reverse Check Time: 13.420795 
+After HMC trajectory call: time= 28.142391 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.364768 secs
+Doing Update: 14 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.351622 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.23155 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.541073
+Monitoring force
+FORCE TIME: gauge : 1.535106
+Monitoring force
+FORCE TIME: gauge : 1.534511
+Monitoring force
+FORCE TIME: gauge : 1.538895
+Monitoring force
+FORCE TIME: gauge : 1.534474
+Monitoring force
+FORCE TIME: gauge : 1.712166
+HMC_TIME: Traj MD Time: 13.880376 
+HMC_TIME: Finish Energy Time: 0.227164 
+Delta H = 90743.4731043987
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.504371
+Monitoring force
+FORCE TIME: gauge : 1.655418
+Monitoring force
+FORCE TIME: gauge : 1.497293
+Monitoring force
+FORCE TIME: gauge : 1.582442
+Monitoring force
+FORCE TIME: gauge : 1.499473
+Monitoring force
+FORCE TIME: gauge : 1.499322
+Reversibility: DeltaDeltaH = 1.85241333383601e-09
+Reversibility: DeltaQ      = 8.61476796058376e-19
+Reversibility: DeltaP      = 1.61331585199203e-18
+HMC_TIME: Reverse Check Time: 13.207824 
+After HMC trajectory call: time= 27.918689 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.431849 secs
+Doing Update: 15 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.347147 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.225889 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.543866
+Monitoring force
+FORCE TIME: gauge : 1.841932
+Monitoring force
+FORCE TIME: gauge : 1.543368
+Monitoring force
+FORCE TIME: gauge : 1.541301
+Monitoring force
+FORCE TIME: gauge : 1.539225
+Monitoring force
+FORCE TIME: gauge : 1.547552
+HMC_TIME: Traj MD Time: 14.043264 
+HMC_TIME: Finish Energy Time: 0.227138 
+Delta H = 90785.0472193537
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.655329
+Monitoring force
+FORCE TIME: gauge : 1.49414
+Monitoring force
+FORCE TIME: gauge : 1.646117
+Monitoring force
+FORCE TIME: gauge : 1.501461
+Monitoring force
+FORCE TIME: gauge : 1.637386
+Monitoring force
+FORCE TIME: gauge : 1.496168
+Reversibility: DeltaDeltaH = 1.87378645932768e-09
+Reversibility: DeltaQ      = 8.61259277463104e-19
+Reversibility: DeltaP      = 1.61171733421003e-18
+HMC_TIME: Reverse Check Time: 13.299388 
+After HMC trajectory call: time= 28.147639 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.375278 secs
+Doing Update: 16 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.351971 
+HMC_TIME: Pseudofermion Refres Time: 0 
+HMC_TIME: Start Energy Time: 0.224728 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.688099
+Monitoring force
+FORCE TIME: gauge : 1.538954
+Monitoring force
+FORCE TIME: gauge : 1.649949
+Monitoring force
+FORCE TIME: gauge : 1.767851
+Monitoring force
+FORCE TIME: gauge : 1.604554
+Monitoring force
+FORCE TIME: gauge : 1.529618
+HMC_TIME: Traj MD Time: 14.133638 
+HMC_TIME: Finish Energy Time: 0.227453 
+Delta H = 90777.4623864833
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.501188
+Monitoring force
+FORCE TIME: gauge : 1.622489
+Monitoring force
+FORCE TIME: gauge : 1.498586
+Monitoring force
+FORCE TIME: gauge : 1.641535
+Monitoring force
+FORCE TIME: gauge : 1.500996
+Monitoring force
+FORCE TIME: gauge : 1.62509
+Reversibility: DeltaDeltaH = 1.87696969078388e-09
+Reversibility: DeltaQ      = 8.61455868002859e-19
+Reversibility: DeltaP      = 1.61186101964563e-18
+HMC_TIME: Reverse Check Time: 13.35898 
+After HMC trajectory call: time= 28.302035 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.366772 secs
+Doing Update: 17 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.358222 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.225617 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.535752
+Monitoring force
+FORCE TIME: gauge : 1.663469
+Monitoring force
+FORCE TIME: gauge : 1.534231
+Monitoring force
+FORCE TIME: gauge : 1.690706
+Monitoring force
+FORCE TIME: gauge : 1.53799
+Monitoring force
+FORCE TIME: gauge : 1.741666
+HMC_TIME: Traj MD Time: 13.990871 
+HMC_TIME: Finish Energy Time: 0.228212 
+Delta H = 90785.8632002678
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.508027
+Monitoring force
+FORCE TIME: gauge : 1.500979
+Monitoring force
+FORCE TIME: gauge : 1.600879
+Monitoring force
+FORCE TIME: gauge : 1.497155
+Monitoring force
+FORCE TIME: gauge : 1.684067
+Monitoring force
+FORCE TIME: gauge : 1.505408
+Reversibility: DeltaDeltaH = 1.87554860531236e-09
+Reversibility: DeltaQ      = 8.61410004544471e-19
+Reversibility: DeltaP      = 1.6122139496087e-18
+HMC_TIME: Reverse Check Time: 13.241908 
+After HMC trajectory call: time= 28.050787 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.364028 secs
+Doing Update: 18 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.349107 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.231005 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.667564
+Monitoring force
+FORCE TIME: gauge : 1.535718
+Monitoring force
+FORCE TIME: gauge : 1.682528
+Monitoring force
+FORCE TIME: gauge : 1.540083
+Monitoring force
+FORCE TIME: gauge : 1.663641
+Monitoring force
+FORCE TIME: gauge : 1.538385
+HMC_TIME: Traj MD Time: 13.840063 
+HMC_TIME: Finish Energy Time: 0.240949 
+Delta H = 90729.4619312398
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.509007
+Monitoring force
+FORCE TIME: gauge : 1.64346
+Monitoring force
+FORCE TIME: gauge : 1.500125
+Monitoring force
+FORCE TIME: gauge : 1.501072
+Monitoring force
+FORCE TIME: gauge : 1.502013
+Monitoring force
+FORCE TIME: gauge : 1.709069
+Reversibility: DeltaDeltaH = 1.87083060154691e-09
+Reversibility: DeltaQ      = 8.60758350037909e-19
+Reversibility: DeltaP      = 1.61135784398794e-18
+HMC_TIME: Reverse Check Time: 13.759144 
+After HMC trajectory call: time= 28.421215 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.364408 secs
+Doing Update: 19 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.348633 
+HMC_TIME: Pseudofermion Refres Time: 0 
+HMC_TIME: Start Energy Time: 0.227772 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.54647
+Monitoring force
+FORCE TIME: gauge : 1.576063
+Monitoring force
+FORCE TIME: gauge : 1.541557
+Monitoring force
+FORCE TIME: gauge : 1.671411
+Monitoring force
+FORCE TIME: gauge : 1.54484
+Monitoring force
+FORCE TIME: gauge : 1.69673
+HMC_TIME: Traj MD Time: 13.881564 
+HMC_TIME: Finish Energy Time: 0.239135 
+Delta H = 90789.7616287246
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.502978
+Monitoring force
+FORCE TIME: gauge : 1.580589
+Monitoring force
+FORCE TIME: gauge : 1.501338
+Monitoring force
+FORCE TIME: gauge : 1.498723
+Monitoring force
+FORCE TIME: gauge : 1.582582
+Monitoring force
+FORCE TIME: gauge : 1.499177
+Reversibility: DeltaDeltaH = 2.72848410531878e-12
+Reversibility: DeltaQ      = 8.60575670229917e-19
+Reversibility: DeltaP      = 1.61129843781319e-18
+HMC_TIME: Reverse Check Time: 13.230321 
+After HMC trajectory call: time= 27.931241 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.374177 secs
+Doing Update: 20 warm_up_p = 0
+Doing Reversibility Test this traj
+Before HMC trajectory call
+HMC_TIME: Momentum Refresh Time: 0.517935 
+HMC_TIME: Pseudofermion Refres Time: 1e-06 
+HMC_TIME: Start Energy Time: 0.226685 
+Working through Copy List of length 0
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.539905
+Monitoring force
+FORCE TIME: gauge : 1.547379
+Monitoring force
+FORCE TIME: gauge : 1.544029
+Monitoring force
+FORCE TIME: gauge : 1.539884
+Monitoring force
+FORCE TIME: gauge : 1.667354
+Monitoring force
+FORCE TIME: gauge : 1.538733
+HMC_TIME: Traj MD Time: 13.748108 
+HMC_TIME: Finish Energy Time: 0.228621 
+Delta H = 90745.563958656
+AccProb = 0
+AcceptP = 0
+Reversing trajectory for reversability test
+MD: Resetting Chrono Predictors at start of trajectory
+Monitoring force
+FORCE TIME: gauge : 1.638824
+Monitoring force
+FORCE TIME: gauge : 1.500669
+Monitoring force
+FORCE TIME: gauge : 1.575757
+Monitoring force
+FORCE TIME: gauge : 1.501673
+Monitoring force
+FORCE TIME: gauge : 1.50001
+Monitoring force
+FORCE TIME: gauge : 1.523763
+Reversibility: DeltaDeltaH = 1.87765181181021e-09
+Reversibility: DeltaQ      = 8.61096192676027e-19
+Reversibility: DeltaP      = 1.61206400667468e-18
+HMC_TIME: Reverse Check Time: 13.354522 
+After HMC trajectory call: time= 28.09356 secs
+HMC: start inline measurements
+HMC: initial resetting default gauge field
+HMC: set default gauge field
+HMC: finished setting default gauge field
+HMC: do default measurement = 0
+HMC: dump named objects
+Available Keys are : 
+default_gauge_field
+gauge
+HMC: finished default measurement = 0
+Doing 0 user measurements
+HMC: finished user measurements
+HMC: final resetting default gauge field
+HMC: finished final resetting default gauge field
+After all measurements: time= 0.364806 secs
+After saving state: time= 0.573216 secs
+HMC: total time = 586.111708 secs

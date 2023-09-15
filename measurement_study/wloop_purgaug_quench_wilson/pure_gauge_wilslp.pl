@@ -18,7 +18,7 @@ $ns=16;
 $nt=16;
 
 $cfg_type="SZINQIO";
-$cfg_file="../../config/purgaug_quench_wilson_compare/wilson_S16_T16_beta6.lime${conf_num}";
+$cfg_file="../../config/purgaug_quench_wilson/pure_gauge_S16_T16_beta6.lime${conf_num}";
 
 ## ======================================================= ##
 ## ===================== XML FILE HEAD =================== ##
