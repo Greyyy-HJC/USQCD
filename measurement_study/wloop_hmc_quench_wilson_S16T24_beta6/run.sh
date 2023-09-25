@@ -18,19 +18,19 @@ done
 
 
 # generate the ini.xml files
-for conf_num in {48..1536..48}
+for conf_num in {48..12288..48}
 do
     ini_xml=wilson_S16_T24_beta6_cfg_${conf_num}.ini.xml
-    ./hmc_quench_wilslp.pl ${conf_num} > ${ini_folder}/${ini_xml}
+    taskset -c 0-3 ./hmc_quench_wilslp.pl ${conf_num} > ${ini_folder}/${ini_xml}
 done
 
 
 # run the Chroma program
-for conf_num in {48..1536..48}
+for conf_num in {48..12288..48}
 do
     ini_xml=wilson_S16_T24_beta6_cfg_${conf_num}.ini.xml
     out_xml=wilson_S16_T24_beta6_cfg_${conf_num}.out.xml
     output_txt=output_cfg_${conf_num}.txt
 
-    ./chroma_double -i ${ini_folder}/${ini_xml} -o ${out_folder}/${out_xml} > ${output_folder}/${output_txt}
+    taskset -c 0-3 ./chroma_double -i ${ini_folder}/${ini_xml} -o ${out_folder}/${out_xml} > ${output_folder}/${output_txt}
 done

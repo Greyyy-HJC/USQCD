@@ -84,5 +84,5 @@ for gap in gap_list:
 gplt.errorbar_plot(gap_list, gv.sdev(fit_m_ls), np.zeros_like(fit_m_ls), title='meff fit results', ylim=None, save=False, head=None)
 
 # %%
-print(Q_ls)
-# %%
+#! check the correlation of the data
+

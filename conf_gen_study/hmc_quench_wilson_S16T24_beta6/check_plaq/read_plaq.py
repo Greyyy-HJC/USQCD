@@ -49,10 +49,10 @@ def select_specific_bool(file_path, start_string, end_string, start_line, end_li
 start_string = '<w_plaq>'
 end_string = '</w_plaq>'
 start_line = 0
-end_line = 32000
+end_line = 120000
 
 
-file_path = 'quench_hmc.out.xml'
+file_path = 'quench_hmc_final.out.xml'
 
 
 
@@ -84,10 +84,10 @@ plt.title('w_plaq with nstep = 75', **fs_p)
 start_string = '<AcceptP>'
 end_string = '</AcceptP>'
 start_line = 0
-end_line = 32000
+end_line = 120000
 
 
-file_path = 'quench_hmc.out.xml'
+file_path = 'quench_hmc_final.out.xml'
 
 
 bool_ls = select_specific_bool(file_path, start_string, end_string, start_line, end_line)
